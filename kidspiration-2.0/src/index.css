@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */ 
+  --color-primary: #f4c025;
+  --color-primary-light: #fef5d3;
+  --color-primary-hover: #dcb022;
+  --color-primary-dark: #d9a818;
+  --color-secondary: #9c8749;
+  --color-background-light: #f8f8f5;
+  --color-background-dark: #221e10;
+  --color-accent-blue: #4aa9ff;
+  --color-accent-red: #ff6b6b;
+  --color-card-bg: #ffffff;
+  --color-text-main: #1c180d;
+  --color-text-muted: #6b5d2e;
+
+  /* Fonts */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Border Radius */ 
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-bouncy: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.doodle-pattern {
+  background-color: #f8f8f5;
+  background-image: radial-gradient(#f4c025 2px, transparent 2px), radial-gradient(#4aa9ff 2px, transparent 2px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
