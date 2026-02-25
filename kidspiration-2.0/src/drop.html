@@ -1,111 +1,209 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kidspiration Welcome Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#f4c025",
-                        "primary-hover": "#dcb022",
-                        "primary-light": "#fef5d3",
-                        "background-light": "#f8f8f5",
-                        "background-dark": "#221e10",
-                        "text-main": "#1c180d",
-                        "text-muted": "#6b5d2e",
-                    },
-                    fontFamily: {
-                        display: ["Plus Jakarta Sans", "sans-serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-                    }
-                },
-            },
-        }
-    </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased overflow-x-hidden">
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 overflow-x-hidden">
 <div class="relative flex min-h-screen w-full flex-col group/design-root">
-<!-- Header -->
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-stone-200 bg-white/90 backdrop-blur-md px-6 py-4 lg:px-10 dark:border-stone-800 dark:bg-stone-900/90">
-<div class="flex items-center gap-4 text-text-main dark:text-white">
-<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined text-3xl">local_activity</span>
+<main class="flex-1">
+<!-- Hero / Featured Section -->
+<div class="relative w-full py-16 px-4 md:px-10 overflow-hidden doodle-pattern dark:bg-background-dark">
+<!-- Abstract blobs for fun background -->
+<div class="absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-blue/20 rounded-full blur-3xl -z-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6 text-center md:text-left z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-accent-blue/10 text-accent-blue font-bold text-sm uppercase tracking-wider">New Arrivals</span>
+<h1 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight">
+                            Gear Up for <span class="text-primary relative inline-block">Adventures <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-50" preserveaspectratio="none" viewbox="0 0 100 10"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3"></path></svg></span>!
+                        </h1>
+<p class="text-lg text-slate-600 dark:text-slate-300 max-w-lg mx-auto md:mx-0 font-medium">
+                            Check out our latest collection of tees, hoodies, and caps designed to spark joy and creativity in every kiddo.
+                        </p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                                Shop All 
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 px-8 py-3 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                View Categories
+                            </button>
 </div>
-<h2 class="text-xl font-bold leading-tight tracking-tight text-text-main dark:text-white">Kidspiration</h2>
 </div>
-<!-- Mobile Menu Icon (Hidden on Desktop) -->
-<div class="flex lg:hidden">
-<button class="text-text-main dark:text-white">
-<span class="material-symbols-outlined">menu</span>
+<div class="flex-1 relative">
+<div class="relative z-10 bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-bouncy transform rotate-2 hover:rotate-0 transition-all duration-500 group">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent-blue/20 mix-blend-multiply"></div>
+<img alt="Featured Merch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Happy kids wearing colorful t-shirts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQtEHRvNPnr9iDKWD4Q_N3ixrevCyamwBfPuNC2jfgZf607x1RPucMsFqiElN8c-evrvHQn4evNHUagnEQ6IYzT6vTgW58G6heASSVGu7uWgvCz2Co0JwhxdMhlanoRGwwe6g693LKuraCNloIKBIlJbFsqCdTkq_FownA13jgGnf5znQvEQsVRuT69Adrrh8Q1OdLdetAGWPDtvl1M3n11V1iqLPjemVGRRWyIaCpZI_tC4oCn8yMaKsmH-L7CfeTQNSurrGcaau"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-accent-red text-white size-24 rounded-full flex flex-col items-center justify-center shadow-lg transform rotate-12 border-4 border-white dark:border-slate-800">
+<span class="text-xs font-bold uppercase">Start at</span>
+<span class="text-2xl font-black">$12</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Section -->
+<div class="max-w-7xl mx-auto px-4 md:px-10 py-16">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Trending Now 🔥</h2>
+<div class="flex gap-2">
+<button class="size-12 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:border-primary hover:text-slate-900 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="size-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-all shadow-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
-<!-- Desktop Nav -->
-<div class="hidden flex-1 justify-end gap-8 lg:flex">
-<nav class="flex items-center gap-9">
-<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Kids</a>
-<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Parents</a>
-<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Leaders</a>
-<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">About Us</a>
-</nav>
-<div class="flex gap-3">
-<button class="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary px-6 text-sm font-bold leading-normal text-stone-900 shadow-sm transition-all hover:bg-primary-hover hover:scale-105 active:scale-95">
-<span class="truncate">Join Now</span>
+</div>
+<!-- Product Grid (Carousel Simulation) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
+<span class="absolute top-3 left-3 bg-accent-blue text-white text-xs font-bold px-2 py-1 rounded-lg z-10">Best Seller</span>
+<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-xl">favorite</span>
 </button>
-<button class="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-stone-100 px-6 text-sm font-bold leading-normal text-text-main transition-all hover:bg-stone-200 dark:bg-stone-800 dark:text-white dark:hover:bg-stone-700">
-<span class="truncate">Log In</span>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Kid wearing a yellow graphic t-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXTUawme-LNSOUc-6Sv3Gzv4x6FSg2iYzekGGRF-jLwupA-yW001s46QnIpk2pcj_BCs5tqi29h66jwjxernkNGfuK9UaFU_V5jaEinTy_w_xhheEeFcOI4jDmgl_mOACx0NCmmAYfWbO18OHDuEbKt6g4HiB781NahtM8mFK2Keuaff6GstjvnXGEsOTN_zswYZfWNgz_MFCNNZ0kOQy12zW8nqxN9T-65Vb6JZ2FsV66lBYvsU23HI9ix27EU2tEzkPngVA48z5S"/>
+</div>
+<div class="px-2 flex-1 flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Super Star Tee</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star_half</span>
+<span class="text-xs text-slate-500 ml-1">(42)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$18.00</span>
+<button class="bg-primary text-slate-900 p-2 rounded-xl hover:bg-primary-dark transition-colors shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
-</header>
-<main class="flex flex-col grow">
-<!-- Hero Section -->
-<div class="@container w-full bg-hero-pattern">
-<div class="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
-<!-- Hero Content -->
-
-<!-- Hero Image -->
-
-<!-- Features Grid -->
-
-<!-- Stats/Trust Section -->
-
-<!-- Testimonials -->
-
-<!-- CTA Section -->
-
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
+<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Child wearing a colorful cap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHKhF5POlx39FfXOnhHbn7iqImNEwjrNlIJBgzZoPKwtpWTvPDwK8FDcb_qhgrq1GaHxYQ9lxzt0EEsz_guAkaRzO9OVr7rLcEHz_ePoiUGkfR5r6ZNcMyZKsd2YugBa4G65i62W-qSeJaodecG2QG3wSvnlOtL2F18pY8KQgPOXl2UUHHt1KbH_KqQd23yA8V3Q6Zc5p95h3lEOsWuJMcLec4UugyzIFSgcBGBbPhorxtw06cca7BrBPNAGiVBN2sAXTDPhONj2zI"/>
+</div>
+<div class="px-2 flex-1 flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Sunny Days Cap</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
+<span class="text-xs text-slate-500 ml-1">(15)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$12.00</span>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
+<span class="absolute top-3 left-3 bg-accent-red text-white text-xs font-bold px-2 py-1 rounded-lg z-10">-20%</span>
+<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Comfortable grey hoodie for kids" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuVnh2g51nf-KLN2eGqmvmbKtckhpuNu_AS2BFZ6DfnUEq1Jb9Mi2MRVpM3CJ1BZTW29Upr6lxhX_c4XwXldy39EABwaFdWHUwMn5ZmVJP8lSeunT_BjNEO5Rj_9Cw0N4SaWAqNP1A3QSbl7MrKKSgfBMirOWQu8zG9PtLGvnbFWBa-tQryDdr7lj3eDKYBASCluffFbDvP_4cBO92KoxnToJJ4r-ZlstYQlpKj2Kf0k9dEaNn4jpyFOqZHP2oufxDDA2RFamolmEL"/>
+</div>
+<div class="px-2 flex-1 flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Cozy Doodle Hoodie</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="text-xs text-slate-500 ml-1">(89)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col leading-none">
+<span class="text-xs text-slate-400 line-through decoration-red-500">$35.00</span>
+<span class="text-xl font-black text-accent-red">$28.00</span>
+</div>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
+<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Girl smiling with a backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQd3l0lk9hku2FdfM5ZpjGiMwkR1T_WMOCuzFnf4hkzMBN8UWYWh-qt1z_QySjbQPcFsVExd2zzfvuO4lfcPYitBkHaMheBMH9huX4cJU8w5-sFUe3yu_QX3fMB4xdod164DPKeIXUwCFs2TNme1iP9BHA5abdPcx7XRO_GBy1Fd0JjxBU7ygp51J24bKdS_onpf8ECAJWIKzHkZADOJ-7ov0ooIBBx5cE1u1Ql-1e86WxmSABs19yy_pbqwXFNoP70XOIg65e6FcI"/>
+</div>
+<div class="px-2 flex-1 flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Explorer Backpack</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="text-xs text-slate-500 ml-1">(24)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-slate-900 dark:text-white">$45.00</span>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Categories / Quick Links -->
+<div class="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 md:px-10">
+<h2 class="text-2xl font-bold text-center mb-10 text-slate-900 dark:text-white">Shop by Category</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Pile of colorful t-shirts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA_uy_7gL01WYNUQXnz5iZAfHVSbEyBkSb7-et5D049_-OlFkAIDac9YNt2NR4XK5rC5jl9oHIIG_C7GGyvSvLRK3bidlUBnl69_b3b9JbiLCke3gMVnRBrPi3gZW7LUtufvWozX_UBj8FodiGAgSdYqRhtazJI2e55wVI0tIo87GY9LgpK1Rmt5eAHxWFgZZMI7al_dkSqGP9jbMPVhmWhFLbUoXpI0DJjDM483S06V5573iZyS5vZDodXdSMAp5IYuyKAm17D1VO"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Tees</span>
+</div>
+</a>
+<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a hoodie texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFYM-CA5hPdbXVbbcqlofu7-99A-aUEPjHSVEV19-_PHDl3sLlfOIgIl4Anwzhnto6umGZBxiv_nnpbULDZry0Q78NSOCt0YPZxfdQXcILuELs1xm3vfXRuDFHgO8YaTVWHd8ttNI1fuQwE_0oGPetN71nw4kwqKaY6_Q3DrYOjVEOBn3kJoBQ6a0W4LdHcaM_rtzw5oaplhv3xac1GQRouAue3Jj5q76QKevzt1YxZYfSzmpNK-APqC7-7pezmkuBBsPpeCgZwP8-"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Hoodies</span>
+</div>
+</a>
+<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Baseball caps on a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxPC7EQk9GhskWJAqomZLsDpC1EIa4jaNh75AmetpjpoFdOZ2XpRU-SnGWGK1MVfUXn-6knHlgkMfqudM1C8HqddPypvBrUEZMb4XlMe_WeOJL8XDS5VHOBZu9J94yfMeUPiHxoy0_6WiiNKCXLdEQ050QD38vmCk-vQFM87h17AUWhhTggIT-dAmtTO9sB_Bgg2rzYY8FMw-l-Lo3RMY40NjvNojUPZuk7Y9ct6Sp_ni-U8gHrSiFMo9_02562jX70fJn2rdHtfeY"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Hats</span>
+</div>
+</a>
+<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Assorted kids accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeg0q2WaM3XEK8ZuitLxUCpJj8NIxFfKbzYB5jEGMjw9nJBP4Giz6nSbuDRVzjLA54kGgTRrFrbDpWtzBuKU7VrI9FhHX7z8XQozYvyvv_VlnfnoV58QPdLI_YUV-30-BrUAJfgcXDUjyO0DfcLG28SlH2eC4D4yQO_4pTIUQdR8VmQreg-u9041ALs9ZWtptNDOs2Qle4JUNpI93gvyXXYyn1maONA-mpQnoy2oLWNDM7GO_JZrrWIbELWoVE91rTeLDJ6SSukmXZ"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Accessories</span>
+</div>
+</a>
+</div>
+</div>
+</div>
 </main>
-<!-- Footer -->
-<footer class="bg-white border-t border-stone-200 px-6 py-10 dark:bg-stone-900 dark:border-stone-800">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="flex items-center gap-2 text-text-main dark:text-white">
-<span class="material-symbols-outlined text-primary">local_activity</span>
-<span class="font-bold text-lg">Kidspiration</span>
-</div>
-<div class="flex gap-6 text-sm text-stone-500 dark:text-stone-400">
-<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="hover:text-primary transition-colors" href="#">Help Center</a>
-</div>
-<div class="text-sm text-stone-400">
-                    © 2023 Kidspiration. All rights reserved.
-                </div>
-</div>
-</footer>
+
 </div>
 </body></html>
