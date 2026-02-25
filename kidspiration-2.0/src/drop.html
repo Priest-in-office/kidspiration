@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kidspiration Welcome Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f4c025",
+                        "primary-hover": "#dcb022",
+                        "primary-light": "#fef5d3",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                        "text-main": "#1c180d",
+                        "text-muted": "#6b5d2e",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-stone-200 bg-white/90 backdrop-blur-md px-6 py-4 lg:px-10 dark:border-stone-800 dark:bg-stone-900/90">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">local_activity</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-text-main dark:text-white">Kidspiration</h2>
+</div>
+<!-- Mobile Menu Icon (Hidden on Desktop) -->
+<div class="flex lg:hidden">
+<button class="text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden flex-1 justify-end gap-8 lg:flex">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Kids</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Parents</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">Leaders</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary px-6 text-sm font-bold leading-normal text-stone-900 shadow-sm transition-all hover:bg-primary-hover hover:scale-105 active:scale-95">
+<span class="truncate">Join Now</span>
+</button>
+<button class="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-stone-100 px-6 text-sm font-bold leading-normal text-text-main transition-all hover:bg-stone-200 dark:bg-stone-800 dark:text-white dark:hover:bg-stone-700">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col grow">
+<!-- Hero Section -->
+<div class="@container w-full bg-hero-pattern">
+<div class="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
+<!-- Hero Content -->
+
+<!-- Hero Image -->
+
+<!-- Features Grid -->
+
+<!-- Stats/Trust Section -->
+
+<!-- Testimonials -->
+
+<!-- CTA Section -->
+
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-stone-200 px-6 py-10 dark:bg-stone-900 dark:border-stone-800">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined text-primary">local_activity</span>
+<span class="font-bold text-lg">Kidspiration</span>
+</div>
+<div class="flex gap-6 text-sm text-stone-500 dark:text-stone-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-sm text-stone-400">
+                    © 2023 Kidspiration. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

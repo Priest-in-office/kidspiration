@@ -54,23 +54,6 @@ export default function Hero() {
               <p className="text-sm opacity-90">Join 10k+ explorers today!</p>
             </div>
           </div>
-          {/* Floating badge */}
-          <div
-            className="absolute -bottom-6 -left-4 lg:left-0 bg-white dark:bg-stone-800 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce"
-            style={{ animationDuration: "3s" }}
-          >
-            <div className="bg-green-100 dark:bg-green-900 p-2 rounded-full text-green-600 dark:text-green-300">
-              <span className="material-symbols-outlined">security</span>
-            </div>
-            <div>
-              <p className="text-xs text-text-muted dark:text-stone-400 font-bold uppercase">
-                Safety First
-              </p>
-              <p className="text-sm font-bold text-text-main dark:text-white">
-                Moderated 24/7
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
