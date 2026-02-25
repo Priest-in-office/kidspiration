@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import SignupChooser from "./pages/SignupChooser";
 import Signup from "./pages/Signup";
@@ -9,6 +10,24 @@ import Partner from "./pages/Partner";
 import Shop from "./pages/Shop";
 
 export default function App() {
+  const [pageLoading, setPageLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (pageLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background-primary">
+        <span className="material-symbols-outlined text-primary text-6xl animate-spin">donut_large</span>
+      </div>
+    );
+  }
+
   return (
     <>
       <Routes>
