@@ -45,7 +45,7 @@ export default function Navbar() {
                 <span className="material-symbols-outlined">search</span>
               </div>
               <input
-                className="flex w-full min-w-0 flex-1 bg-transparent border-none text-slate-900 dark:text-white focus:ring-0 placeholder:text-slate-400 px-3 text-sm font-medium"
+                className="flex w-full min-w-0 flex-1 bg-transparent border-none outline-none text-slate-900 dark:text-white focus:ring-0 placeholder:text-slate-400 px-3 text-sm font-medium"
                 placeholder="Search..."
               />
             </div>

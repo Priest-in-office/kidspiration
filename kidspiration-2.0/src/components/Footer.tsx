@@ -1,3 +1,5 @@
+import kidspirationLogo from "../assets/kidspiration-logo.png"
+
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#e6e2d6] dark:border-slate-800 bg-[#f4f0e7] dark:bg-background-dark py-12 px-4 md:px-10">
@@ -5,15 +7,12 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 text-text-main dark:text-white">
             <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-slate-900">
-              <span className="material-symbols-outlined !text-[20px]">
-                token
-              </span>
+              <img src={kidspirationLogo} alt="kidspiration-logo" />
             </div>
             <h2 className="text-lg font-bold">Kidspiration</h2>
           </div>
           <p className="text-sm text-text-muted dark:text-slate-400 max-w-xs">
-            A safe, fun place for kids to learn, play, and grow together in
-            faith and friendship.
+            Discover the joy of faith through inspiring Bible stories, fun activities, and exciting adventures designed to help kids grow in God's love.
           </p>
         </div>
         <div className="flex flex-col gap-3">
@@ -103,7 +102,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto max-w-[1280px] mt-12 pt-8 border-t border-[#e6e2d6] dark:border-slate-800 text-center text-sm text-text-muted dark:text-slate-500">
-        © 2024 Kidspiration. All rights reserved.
+        © {new Date().getFullYear()} Kidspiration. All rights reserved.
       </div>
     </footer>
   );
