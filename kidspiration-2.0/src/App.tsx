@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Partner from "./pages/Partner";
 import Shop from "./pages/Shop";
+import About from "./pages/About";
 
 export default function App() {
   const [pageLoading, setPageLoading] = useState(true);
@@ -23,7 +24,9 @@ export default function App() {
   if (pageLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background-primary">
-        <span className="material-symbols-outlined text-primary text-6xl animate-spin">donut_large</span>
+        <span className="material-symbols-outlined text-primary text-6xl animate-spin">
+          donut_large
+        </span>
       </div>
     );
   }
@@ -32,6 +35,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/signup" element={<SignupChooser />} />

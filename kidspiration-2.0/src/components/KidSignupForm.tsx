@@ -75,7 +75,7 @@ export default function KidSignupForm() {
       {
         firstName: { required: true, minLength: 2 },
         lastName: { required: true, minLength: 2 },
-        dateOfBirth: { required: true, maxAge: 17 },
+        dateOfBirth: { required: true, maxAge: 12 },
         parentEmail: {
           required: true,
           pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -83,7 +83,7 @@ export default function KidSignupForm() {
       },
     );
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setError(null);
 

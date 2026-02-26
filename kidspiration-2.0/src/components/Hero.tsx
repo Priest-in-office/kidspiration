@@ -1,4 +1,13 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import kidspiration1 from "../assets/kidspiration-1.png";
+import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4"
+import VideoModal from "./VideoModal";
+
 export default function Hero() {
+  const navigate = useNavigate();
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <div className="@container w-full bg-hero-pattern">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
@@ -7,26 +16,33 @@ export default function Hero() {
             <span className="material-symbols-outlined text-sm">
               celebration
             </span>
-            <span>New Adventures Added!</span>
+            <span>Join thousands of kids worldwide!</span>
           </div>
           <h1 className="text-4xl font-black leading-tight tracking-tight text-text-main dark:text-white sm:text-5xl lg:text-6xl">
-            Unleash Your{" "}
+            Welcome To{" "}
             <span className="text-primary underline decoration-wavy decoration-4 underline-offset-4">
-              Spark!
+              Kidspiration!
             </span>
           </h1>
           <p className="text-lg font-normal leading-relaxed text-text-muted dark:text-stone-300 max-w-xl mx-auto lg:mx-0">
-            A safe, colorful, and creative community where kids design, learn,
-            and grow together while parents and leaders guide the way.
+            Discover the joy of faith through inspiring Bible stories, fun
+            activities, and exciting adventures designed to help kids grow in
+            God's love.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-2">
-            <button className="flex h-12 cursor-pointer items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-stone-900 shadow-lg shadow-primary/30 transition-all hover:bg-primary-hover hover:-translate-y-1">
+            <button
+              className="flex h-12 cursor-pointer items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-stone-900 shadow-lg shadow-primary/30 transition-all hover:bg-primary-hover hover:-translate-y-1"
+              onClick={() => navigate("/signup")}
+            >
               <span className="truncate">Join the Fun</span>
               <span className="material-symbols-outlined ml-2">
                 rocket_launch
               </span>
             </button>
-            <button className="flex h-12 cursor-pointer items-center justify-center rounded-xl bg-white border border-stone-200 px-8 text-base font-bold text-text-main shadow-sm transition-all hover:bg-stone-50 hover:border-stone-300 dark:bg-stone-800 dark:border-stone-700 dark:text-white dark:hover:bg-stone-700">
+            <button
+              onClick={() => setShowVideo(true)}
+              className="flex h-12 cursor-pointer items-center justify-center rounded-xl bg-white border border-stone-200 px-8 text-base font-bold text-text-main shadow-sm transition-all hover:bg-stone-50 hover:border-stone-300 dark:bg-stone-800 dark:border-stone-700 dark:text-white dark:hover:bg-stone-700"
+            >
               <span className="truncate">Watch Video</span>
               <span className="material-symbols-outlined ml-2">
                 play_circle
@@ -42,9 +58,8 @@ export default function Hero() {
             className="relative w-full aspect-[4/3] max-w-md lg:max-w-full rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
             data-alt="Group of diverse happy children jumping and playing in a park"
             style={{
-              backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCk2v2HVNIOaAdJkrxrmsdahObsCNIU281a0B0pkCv3tcJzQ8aUycCNQPJPuYy2qpg9lPp5TZ2i8-TEIAcLDQLvEewpZIuzccuMyYOk_iTahhII39VHDmVhLvdNlaJmSfbD7hjZTaDBUgO1Kq4xvBYC-RF08X7lZMrM1KIpSJzOq6Tfz6ImvslyETwiHpCNtFeMI83UDD3uYuyPzqMJZdisTF9QG7WZlgf2i435_ej6XTKxmXN7sjEiJopLmx6lK2nkhK_ivLGNbUVY')",
-              backgroundSize: "cover",
+              backgroundImage: `url(${kidspiration1})`,
+              backgroundSize: "contain",
               backgroundPosition: "center",
             }}
           >
@@ -56,6 +71,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+        videoUrl={kidspirationVideo}
+        title="Welcome to Kidspiration"
+      />
     </div>
   );
 }

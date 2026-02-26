@@ -1,22 +1,45 @@
+import { useNavigate } from "react-router-dom";
+
 interface FeaturesCardProps {
   title: string;
   description: string;
   imageUrl: string;
   icon: string;
+  link?: string;
 }
 
-export default function FeaturesCard({ title, description, imageUrl, icon }: FeaturesCardProps) {
+export default function FeaturesCard({
+  title,
+  description,
+  imageUrl,
+  icon,
+  link,
+}: FeaturesCardProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if(!link) return;
+    if(link.startsWith("http")) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
+      navigate(link)
+    }
+  };
+
   return (
-    <div>
+    <div
+      onClick={handleClick}
+      className={link ? "cursor-pointer" : ""}
+      role={link ? "link" : undefined}
+    >
       <div className="group flex flex-col gap-4 p-4 rounded-2xl hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-300">
-        <div className="w-full aspect-video rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow">
+        <div className="w-full aspect-square rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow">
           <div
-            className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full bg-contain bg-center transform group-hover:scale-105 transition-transform duration-500"
             data-alt={title}
             style={{
-              backgroundImage:  
-                `url(${imageUrl})`,
-              }}
+              backgroundImage: `url(${imageUrl})`,
+            }}
           ></div>
         </div>
         <div>

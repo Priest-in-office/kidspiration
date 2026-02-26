@@ -5,7 +5,7 @@ export default function Testimonials() {
     <div className="flex flex-col gap-8 overflow-hidden bg-background-light px-4 py-16 dark:bg-background-dark">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-text-main dark:text-white">
-          What Families Say
+          Testimonials from all Around The World
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full">
