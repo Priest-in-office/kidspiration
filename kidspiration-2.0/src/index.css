@@ -2,7 +2,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Colors */ 
+  /* Colors */
   --color-primary: #f4c025;
   --color-primary-light: #fef5d3;
   --color-primary-hover: #dcb022;
@@ -20,7 +20,7 @@
   --font-display: "Plus Jakarta Sans", sans-serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
 
-  /* Border Radius */ 
+  /* Border Radius */
   --radius: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
@@ -28,14 +28,35 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-bouncy: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-bouncy:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: #f8f8f5;
+  transition: background-color 0.3s ease;
+}
+
+:where(.dark, .dark *) body {
+  background-color: #0f172a;
 }
 
 .doodle-pattern {
   background-color: #f8f8f5;
-  background-image: radial-gradient(#f4c025 2px, transparent 2px), radial-gradient(#4aa9ff 2px, transparent 2px);
+  background-image:
+    radial-gradient(#f4c025 2px, transparent 2px),
+    radial-gradient(#4aa9ff 2px, transparent 2px);
   background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+  background-position:
+    0 0,
+    20px 20px;
+}
+
+:where(.dark, .dark *) .doodle-pattern {
+  background-color: #0f172a;
+  background-image:
+    radial-gradient(rgba(244, 192, 37, 0.25) 2px, transparent 2px),
+    radial-gradient(rgba(74, 169, 255, 0.15) 2px, transparent 2px);
 }
 
 .bg-hero-pattern {
@@ -43,15 +64,30 @@
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+:where(.dark, .dark *) .bg-hero-pattern {
+  background-color: #0f172a;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 /* Video Modal animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-fadeIn {

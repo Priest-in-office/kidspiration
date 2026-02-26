@@ -23,7 +23,7 @@ export default function App() {
 
   if (pageLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background-primary">
+      <div className="min-h-screen flex items-center justify-center bg-background-light dark:bg-slate-950">
         <span className="material-symbols-outlined text-primary text-6xl animate-spin">
           donut_large
         </span>

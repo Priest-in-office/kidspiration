@@ -113,7 +113,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-950">
       <Navbar />
       <main>
         {/* ───── Hero Banner ───── */}
@@ -136,7 +136,7 @@ export default function About() {
         </section>
 
         {/* ───── Intro ───── */}
-        <section className="max-w-4xl mx-auto px-4 md:px-10 py-16 text-center">
+        <section className="max-w-4xl mx-auto px-4 md:px-10 py-16 text-center bg-white dark:bg-slate-950">
           <p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-medium">
             A{" "}
             <strong className="text-slate-900 dark:text-white">
@@ -178,7 +178,7 @@ export default function About() {
         </section>
 
         {/* ───── Who Is Eligible? ───── */}
-        <section className="max-w-7xl mx-auto px-4 md:px-10 py-16">
+        <section className="max-w-7xl mx-auto px-4 md:px-10 py-16 bg-white dark:bg-slate-950">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">
               Who Is Eligible?
@@ -252,7 +252,7 @@ export default function About() {
         </section>
 
         {/* ───── Our Programs ───── */}
-        <section className="max-w-7xl mx-auto px-4 md:px-10 py-16">
+        <section className="max-w-7xl mx-auto px-4 md:px-10 py-16 bg-white dark:bg-slate-950">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white text-center mb-12">
             Our Programs
           </h2>

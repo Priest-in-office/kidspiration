@@ -2,9 +2,15 @@ import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { navItems } from "../config/navigation";
 import logo from "../assets/kidspiration-logo.png";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -73,8 +79,18 @@ export default function Navbar() {
             <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
               2
             </span>
+          </button> {/* TODO: make this dynamic based on cart items count */}
+          
+          {/* Dark mode toggle - desktop only */}
+          <button
+            onClick={toggleTheme}
+            className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            <span className="material-symbols-outlined">
+              {theme === "light" ? "dark_mode" : "light_mode"}
+            </span>
           </button>
-          {/* TODO: make this dynamic based on cart items count */}
 
           {/* Hamburger - mobile only */}
           <button
@@ -115,6 +131,15 @@ export default function Navbar() {
               <span className="material-symbols-outlined">shopping_cart</span>
               <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
                 2
+              </span>
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <span className="material-symbols-outlined">
+                {theme === "light" ? "dark_mode" : "light_mode"}
               </span>
             </button>
           </div>

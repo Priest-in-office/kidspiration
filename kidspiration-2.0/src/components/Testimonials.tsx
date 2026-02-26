@@ -2,7 +2,7 @@ import TestimonialCard from "./TestimonialCard";
 
 export default function Testimonials() {
   return (
-    <div className="flex flex-col gap-8 overflow-hidden bg-background-light px-4 py-16 dark:bg-background-dark">
+    <div className="flex flex-col gap-8 overflow-hidden bg-background-light px-4 py-16 dark:bg-slate-900">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-text-main dark:text-white">
           Testimonials from all Around The World

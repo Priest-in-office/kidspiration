@@ -4,7 +4,7 @@ export default function CTA() {
   const navigate = useNavigate();
   return (
     <div className="@container">
-      <div className="flex flex-col justify-center items-center gap-8 px-4 py-20 lg:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+      <div className="flex flex-col justify-center items-center gap-8 px-4 py-20 lg:py-32 bg-background-light dark:bg-slate-800/50 relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-10 left-10 text-primary opacity-30 hidden md:block animate-spin-slow">
           <span className="material-symbols-outlined !text-[120px] font-bold">

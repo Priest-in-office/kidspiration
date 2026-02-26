@@ -29,7 +29,7 @@ export default function Features() {
   };
 
   return (
-    <div className="flex flex-col gap-10 px-4 py-16 lg:px-20 lg:py-24 bg-white dark:bg-stone-900 @container">
+    <div className="flex flex-col gap-10 px-4 py-16 lg:px-20 lg:py-24 bg-white dark:bg-slate-800 @container">
       <div className="flex flex-col gap-4 text-center items-center">
         <h2 className="text-text-main dark:text-white text-3xl font-black leading-tight sm:text-4xl lg:text-5xl max-w-2xl">
           Get Involved Today
