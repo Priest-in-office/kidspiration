@@ -9,6 +9,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Partner from "./pages/Partner";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
+import Donate from "./pages/Donate";
 
 export default function App() {
   const [pageLoading, setPageLoading] = useState(true);
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
+        <Route path="/partner/donate" element={<Donate />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/signup" element={<SignupChooser />} />
         <Route path="/signup/adult" element={<Signup />} />

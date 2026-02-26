@@ -6,6 +6,8 @@ interface ValidationErrors {
   pattern?: RegExp;
   match?: string;
   maxAge?: number;
+  isEmail?: boolean;
+  isPhone?: boolean;
 }
 
 interface FieldConfig {
@@ -22,29 +24,32 @@ type FieldValue = string | DateValue;
 
 export function useFormValidation<T extends Record<string, FieldValue>>(
   initialValues: T,
-  rules: FieldConfig
+  rules: FieldConfig,
 ) {
   const [values, setValues] = useState<T>(initialValues);
   const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
 
   const setValue = <K extends keyof T>(field: K, value: T[K]) => {
-    setValues(prev => ({
+    setValues((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
     // clear error when user starts typing again
-    if(errors[field]) {
-      setErrors(prev => ({
+    if (errors[field]) {
+      setErrors((prev) => ({
         ...prev,
-        [field]: ""
+        [field]: "",
       }));
     }
   };
 
-  const validateDate = (dateValue: DateValue, maxAge?: number): string | null => {
+  const validateDate = (
+    dateValue: DateValue,
+    maxAge?: number,
+  ): string | null => {
     const { day, month, year } = dateValue;
 
-    if(!day || !month || !year){
+    if (!day || !month || !year) {
       return "Please enter a complete date";
     }
 
@@ -54,17 +59,18 @@ export function useFormValidation<T extends Record<string, FieldValue>>(
 
     const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
 
-    if(isNaN(date.getTime())) {
+    if (isNaN(date.getTime())) {
       return "Please enter a valid date";
     }
 
-    if(maxAge) {
+    if (maxAge) {
       const today = new Date();
       let age = today.getFullYear() - date.getFullYear();
       const monthDiff = today.getMonth() - date.getMonth();
       const dayDiff = today.getDate() - date.getDate();
 
-      const actualAge = monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
+      const actualAge =
+        monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
 
       if (actualAge > maxAge) {
         return `Children must be at most ${maxAge} years old`;
@@ -76,10 +82,10 @@ export function useFormValidation<T extends Record<string, FieldValue>>(
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof T, string>> = {};
 
-    for (const [field, fieldRules] of Object.entries(rules)){
+    for (const [field, fieldRules] of Object.entries(rules)) {
       const value = values[field as keyof T];
 
-      if(typeof value === "object" && "day" in value) {
+      if (typeof value === "object" && "day" in value) {
         const dateError = validateDate(value, fieldRules.maxAge);
         if (fieldRules.required && dateError) {
           newErrors[field as keyof T] = dateError;
@@ -91,11 +97,28 @@ export function useFormValidation<T extends Record<string, FieldValue>>(
 
       if (fieldRules.required && !stringValue) {
         newErrors[field as keyof T] = "This field is required";
-      } else if (fieldRules.minLength && stringValue.length < fieldRules.minLength) {
-        newErrors[field as keyof T] = `This field must be at least ${fieldRules.minLength} characters long`;
+      } else if (
+        fieldRules.minLength &&
+        stringValue.length < fieldRules.minLength
+      ) {
+        newErrors[field as keyof T] =
+          `This field must be at least ${fieldRules.minLength} characters long`;
       } else if (fieldRules.pattern && !fieldRules.pattern.test(stringValue)) {
         newErrors[field as keyof T] = "Invalid format";
-      } else if (fieldRules.match && stringValue !== (values[fieldRules.match as keyof T] as string)) {
+      } else if (
+        fieldRules.isEmail &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(stringValue)
+      ) {
+        newErrors[field as keyof T] = "Please enter a valid email address";
+      } else if (
+        fieldRules.isPhone &&
+        !/^\+?[0-9]{7,15}$/.test(stringValue.replace(/[\s-]/g, ""))
+      ) {
+        newErrors[field as keyof T] = "Please enter a valid phone number";
+      } else if (
+        fieldRules.match &&
+        stringValue !== (values[fieldRules.match as keyof T] as string)
+      ) {
         newErrors[field as keyof T] = "Fields do not match";
       }
     }
@@ -109,11 +132,11 @@ export function useFormValidation<T extends Record<string, FieldValue>>(
     if (typeof value === "object" && "day" in value) {
       const { day, month, year } = value;
       if (day && month && year) {
-        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+        return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
       }
     }
     return null;
-  }
+  };
 
   return { values, errors, setValue, validate, getDateAsISO };
 }

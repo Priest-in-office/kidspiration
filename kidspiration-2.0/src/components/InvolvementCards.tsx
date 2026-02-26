@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const CARDS = [
   {
     icon: "groups",
@@ -20,6 +22,8 @@ const CARDS = [
 ];
 
 export default function InvolvementCards() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-10 px-4 py-16 @container">
       {/* Header */}
@@ -55,7 +59,13 @@ export default function InvolvementCards() {
                 {card.description}
               </p>
             </div>
-            <button className="mt-auto pt-4 text-primary font-bold text-sm hover:underline flex items-center gap-1 self-start">
+            <button
+              onClick={() => {
+                if (card.title === "Support the Mission")
+                  navigate("/partner/donate");
+              }}
+              className="mt-auto pt-4 text-primary font-bold text-sm hover:underline flex items-center gap-1 self-start"
+            >
               Learn more{" "}
               <span className="material-symbols-outlined text-sm">
                 arrow_forward
@@ -67,7 +77,10 @@ export default function InvolvementCards() {
 
       {/* CTA */}
       <div className="flex justify-center mt-6">
-        <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-8 bg-primary hover:bg-yellow-400 text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md hover:shadow-lg">
+        <button
+          onClick={() => navigate("/partner/donate")}
+          className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-8 bg-primary hover:bg-yellow-400 text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md hover:shadow-lg"
+        >
           <span className="truncate">See Full Details</span>
         </button>
       </div>
