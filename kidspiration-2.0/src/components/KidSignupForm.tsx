@@ -158,7 +158,7 @@ export default function KidSignupForm() {
             Create Your Hero Profile!
           </h1>
           <p className="text-slate-500 dark:text-slate-400 font-medium">
-            Let's get you ready to save the world.
+            Let's get you ready to do big things.
           </p>
         </div>
 
