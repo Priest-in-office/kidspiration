@@ -2,7 +2,7 @@ import kidspirationLogo from "../assets/kidspiration-logo.png"
 
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-[#e6e2d6] dark:border-slate-800 bg-[#f4f0e7] dark:bg-background-dark py-12 px-4 md:px-10">
+    <footer className="mt-auto border-t border-[#e6e2d6] dark:border-slate-800 bg-[#f4f0e7] dark:bg-stone-800/50 py-12 px-4 md:px-10">
       <div className="mx-auto max-w-[1280px] grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 text-text-main dark:text-white">

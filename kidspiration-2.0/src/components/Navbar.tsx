@@ -56,7 +56,6 @@ export default function Navbar() {
               />
             </div>
           </label>
-
           {/* Join Now - desktop only */}
           <button
             onClick={() => navigate("/signup")}
@@ -64,7 +63,6 @@ export default function Navbar() {
           >
             <span>Join Now</span>
           </button>
-
           {/* Log In - always visible */}
           <button
             onClick={() => navigate("/login")}
@@ -72,15 +70,14 @@ export default function Navbar() {
           >
             <span>Log In</span>
           </button>
-
           {/* Cart - desktop only */}
           <button className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative">
             <span className="material-symbols-outlined">shopping_cart</span>
             <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
               2
             </span>
-          </button> {/* TODO: make this dynamic based on cart items count */}
-          
+          </button>{" "}
+          {/* TODO: make this dynamic based on cart items count */}
           {/* Dark mode toggle - desktop only */}
           <button
             onClick={toggleTheme}
@@ -91,7 +88,6 @@ export default function Navbar() {
               {theme === "light" ? "dark_mode" : "light_mode"}
             </span>
           </button>
-
           {/* Hamburger - mobile only */}
           <button
             className="flex md:hidden items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
@@ -124,24 +120,26 @@ export default function Navbar() {
             >
               <span>Join Now</span>
             </button>
-            <button
-              onClick={() => navigate("/shop")}
-              className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative"
-            >
-              <span className="material-symbols-outlined">shopping_cart</span>
-              <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
-                2
-              </span>
-            </button>
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              <span className="material-symbols-outlined">
-                {theme === "light" ? "dark_mode" : "light_mode"}
-              </span>
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() => navigate("/shop")}
+                className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative"
+              >
+                <span className="material-symbols-outlined">shopping_cart</span>
+                <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
+                  2
+                </span>
+              </button>
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                <span className="material-symbols-outlined">
+                  {theme === "light" ? "dark_mode" : "light_mode"}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       )}

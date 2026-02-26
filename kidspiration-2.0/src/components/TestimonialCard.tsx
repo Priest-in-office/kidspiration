@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ name, image, date, rating, testimonial, likes }: TestimonialCardProps) {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-sm border border-stone-100 dark:bg-stone-900 dark:border-stone-800">
+    <div className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-sm border border-stone-100 dark:bg-stone-800/50 dark:border-stone-800">
       <div className="flex items-center gap-3">
         <div
           className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 ring-2 ring-primary/20"
