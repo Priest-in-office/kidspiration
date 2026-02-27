@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormValidation, type DateValue } from "../context/FormValidation";
 import FormInput from "./FormInput";
+import CountrySelect from "./CountrySelect";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -42,6 +43,7 @@ async function registerChild(data: {
   lastName: string;
   dateOfBirth: string;
   gender: string;
+  country: string;
   parentEmail: string;
 }) {
   const response = await fetch(`${API_URL}/auth/child-signup`, {
@@ -70,12 +72,14 @@ export default function KidSignupForm() {
         firstName: "",
         lastName: "",
         dateOfBirth: { day: "", month: "", year: "" } as DateValue,
+        country: "",
         parentEmail: "",
       },
       {
         firstName: { required: true, minLength: 2 },
         lastName: { required: true, minLength: 2 },
         dateOfBirth: { required: true, maxAge: 12 },
+        country: { required: true },
         parentEmail: {
           required: true,
           pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -108,6 +112,7 @@ export default function KidSignupForm() {
         lastName: values.lastName,
         dateOfBirth: dob,
         gender: selectedGender,
+        country: values.country,
         parentEmail: values.parentEmail,
       });
       setSuccess(true);
@@ -371,6 +376,16 @@ export default function KidSignupForm() {
                 </label>
               ))}
             </div>
+          </div>
+
+          {/* Country */}
+          <div className="mt-4">
+            <CountrySelect
+              label="Country"
+              value={values.country}
+              onChange={(v) => setValue("country", v)}
+              error={errors.country}
+            />
           </div>
         </div>
 

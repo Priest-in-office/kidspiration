@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth, type SignUpData } from "../context/AuthContext";
 import { useFormValidation } from "../context/FormValidation";
 import FormInput from "./FormInput";
+import CountrySelect from "./CountrySelect";
 import RoleCard from "./RoleCard";
 
 const ROLE_OPTIONS = [
@@ -46,8 +47,9 @@ export default function SignupForm() {
       lastName: "",
       email: "",
       password: "",
+      country: "",
     },
-    VALIDATION_RULES,
+    { ...VALIDATION_RULES, country: { required: true } },
   );
 
   const handleSubmit = async (e: React.SubmitEvent) => {
@@ -69,6 +71,7 @@ export default function SignupForm() {
       lastName: values.lastName,
       email: values.email,
       password: values.password,
+      country: values.country,
       child: {
         avatar: "",
         firstName: "",
@@ -150,6 +153,17 @@ export default function SignupForm() {
             onChange={(v) => setValue("password", v)}
             error={errors.password}
             hint="Must be at least 8 characters long."
+            showPasswordToggle
+          />
+        </div>
+
+        {/* Country */}
+        <div className="mb-5">
+          <CountrySelect
+            label="Country"
+            value={values.country}
+            onChange={(v) => setValue("country", v)}
+            error={errors.country}
           />
         </div>
 

@@ -37,7 +37,7 @@ export default function HealingStreams() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-2">
             <a
-              href="https://healingstreams.tv/register"
+              href="https://healingstreams.tv/kids"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-12 cursor-pointer items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-stone-900 shadow-lg shadow-primary/30 transition-all hover:bg-primary-hover hover:-translate-y-1"

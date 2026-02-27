@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import kidspiration1 from "../assets/kidspiration-1.png";
-import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4"
+import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4";
 import VideoModal from "./VideoModal";
 
 export default function Hero() {
@@ -10,7 +10,7 @@ export default function Hero() {
 
   return (
     <div className="@container w-full bg-hero-pattern">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
         <div className="flex flex-col gap-6 text-center lg:text-left lg:w-1/2 z-10">
           <div className="inline-flex w-fit mx-auto lg:mx-0 items-center gap-2 rounded-full bg-primary-light px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-stone-800 dark:bg-stone-800 dark:text-primary">
             <span className="material-symbols-outlined text-sm">

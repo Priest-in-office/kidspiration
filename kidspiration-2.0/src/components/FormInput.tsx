@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface FormInputProps {
   label: string;
   type?: string;
@@ -7,6 +9,7 @@ interface FormInputProps {
   onChange: (value: string) => void;
   error?: string;
   hint?: string;
+  showPasswordToggle?: boolean;
 }
 
 export default function FormInput({
@@ -18,7 +21,9 @@ export default function FormInput({
   onChange,
   error,
   hint,
+  showPasswordToggle,
 }: FormInputProps) {
+  const [showPassword, setShowPassword] = useState(false);
   const baseInputClasses =
     "w-full rounded-xl border bg-[#fcfbf8] dark:bg-[#221e10] px-4 py-3 text-slate-900 dark:text-slate-100 placeholder-slate-400 outline-none transition-all";
   const borderClasses = error
@@ -37,12 +42,23 @@ export default function FormInput({
             {icon}
           </span>
           <input
-            type={type}
+            type={showPasswordToggle && type === "password" ? (showPassword ? "text" : "password") : type}
             placeholder={placeholder}
             value={value}
             onChange={(e) => onChange(e.target.value)}
             className={`${baseInputClasses} ${borderClasses} pl-11 pr-4`}
           />
+          {showPasswordToggle && type === "password" && (
+            <button
+              type="button"
+              onClick={() => setShowPassword(prev => !prev)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+            >
+              <span className="material-symbols-outlined">
+                {showPassword ? "visibility_off" : "visibility"}
+              </span>
+            </button>
+          )}
         </div>
       ) : (
         <input

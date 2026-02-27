@@ -1,4 +1,10 @@
-import { createContext, useState, useEffect, useContext, type ReactNode } from "react";
+import {
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+  type ReactNode,
+} from "react";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -24,6 +30,7 @@ export interface SignUpData {
   lastName: string;
   email: string;
   password: string;
+  country: string;
   child: ChildSignUpData;
 }
 
@@ -46,7 +53,10 @@ export interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-async function authFetch(endpoint: string, options: { method?: string; body?: object } = {}) {
+async function authFetch(
+  endpoint: string,
+  options: { method?: string; body?: object } = {},
+) {
   const { method = "POST", body } = options;
 
   try {
@@ -58,7 +68,7 @@ async function authFetch(endpoint: string, options: { method?: string; body?: ob
       },
     };
 
-    if(body && method !== "GET" && method !== "HEAD") {
+    if (body && method !== "GET" && method !== "HEAD") {
       fetchParam.body = JSON.stringify(body);
     }
 
@@ -66,7 +76,7 @@ async function authFetch(endpoint: string, options: { method?: string; body?: ob
 
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(data.message || "Something went wrong");
     }
 
@@ -109,12 +119,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await authFetch("/auth/login", { body: { email: data.email, password: data.password } });
+      const res = await authFetch("/auth/login", {
+        body: { email: data.email, password: data.password },
+      });
       setUser(res.user);
       setIsAuthenticated(true);
       setIsChild(res.user.role === "child");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Invalid email or password");
+      setError(
+        err instanceof Error ? err.message : "Invalid email or password",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -126,28 +140,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await authFetch("/auth/signup", { body: data });
     } catch (err) {
-      if(!error) {
-        setError(err instanceof Error ? err.message : "Failed to create account");
+      if (!error) {
+        setError(
+          err instanceof Error ? err.message : "Failed to create account",
+        );
       }
     } finally {
       setIsLoading(false);
     }
-  }
-  
+  };
+
   const logout = async () => {
     try {
       await authFetch("/auth/logout", { method: "POST" });
-    } catch {} finally {
+    } catch {
+    } finally {
       setUser(null);
       setIsAuthenticated(false);
       setIsChild(false);
     }
-  }
+  };
 
   const clearError = () => setError(null);
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, isAuthenticated, isChild, error, login, signup, logout, clearError }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isLoading,
+        isAuthenticated,
+        isChild,
+        error,
+        login,
+        signup,
+        logout,
+        clearError,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -155,7 +184,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const context = useContext(AuthContext);
-  if(!context) {
+  if (!context) {
     throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
