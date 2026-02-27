@@ -16,7 +16,7 @@ export default function Hero() {
             <span className="material-symbols-outlined text-sm">
               celebration
             </span>
-            <span>Join thousands of kids worldwide!</span>
+            <span>Join millions of kids worldwide!</span>
           </div>
           <h1 className="text-4xl font-black leading-tight tracking-tight text-text-main dark:text-white sm:text-5xl lg:text-6xl">
             Welcome To{" "}

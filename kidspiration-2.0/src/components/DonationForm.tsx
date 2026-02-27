@@ -39,6 +39,7 @@ const VALIDATION_RULES = {
 export default function DonationForm() {
   const [step, setStep] = useState(1);
   const [plan, setPlan] = useState("one-time");
+  const [givingPurpose, setGivingPurpose] = useState("");
   const [amount, setAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState("");
   const [amountError, setAmountError] = useState("");
@@ -86,6 +87,7 @@ export default function DonationForm() {
           fullName: values.fullName,
           phone: values.phone,
           plan,
+          givingPurpose,
           custom_fields: [
             {
               display_name: "Full Name",
@@ -96,6 +98,11 @@ export default function DonationForm() {
               display_name: "Phone",
               variable_name: "phone",
               value: values.phone,
+            },
+            {
+              display_name: "Giving Purpose",
+              variable_name: "giving_purpose",
+              value: givingPurpose,
             },
           ],
         },
@@ -203,6 +210,37 @@ export default function DonationForm() {
             </div>
           </label>
         ))}
+      </div>
+
+      {/* Giving Purpose */}
+      <div className="mb-8">
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-semibold text-slate-900 dark:text-slate-200">
+            I am giving for...
+          </span>
+          <div className="relative">
+            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+              category
+            </span>
+            <select
+              value={givingPurpose}
+              onChange={(e) => setGivingPurpose(e.target.value)}
+              className={`w-full rounded-xl border bg-[#fcfbf8] dark:bg-[#221e10] pl-11 pr-10 py-3 text-slate-900 dark:text-slate-100 outline-none transition-all appearance-none cursor-pointer border-[#e8e2ce] dark:border-[#3a3525] focus:border-primary focus:ring-1 focus:ring-primary ${
+                !givingPurpose ? "text-slate-400" : ""
+              }`}
+            >
+              <option value="" disabled>
+                Select a purpose
+              </option>
+              {/* ── Add your options here ── */}
+              <option value="outreaches">Outreaches</option>
+              <option value="missions">Missions</option>
+            </select>
+            <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-lg">
+              expand_more
+            </span>
+          </div>
+        </label>
       </div>
 
       {/* Amount Selection */}
