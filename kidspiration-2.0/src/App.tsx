@@ -10,6 +10,8 @@ import Partner from "./pages/Partner";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Donate from "./pages/Donate";
+import Live from "./pages/Live";
+import FourPs from "./pages/FourPs";
 import { useImagePreloader } from "./hooks/useImagePreloader";
 
 // Local assets to preload
@@ -56,6 +58,8 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/live" element={<Live />} />
+        <Route path="/4ps" element={<FourPs />} />
         <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/partner/donate" element={<Donate />} />

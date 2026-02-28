@@ -32,13 +32,20 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-bold transition-colors hover:text-primary ${
+                className={`relative py-1 text-sm font-bold transition-colors hover:text-primary ${
                   location.pathname === item.path
                     ? "text-primary"
                     : "text-slate-700 dark:text-slate-300"
                 }`}
               >
                 {item.label}
+                <span
+                  className={`absolute left-0 bottom-0 h-0.5 w-full origin-left bg-primary transition-transform duration-300 ease-out ${
+                    location.pathname === item.path
+                      ? "scale-x-100"
+                      : "scale-x-0"
+                  }`}
+                />
               </Link>
             ))}
           </div>
@@ -107,10 +114,17 @@ export default function Navbar() {
           {navItems.map((item) => (
             <Link
               key={item.path}
-              className="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors text-sm font-bold py-2"
               to={item.path}
+              className={`relative py-2 w-fit text-sm font-bold transition-colors hover:text-primary ${
+                location.pathname === item.path ? "text-primary" : "text-slate-700 dark:text-slate-300"
+              }`}
             >
               {item.label}
+              <span
+                className={`absolute left-0 bottom-1 h-0.5 w-full origin-left bg-primary transition-transform duration-300 ease-out ${
+                  location.pathname === item.path ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
             </Link>
           ))}
           <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-1 flex items-center justify-between">

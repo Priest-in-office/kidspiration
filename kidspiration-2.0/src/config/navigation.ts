@@ -5,9 +5,10 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { path: "/", label: "Home" },
-  { path: "/partner", label: "Partner" },
-  { path: "/shop", label: "Shop" },
   { path: "/about", label: "About Us" },
-  { path: "/activities", label: "Activities" },
+  { path: "/live", label: "Live" },
+  { path: "/partner", label: "Partner" },
+  // { path: "/shop", label: "Shop" },
+  { path: "/4ps", label: "4Ps" },
   { path: "/stories", label: "Impact Stories" },
 ];
