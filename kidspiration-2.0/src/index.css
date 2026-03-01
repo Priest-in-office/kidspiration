@@ -17,7 +17,8 @@
   --color-text-muted: #6b5d2e;
 
   /* Fonts */
-  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Fredoka", "Plus Jakarta Sans", sans-serif;
+  --font-heading: "Fredoka", "Plus Jakarta Sans", sans-serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
 
   /* Border Radius */
@@ -69,6 +70,37 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Animated Rainbow Gradient Background */
+@keyframes rainbowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-rainbow-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--color-accent-sky-light),
+    var(--color-primary-light),
+    var(--color-accent-green-light),
+    #ffe6e1
+  );
+  background-size: 400% 400%;
+  animation: rainbowGradient 12s ease-in-out infinite;
+}
+
+:where(.dark, .dark *) .bg-rainbow-gradient {
+  background: linear-gradient(-45deg, #0f293a, #2c2409, #102a18, #3b1814);
+  background-size: 400% 400%;
+  animation: rainbowGradient 12s ease-in-out infinite;
+}
+
 /* Video Modal animations */
 @keyframes fadeIn {
   from {
@@ -96,4 +128,325 @@ body {
 
 .animate-scaleIn {
   animation: scaleIn 0.3s ease-out;
+}
+
+/* Fredoka headings */
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", "Plus Jakarta Sans", sans-serif;
+}
+
+/* Hero carousel dot active animation */
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.carousel-dot-active {
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+/* Gentle wiggle for badge on load */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-3deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  45% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.8s ease-in-out 2s 1;
+}
+
+/* Subtle repeating bounce for CTA buttons */
+@keyframes gentleBounce {
+  0%,
+  85%,
+  100% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-6px);
+  }
+  95% {
+    transform: translateY(0);
+  }
+  97% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-gentle-bounce {
+  animation: gentleBounce 3s ease-in-out infinite;
+}
+
+.animate-gentle-bounce:hover {
+  animation: none;
+  transform: translateY(-4px);
+}
+
+/* Pulsing glow ring for CTA buttons */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(244, 192, 37, 0.5),
+      0 4px 15px rgba(244, 192, 37, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(244, 192, 37, 0),
+      0 4px 20px rgba(244, 192, 37, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow:hover {
+  animation: none;
+  box-shadow:
+    0 0 0 4px rgba(244, 192, 37, 0.3),
+    0 8px 25px rgba(244, 192, 37, 0.4);
+}
+
+/* Button Sparkle Effect */
+@keyframes sparkleSweep {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+  }
+  20%,
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.btn-sparkle {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sparkle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-15deg);
+  animation: sparkleSweep 4s infinite;
+}
+
+/* Floating emoji animations */
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(100%) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--emoji-opacity, 0.15);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(30px) rotate(180deg);
+  }
+  90% {
+    opacity: var(--emoji-opacity, 0.15);
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-20px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.float-emoji {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  font-size: 2rem;
+  --emoji-opacity: 0.15;
+  animation: floatEmoji var(--float-duration, 12s) var(--float-delay, 0s)
+    ease-in-out infinite;
+}
+
+.float-emoji-1 {
+  --float-duration: 14s;
+  --float-delay: 0s;
+}
+.float-emoji-2 {
+  --float-duration: 11s;
+  --float-delay: 3s;
+}
+.float-emoji-3 {
+  --float-duration: 16s;
+  --float-delay: 6s;
+}
+.float-emoji-4 {
+  --float-duration: 13s;
+  --float-delay: 9s;
+}
+.float-emoji-5 {
+  --float-duration: 10s;
+  --float-delay: 2s;
+}
+.float-emoji-6 {
+  --float-duration: 15s;
+  --float-delay: 7s;
+}
+.float-emoji-7 {
+  --float-duration: 12s;
+  --float-delay: 4s;
+}
+.float-emoji-8 {
+  --float-duration: 17s;
+  --float-delay: 1s;
+}
+
+/* ── Flip Countdown Timer ── */
+.flip-card {
+  perspective: 300px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 3.5rem;
+  height: 4.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  font-family: "Fredoka", "Plus Jakarta Sans", sans-serif;
+}
+
+/* Horizontal divider line */
+.flip-card-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Light mode card */
+:not(.dark) .flip-card-inner {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+:not(.dark) .flip-card-inner::after {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Flip animation on number change */
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.flip-animate {
+  animation: flipBottom 0.5s ease-out;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.4rem;
+  color: #64748b;
+}
+
+.dark .countdown-label {
+  color: #94a3b8;
+}
+
+/* Colon separator */
+.countdown-colon {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #f4c025;
+  line-height: 4.5rem;
+  margin: 0 0.15rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+/* Responsive sizing */
+@media (min-width: 640px) {
+  .flip-card-inner {
+    width: 4.5rem;
+    height: 5.5rem;
+    font-size: 2.5rem;
+    border-radius: 0.75rem;
+  }
+  .countdown-colon {
+    font-size: 2.25rem;
+    line-height: 5.5rem;
+    margin: 0 0.25rem;
+  }
+  .countdown-label {
+    font-size: 0.7rem;
+  }
 }
