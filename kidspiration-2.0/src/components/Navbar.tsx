@@ -78,12 +78,12 @@ export default function Navbar() {
             <span>Log In</span>
           </button>
           {/* Cart - desktop only */}
-          <button className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative">
+          {/* <button className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative">
             <span className="material-symbols-outlined">shopping_cart</span>
             <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
               2
             </span>
-          </button>{" "}
+          </button>{" "} */}
           {/* TODO: make this dynamic based on cart items count */}
           {/* Dark mode toggle - desktop only */}
           <button

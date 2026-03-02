@@ -368,11 +368,20 @@ export default function ReadHttn() {
           }`}
         >
           <div
-            className={`relative w-full shadow-xl overflow-hidden bg-black transition-all ${
+            className={`relative shadow-xl overflow-hidden bg-black transition-all ${
               isFullscreen
-                ? "h-full max-h-screen aspect-[1/1.414]"
-                : "aspect-[1/1.414] rounded-2xl md:rounded-3xl ring-1 ring-slate-200 dark:ring-slate-800"
+                ? "flex-shrink-0"
+                : "w-full aspect-[1/1.414] rounded-2xl md:rounded-3xl ring-1 ring-slate-200 dark:ring-slate-800"
             }`}
+            style={
+              isFullscreen
+                ? {
+                    width: "100%",
+                    maxWidth: "min(100vw, 100vh / 1.414)", // Prevents horizontal stretching
+                    aspectRatio: "1 / 1.414", // Strict aspect ratio
+                  }
+                : undefined
+            }
           >
             {/* Layer 0 */}
             <video
