@@ -115,7 +115,7 @@ export default function ImpactStories() {
 
         {/* Stories Grid Section */}
         <section className="w-full max-w-7xl mx-auto px-4 py-16 md:py-24">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-primary-light px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-stone-800 dark:bg-stone-800 dark:text-primary mb-4">
                 <span className="material-symbols-outlined text-sm">
