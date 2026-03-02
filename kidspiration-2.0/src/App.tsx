@@ -13,15 +13,16 @@ import Donate from "./pages/Donate";
 import Live from "./pages/Live";
 import FourPs from "./pages/FourPs";
 import ReadHttn from "./pages/ReadHttn";
+import ImpactStories from "./pages/ImpactStories";
 import { useImagePreloader } from "./hooks/useImagePreloader";
 
 // Local assets to preload
 import heroImg from "./assets/kidspiration-1.png";
 import healingImg from "./assets/HSLHS_MARCH_2026.jpg";
 import logoImg from "./assets/kidspiration-logo.png";
-import partner from "./assets/real-images/live-11.jpg"
-import mentor from "./assets/real-images/live-6.jpg"
-import community from "./assets/real-images/live-4.jpg"
+import partner from "./assets/real-images/live-11.jpg";
+import mentor from "./assets/real-images/live-6.jpg";
+import community from "./assets/real-images/live-4.jpg";
 
 // Critical above-the-fold images (local + external)
 const CRITICAL_IMAGES = [
@@ -65,6 +66,7 @@ export default function App() {
         <Route path="/read-httn4kids" element={<ReadHttn />} />
         <Route path="/live" element={<Live />} />
         <Route path="/4ps" element={<FourPs />} />
+        <Route path="/stories" element={<ImpactStories />} />
         <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/partner/donate" element={<Donate />} />
