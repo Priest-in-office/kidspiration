@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-3">
           {/* Search - desktop only */}
-          <label className="hidden lg:flex flex-col min-w-40 h-10 w-64">
+          {/* <label className="hidden lg:flex flex-col min-w-40 h-10 w-64">
             <div className="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-100 dark:bg-slate-800 focus-within:ring-2 focus-within:ring-primary transition-all">
               <div className="text-slate-400 flex items-center justify-center pl-4">
                 <span className="material-symbols-outlined">search</span>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 placeholder="Search..."
               />
             </div>
-          </label>
+          </label> */}
           {/* Join Now - desktop only */}
           <button
             onClick={() => navigate("/signup")}

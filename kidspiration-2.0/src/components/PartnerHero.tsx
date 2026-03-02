@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import partner from "../assets/real-images/live-11.jpg"
 
 export default function PartnerHero() {
   const navigate = useNavigate();
@@ -11,8 +12,7 @@ export default function PartnerHero() {
           role="img"
           aria-label="Happy diverse group of children playing outdoors"
           style={{
-            backgroundImage:
-              'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3NwV8y3TqaArywz6n-MLB5czAFfD5_Gm3PunJODY_VWzd582IsnjE424fjxnM4HEe-z0yOPzUu6pWZntPpAgckbyrVtxPP__H4WF8Zf7nF62n4mtF54xq5hhdIOa7YRuvzmMp6OA9a2TkuxMZF7KQcOT_qpXDUNrdOHZRfaKkvnHDofaBgZ_bDKh_qOGZbNgzZy0JcaFsTrziSVNZpuBymotul7OP06PF8P6Y1fzV24TgvBQ2icE_zvlb4ytzWR9g0jCf2Vjv5TFw")',
+            backgroundImage: `url(${partner})`,
           }}
         />
         <div className="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center @[864px]:w-1/2">

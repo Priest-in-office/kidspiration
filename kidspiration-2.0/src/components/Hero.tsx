@@ -1,27 +1,27 @@
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import kidspiration1 from "../assets/kidspiration-1.png";
-import kidspiration2 from "../assets/kidspiration-2.png";
-import kidspiration3 from "../assets/kidspiration-3.png";
+import { motion, AnimatePresence } from "framer-motion";
+import live1 from "../assets/real-images/live-5.jpg";
+import live2 from "../assets/real-images/live-6.jpg";
+import live3 from "../assets/real-images/live-12.jpg";
 import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4";
 import VideoModal from "./VideoModal";
 
 const heroImages = [
   {
-    src: kidspiration1,
+    src: live1,
     alt: "Happy kids jumping and playing together",
     label: "Daily Challenges",
     sub: "Join 10k+ explorers today!",
   },
   {
-    src: kidspiration2,
+    src: live2,
     alt: "Kids participating in the Last Child challenge",
     label: "Last Child Challenge",
     sub: "Reach every child worldwide!",
   },
   {
-    src: kidspiration3,
+    src: live3,
     alt: "Kids reading and learning together",
     label: "Bible Adventures",
     sub: "Discover God's love!",
@@ -62,6 +62,8 @@ export default function Hero() {
       setTypingDone(true);
     }
   }, [typedCount]);
+
+  const activeImage = heroImages[currentSlide];
 
   return (
     <div className="@container w-full bg-hero-pattern relative overflow-hidden">
@@ -138,7 +140,7 @@ export default function Hero() {
           <path d="M12 2L2 12l10 10 10-10z" />
         </svg>
       </span>
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
         {/* Text — slides in from left */}
         <motion.div
           className="flex flex-col gap-6 text-center lg:text-left lg:w-1/2 z-10"
@@ -196,7 +198,7 @@ export default function Hero() {
 
         {/* Hero Image Carousel — slides in from right */}
         <motion.div
-          className="lg:w-1/2 relative flex justify-center items-center"
+          className="w-full lg:w-1/2 relative flex justify-center items-center"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -206,24 +208,43 @@ export default function Hero() {
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl opacity-30"></div>
 
           {/* Carousel container */}
-          <div className="relative w-full max-w-md lg:max-w-full">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-              {heroImages.map((img, index) => (
+          <div className="relative w-full max-w-lg mx-auto lg:max-w-full lg:w-[120%]">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 bg-stone-100 dark:bg-stone-900 border-[6px] border-white/10 dark:border-white/5 bg-clip-padding">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentSlide}
+                  src={activeImage.src} 
+                  alt={activeImage.alt}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }} 
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover rounded-2xl md:rounded-3xl"
+                />
+              </AnimatePresence>
+
+              {/* {heroImages.map((img, index) => (
                 <div
                   key={index}
-                  className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-                  style={{ opacity: index === currentSlide ? 1 : 0 }}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    index === currentSlide
+                      ? "opacity-100 z-10"
+                      : "opacity-0 z-0"
+                  }`}
                 >
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover rounded-2xl md:rounded-3xl"
                   />
                 </div>
-              ))}
+              ))} */}
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none rounded-2xl md:rounded-3xl"></div>
 
               {/* Slide label */}
               <div className="absolute bottom-6 left-6 text-white z-10">

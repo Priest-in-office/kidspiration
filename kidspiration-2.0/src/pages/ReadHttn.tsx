@@ -61,6 +61,7 @@ export default function ReadHttn() {
   const [currentPage, setCurrentPage] = useState(0);
   const [activeLayer, setActiveLayer] = useState<0 | 1>(0);
   const [isPlaying, setIsPlaying] = useState(true); // Default to playing
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // --- Coloring State & Refs ---
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -224,6 +225,7 @@ export default function ReadHttn() {
 
   const video0Ref = useRef<HTMLVideoElement>(null);
   const video1Ref = useRef<HTMLVideoElement>(null);
+  const containerWrapRef = useRef<HTMLDivElement>(null);
 
   // When changing pages
   const goToPage = (newIndex: number) => {
@@ -282,6 +284,29 @@ export default function ReadHttn() {
     setIsPlaying((prev) => !prev);
   };
 
+  const handleVideoEnded = () => {
+    if (currentPage < MAGAZINE_PAGES.length - 1) {
+      goToPage(currentPage + 1);
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
+  const toggleFullScreen = async () => {
+    if (!document.fullscreenElement) {
+      await containerWrapRef.current?.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  };
+
   // Ensure active video follows isPlaying state
   useEffect(() => {
     const activeVideo =
@@ -302,11 +327,20 @@ export default function ReadHttn() {
 
     const dormantVideo =
       activeLayer === 0 ? video1Ref.current : video0Ref.current;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
     if (dormantVideo) {
-      dormantVideo.pause();
-      // Reset dormant video to start so it's ready for next time
-      dormantVideo.currentTime = 0;
+      // Delay stopping the dormant video to allow the crossfade transition to complete smoothly
+      timeoutId = setTimeout(() => {
+        dormantVideo.pause();
+        // Reset dormant video to start so it's ready for next time
+        dormantVideo.currentTime = 0;
+      }, 500); // 500ms matches the duration-500 Tailwind class
     }
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [activeLayer, isPlaying]);
 
   return (
@@ -325,50 +359,76 @@ export default function ReadHttn() {
 
         {/* Double-Buffered Video Container */}
         {/* We use a vertical aspect ratio matching standard magazine/A4 sizes so the video is never cropped */}
-        <div className="relative w-full max-w-[500px] md:max-w-[650px] aspect-[1/1.414] bg-black rounded-2xl md:rounded-3xl shadow-xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800">
-          {/* Layer 0 */}
-          <video
-            ref={video0Ref}
-            src={videoSrcs[0]}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
-              activeLayer === 0
-                ? "opacity-100 z-10"
-                : "opacity-0 z-0 pointer-events-none"
+        <div
+          ref={containerWrapRef}
+          className={`relative group flex justify-center items-center ${
+            isFullscreen
+              ? "w-screen h-screen bg-black"
+              : "w-full max-w-[500px] md:max-w-[650px]"
+          }`}
+        >
+          <div
+            className={`relative w-full shadow-xl overflow-hidden bg-black transition-all ${
+              isFullscreen
+                ? "h-full max-h-screen aspect-[1/1.414]"
+                : "aspect-[1/1.414] rounded-2xl md:rounded-3xl ring-1 ring-slate-200 dark:ring-slate-800"
             }`}
-            loop
-            playsInline
-          />
+          >
+            {/* Layer 0 */}
+            <video
+              ref={video0Ref}
+              src={videoSrcs[0]}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+                activeLayer === 0
+                  ? "opacity-100 z-10"
+                  : "opacity-0 z-0 pointer-events-none"
+              }`}
+              onEnded={handleVideoEnded}
+              playsInline
+            />
 
-          {/* Layer 1 */}
-          <video
-            ref={video1Ref}
-            src={videoSrcs[1]}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
-              activeLayer === 1
-                ? "opacity-100 z-10"
-                : "opacity-0 z-0 pointer-events-none"
-            }`}
-            loop
-            playsInline
-          />
+            {/* Layer 1 */}
+            <video
+              ref={video1Ref}
+              src={videoSrcs[1]}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+                activeLayer === 1
+                  ? "opacity-100 z-10"
+                  : "opacity-0 z-0 pointer-events-none"
+              }`}
+              onEnded={handleVideoEnded}
+              playsInline
+            />
 
-          {/* Interactive Coloring Canvas */}
-          <canvas
-            ref={canvasRef}
-            className={`absolute inset-0 w-full h-full z-20 touch-none transition-opacity duration-300 ${
-              COLORING_PAGES.includes(currentPage)
-                ? "opacity-100 cursor-crosshair"
-                : "opacity-0 pointer-events-none"
-            }`}
-            onMouseDown={startDrawing}
-            onMouseMove={draw}
-            onMouseUp={stopDrawing}
-            onMouseOut={stopDrawing}
-            onTouchStart={startDrawing}
-            onTouchMove={draw}
-            onTouchEnd={stopDrawing}
-            onTouchCancel={stopDrawing}
-          />
+            {/* Interactive Coloring Canvas */}
+            <canvas
+              ref={canvasRef}
+              className={`absolute inset-0 w-full h-full z-20 touch-none transition-opacity duration-300 ${
+                COLORING_PAGES.includes(currentPage)
+                  ? "opacity-100 cursor-crosshair"
+                  : "opacity-0 pointer-events-none"
+              }`}
+              onMouseDown={startDrawing}
+              onMouseMove={draw}
+              onMouseUp={stopDrawing}
+              onMouseOut={stopDrawing}
+              onTouchStart={startDrawing}
+              onTouchMove={draw}
+              onTouchEnd={stopDrawing}
+              onTouchCancel={stopDrawing}
+            />
+          </div>
+
+          {/* Fullscreen Toggle Button */}
+          <button
+            onClick={toggleFullScreen}
+            className="absolute top-4 right-4 z-30 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm shadow-md"
+            title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+          >
+            <span className="material-symbols-outlined !text-2xl md:!text-3xl">
+              {isFullscreen ? "fullscreen_exit" : "fullscreen"}
+            </span>
+          </button>
         </div>
 
         {/* --- Coloring Palette UI (Only visible on coloring pages) --- */}

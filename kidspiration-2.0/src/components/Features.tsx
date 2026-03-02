@@ -71,7 +71,7 @@ export default function Features() {
       imageUrl: kidspiration3,
       icon: "auto_stories",
       iconAnimation: "flip" as const,
-      link: "https://httnmagazine.org/magazine/order?type=kids",
+      link: "/read-httn4kids",
     },
     {
       title: "Order HTTN Magazine for Kids",
@@ -81,15 +81,15 @@ export default function Features() {
       iconAnimation: "bounce" as const,
       link: "https://httnmagazine.org/magazine/order?type=kids",
     },
-    {
-      title: "Kidspiration Marketplace",
-      description:
-        "Shop with Purpose. Get official merchandise and support children worldwide!",
-      imageUrl: kidspiration5,
-      icon: "storefront",
-      iconAnimation: "swing" as const,
-      link: "/shop",
-    },
+    // {
+    //   title: "Kidspiration Marketplace",
+    //   description:
+    //     "Shop with Purpose. Get official merchandise and support children worldwide!",
+    //   imageUrl: kidspiration5,
+    //   icon: "storefront",
+    //   iconAnimation: "swing" as const,
+    //   link: "/shop",
+    // },
     {
       title: "Kidspiration Party Initiative",
       description:

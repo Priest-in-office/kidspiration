@@ -97,7 +97,7 @@ export default function HealingStreams() {
           className="flex flex-col gap-6 text-center lg:text-left lg:w-1/2 z-10"
           style={{ y: textY }}
         >
-          <div className="inline-flex w-fit mx-auto lg:mx-0 items-center gap-2 rounded-full bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+          <div className="inline-flex w-fit mx-auto mt-4 lg:mx-0 items-center gap-2 rounded-full bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
             <span className="material-symbols-outlined text-sm">event</span>
             <span>March 13–15, 2026</span>
           </div>

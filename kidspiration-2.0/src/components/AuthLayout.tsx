@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import mentor from "../assets/real-images/live-6.jpg"
+import community from "../assets/real-images/live-4.jpg"
 
 interface IntroImage {
   src: string;
@@ -21,12 +23,12 @@ interface AuthLayoutProps {
 
 const DEFAULT_IMAGES: [IntroImage, IntroImage] = [
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwzM2E0NPaDruD5nBcsQwdYwwCp4P4ljeorYwLU3A-5fHVXnazbjjp4vhsdvUE9eHvbjSYfIrPHHlyllT98QX9czMZ9o_3P3ednJ2UhDdaWzKY9QS_CxphhyanBBWgqwfeaKK6WQfcMaqjEpxsH_2KV02hH3cBo3lmA6Ewq14mj-7xMChIkY-0wOtoZx5hcuDqv0TYGWCHw6gPgqhJdQMz96IPducISeH38O1nKDfoC4xZXiET2W2y7N2OE2iITtfEQT9cX-7Bk6dV",
+    src: mentor,
     alt: "Adult mentoring a child reading a book",
     label: "Mentorship",
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDNDQ7YPazIUD5AzN3KgHZPRFct_CFs2rMvsFchcCqMPxX2QkAim53iqt8tukvmTzVMMRCeClPTtFThk660ukFmiYg7hHC3tNBwPCk19fPpx24yrZL-1eiBkZIto7jBkGWosKxfFh3lux9olUQuUwnqkxJN5aJHYWcJPnUZIFCYzjbBffUtjP6Q_XSjoQ_X0yatZoVi4wNflk9VwNeFM3qcgJ9i9kh9NT3JWCVvbCttgoxMEyHBfE2ZdF35M4Rj3ItioBEWc2tDZ1_2",
+    src: community,
     alt: "Group of diverse kids playing together outdoors",
     label: "Community",
     offset: true,
