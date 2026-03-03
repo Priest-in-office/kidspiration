@@ -28,26 +28,32 @@ export default function Navbar() {
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`relative py-1 text-sm font-bold transition-colors hover:text-primary ${
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-slate-700 dark:text-slate-300"
-                }`}
-              >
-                {item.label}
-                <span
-                  className={`absolute left-0 bottom-0 h-0.5 w-full origin-left bg-primary transition-transform duration-300 ease-out ${
-                    location.pathname === item.path
-                      ? "scale-x-100"
-                      : "scale-x-0"
+            {navItems.map((item) => {
+              // Exact match for Home ("/"), otherwise see if it starts with the path
+              const isActive =
+                item.path === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(item.path);
+
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`relative py-1 text-sm font-bold transition-colors hover:text-primary ${
+                    isActive
+                      ? "text-primary"
+                      : "text-slate-700 dark:text-slate-300"
                   }`}
-                />
-              </Link>
-            ))}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute left-0 bottom-0 h-0.5 w-full origin-left bg-primary transition-transform duration-300 ease-out ${
+                      isActive ? "scale-x-100" : "scale-x-0"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -116,7 +122,9 @@ export default function Navbar() {
               key={item.path}
               to={item.path}
               className={`relative py-2 w-fit text-sm font-bold transition-colors hover:text-primary ${
-                location.pathname === item.path ? "text-primary" : "text-slate-700 dark:text-slate-300"
+                location.pathname === item.path
+                  ? "text-primary"
+                  : "text-slate-700 dark:text-slate-300"
               }`}
             >
               {item.label}

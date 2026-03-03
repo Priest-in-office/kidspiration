@@ -211,12 +211,12 @@ export default function Hero() {
           <div className="relative w-full max-w-lg mx-auto lg:max-w-full lg:w-[120%]">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 bg-stone-100 dark:bg-stone-900 border-[6px] border-white/10 dark:border-white/5 bg-clip-padding">
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={currentSlide}
-                  src={activeImage.src} 
+                  src={activeImage.src}
                   alt={activeImage.alt}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }} 
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                   decoding="async"
@@ -263,7 +263,7 @@ export default function Hero() {
                     prev === 0 ? heroImages.length - 1 : prev - 1,
                   )
                 }
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center size-9 rounded-full bg-white/20 dark:bg-black/30 backdrop-blur-sm text-white hover:bg-white/40 dark:hover:bg-black/50 transition-colors cursor-pointer"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center size-9 rounded-full bg-card-bg/20 dark:bg-black/30 backdrop-blur-sm text-white hover:bg-card-bg/40 dark:hover:bg-black/50 transition-colors cursor-pointer"
                 aria-label="Previous slide"
               >
                 <span className="material-symbols-outlined text-xl">
@@ -274,7 +274,7 @@ export default function Hero() {
                 onClick={() =>
                   setCurrentSlide((prev) => (prev + 1) % heroImages.length)
                 }
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center size-9 rounded-full bg-white/20 dark:bg-black/30 backdrop-blur-sm text-white hover:bg-white/40 dark:hover:bg-black/50 transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center size-9 rounded-full bg-card-bg/20 dark:bg-black/30 backdrop-blur-sm text-white hover:bg-card-bg/40 dark:hover:bg-black/50 transition-colors cursor-pointer"
                 aria-label="Next slide"
               >
                 <span className="material-symbols-outlined text-xl">

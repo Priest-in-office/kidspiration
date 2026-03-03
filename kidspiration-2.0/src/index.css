@@ -8,13 +8,17 @@
   --color-primary-hover: #dcb022;
   --color-primary-dark: #d9a818;
   --color-secondary: #9c8749;
-  --color-background-light: #f8f8f5;
-  --color-background-dark: #221e10;
+
+  /* NEW BACKGROUNDS */
+  --color-background-light: #f4f7fb; /* Very faint, airy blue-gray */
+  --color-card-bg: #ffffff;
+
   --color-accent-blue: #4aa9ff;
   --color-accent-red: #ff6b6b;
-  --color-card-bg: #ffffff;
-  --color-text-main: #1c180d;
-  --color-text-muted: #6b5d2e;
+
+  /* NEW TEXT COLORS */
+  --color-text-main: #1a2235; /* Deep slate blue-black */
+  --color-text-muted: #64748b; /* Slate gray */
 
   /* Fonts */
   --font-display: "Fredoka", "Plus Jakarta Sans", sans-serif;
@@ -34,7 +38,7 @@
 }
 
 body {
-  background-color: #f8f8f5;
+  background-color: #f4f7fb;
   transition: background-color 0.3s ease;
 }
 
@@ -43,7 +47,7 @@ body {
 }
 
 .doodle-pattern {
-  background-color: #f8f8f5;
+  background-color: var(--color-background-light);
   background-image:
     radial-gradient(#f4c025 2px, transparent 2px),
     radial-gradient(#4aa9ff 2px, transparent 2px);
@@ -61,7 +65,7 @@ body {
 }
 
 .bg-hero-pattern {
-  background-color: #f8f8f5;
+  background-color: var(--color-background-light);
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c025' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 

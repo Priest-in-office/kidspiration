@@ -71,7 +71,7 @@ export default function SignupChooser() {
             <button
               key={option.route}
               onClick={() => navigate(option.route)}
-              className="group text-left bg-white dark:bg-[#1a170d] rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border-2 border-[#e8e2ce] dark:border-[#3a3525] hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
+              className="group text-left bg-card-bg dark:bg-[#1a170d] rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border-2 border-[#e8e2ce] dark:border-[#3a3525] hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
             >
               {/* Decorative glow */}
               <div className="absolute top-0 right-0 -mr-12 -mt-12 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors pointer-events-none" />

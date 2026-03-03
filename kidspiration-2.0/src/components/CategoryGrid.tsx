@@ -7,7 +7,7 @@ interface CategoryGridProps {
 
 export default function CategoryGrid({ categories }: CategoryGridProps) {
   return (
-    <div className="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+    <div className="py-16 bg-background-light dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
         <h2 className="text-2xl font-bold text-center mb-10 text-slate-900 dark:text-white">
           Shop by Category

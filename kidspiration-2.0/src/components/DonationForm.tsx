@@ -495,7 +495,7 @@ export default function DonationForm() {
   // ──────────────────────── Render ─────────────────────────────────
 
   return (
-    <div className="lg:w-7/12 w-full bg-white dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden">
+    <div className="lg:w-7/12 w-full bg-card-bg dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden">
       <StepIndicator />
       {step === 1 && renderStep1()}
       {step === 2 && renderStep2()}

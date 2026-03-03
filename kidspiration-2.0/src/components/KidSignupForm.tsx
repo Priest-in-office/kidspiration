@@ -125,7 +125,7 @@ export default function KidSignupForm() {
 
   if (success) {
     return (
-      <div className="lg:w-7/12 w-full bg-white dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden text-center">
+      <div className="lg:w-7/12 w-full bg-card-bg dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden text-center">
         <div className="py-12">
           <div className="text-6xl mb-6">🎉</div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
@@ -147,7 +147,7 @@ export default function KidSignupForm() {
   }
 
   return (
-    <div className="lg:w-7/12 w-full bg-white dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden relative">
+    <div className="lg:w-7/12 w-full bg-card-bg dark:bg-[#1a170d] rounded-3xl p-4 sm:p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-[#e8e2ce] dark:border-[#3a3525] overflow-hidden relative">
       {/* Decorative background glow */}
       <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
