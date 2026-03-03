@@ -33,7 +33,7 @@ export default function RoleCard({
         className={`h-full p-4 rounded-2xl border-2 transition-all flex flex-col gap-3 ${
           selected
             ? "border-primary bg-primary/5"
-            : "border-[#e8e2ce] dark:border-[#3a3525] bg-background-light dark:bg-background-dark hover:border-primary/50"
+            : "border-[#e8e2ce] dark:border-[#3a3525] bg-card-bg dark:bg-transparent hover:border-primary/50"
         }`}
       >
         <div

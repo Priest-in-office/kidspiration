@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import FloatingShapes from "../components/FloatingShapes";
 
 const SIGNUP_OPTIONS = [
   {
@@ -47,12 +48,21 @@ export default function SignupChooser() {
   const navigate = useNavigate();
 
   return (
-    <div className="overflow-x-hidden min-h-screen flex flex-col">
+    <div className="overflow-x-hidden min-h-screen flex flex-col relative bg-hero-pattern">
+      {/* Floating background SVG shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <FloatingShapes />
+      </div>
       <Navbar />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20">
+      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-yellow-700 dark:text-yellow-400 text-xs font-bold uppercase tracking-wider mb-4">
             Get Started
           </span>
@@ -77,14 +87,21 @@ export default function SignupChooser() {
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Choose how you'd like to join Kidspiration.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-          {SIGNUP_OPTIONS.map((option) => (
-            <button
+          {SIGNUP_OPTIONS.map((option, index) => (
+            <motion.button
               key={option.route}
               onClick={() => navigate(option.route)}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2 + index * 0.15,
+                ease: "easeOut",
+              }}
               className="group text-left bg-card-bg dark:bg-[#1a170d] rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border-2 border-[#e8e2ce] dark:border-[#3a3525] hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
             >
               {/* Decorative glow */}
@@ -131,7 +148,7 @@ export default function SignupChooser() {
                   </span>
                 </div>
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
 
@@ -146,8 +163,6 @@ export default function SignupChooser() {
           </button>
         </p>
       </main>
-
-      <Footer />
     </div>
   );
 }

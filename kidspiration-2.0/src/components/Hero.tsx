@@ -7,6 +7,7 @@ import live3 from "../assets/real-images/live-12.jpg";
 import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4";
 import VideoModal from "./VideoModal";
 import TypewriterText from "./TypewriterText";
+import FloatingShapes from "./FloatingShapes";
 
 const heroImages = [
   {
@@ -56,78 +57,7 @@ export default function Hero() {
   return (
     <div className="@container w-full bg-hero-pattern relative overflow-hidden">
       {/* Floating background SVG shapes */}
-      {/* Star — sky blue */}
-      <span
-        className="float-emoji float-emoji-1"
-        style={{ left: "5%", bottom: "-2rem" }}
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#5BC5F2">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z" />
-        </svg>
-      </span>
-      {/* Heart — coral */}
-      <span
-        className="float-emoji float-emoji-2"
-        style={{ left: "20%", bottom: "-2rem" }}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF7E67">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
-        </svg>
-      </span>
-      {/* Circle — golden yellow */}
-      <span
-        className="float-emoji float-emoji-3"
-        style={{ left: "35%", bottom: "-2rem" }}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#F4C025">
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-      </span>
-      {/* Diamond — emerald green */}
-      <span
-        className="float-emoji float-emoji-4"
-        style={{ left: "55%", bottom: "-2rem" }}
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#4DB870">
-          <path d="M12 2L2 12l10 10 10-10z" />
-        </svg>
-      </span>
-      {/* Star — golden yellow */}
-      <span
-        className="float-emoji float-emoji-5"
-        style={{ left: "70%", bottom: "-2rem" }}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F4C025">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z" />
-        </svg>
-      </span>
-      {/* Heart — sky blue */}
-      <span
-        className="float-emoji float-emoji-6"
-        style={{ left: "85%", bottom: "-2rem" }}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#5BC5F2">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
-        </svg>
-      </span>
-      {/* Circle — coral */}
-      <span
-        className="float-emoji float-emoji-7"
-        style={{ left: "45%", bottom: "-2rem" }}
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF7E67">
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-      </span>
-      {/* Diamond — sky blue */}
-      <span
-        className="float-emoji float-emoji-8"
-        style={{ left: "92%", bottom: "-2rem" }}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#5BC5F2">
-          <path d="M12 2L2 12l10 10 10-10z" />
-        </svg>
-      </span>
+      <FloatingShapes />
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-4 py-12 lg:px-20 lg:py-24 max-w-7xl mx-auto">
         {/* Text — slides in from left */}
         <motion.div

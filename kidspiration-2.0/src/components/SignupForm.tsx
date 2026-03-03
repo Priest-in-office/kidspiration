@@ -40,7 +40,7 @@ export default function SignupForm() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const queryRole = queryParams.get("role") as SignUpData["role"] | null;
-  const isValidRole = ROLE_OPTIONS.some((opt) => opt.value === queryRole);
+  const isValidRole = ROLE_OPTIONS.some(opt => opt.value === queryRole);
   const initialRole = isValidRole && queryRole ? queryRole : "parent_or_mentor";
 
   const [role, setRole] = useState<SignUpData["role"]>(initialRole);
