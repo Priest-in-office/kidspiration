@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth, type SignUpData } from "../context/AuthContext";
 import { useFormValidation } from "../context/FormValidation";
 import FormInput from "./FormInput";
@@ -37,7 +37,13 @@ const VALIDATION_RULES = {
 
 export default function SignupForm() {
   const { signup, isLoading, error: authError, clearError } = useAuth();
-  const [role, setRole] = useState<SignUpData["role"]>("parent_or_mentor");
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const queryRole = queryParams.get("role") as SignUpData["role"] | null;
+  const isValidRole = ROLE_OPTIONS.some((opt) => opt.value === queryRole);
+  const initialRole = isValidRole && queryRole ? queryRole : "parent_or_mentor";
+
+  const [role, setRole] = useState<SignUpData["role"]>(initialRole);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [termsError, setTermsError] = useState("");
 

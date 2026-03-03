@@ -4,15 +4,29 @@ import Footer from "../components/Footer";
 
 const SIGNUP_OPTIONS = [
   {
-    route: "/signup/adult",
+    route: "/signup/adult?role=parent_or_mentor",
     icon: "family_star",
     iconBg: "bg-orange-100 dark:bg-orange-900/30",
     iconColor: "text-orange-600 dark:text-orange-400",
-    title: "I'm an Adult",
+    title: "I'm a Parent or Mentor",
     description:
-      "Parents, mentors, pastors, and leaders — sign up to guide children on their spiritual journey.",
+      "Parents, and mentors — sign up to guide children on their spiritual journey.",
     features: [
       "Track your child's progress",
+      "Access mentorship tools",
+      "Join the community",
+    ],
+  },
+  {
+    route: "/signup/adult?role=pastor_or_leader",
+    icon: "family_star",
+    iconBg: "bg-orange-100 dark:bg-orange-900/30",
+    iconColor: "text-orange-600 dark:text-orange-400",
+    title: "I'm a Pastor or Leader",
+    description:
+      "Pastors, and leaders — sign up to guide children on their spiritual journey.",
+    features: [
+      "Manage your group",
       "Access mentorship tools",
       "Join the community",
     ],
@@ -66,7 +80,7 @@ export default function SignupChooser() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
           {SIGNUP_OPTIONS.map((option) => (
             <button
               key={option.route}
