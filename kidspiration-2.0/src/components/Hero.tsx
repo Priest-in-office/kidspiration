@@ -6,6 +6,7 @@ import live2 from "../assets/real-images/live-6.jpg";
 import live3 from "../assets/real-images/live-12.jpg";
 import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4";
 import VideoModal from "./VideoModal";
+import TypewriterText from "./TypewriterText";
 
 const heroImages = [
   {
@@ -30,14 +31,11 @@ const heroImages = [
 
 const AUTOPLAY_INTERVAL = 5000;
 const HEADING_TEXT = "Welcome To Kidspiration!";
-const TYPING_SPEED = 90;
 
 export default function Hero() {
   const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [typedCount, setTypedCount] = useState(0);
-  const [typingDone, setTypingDone] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroImages.length);
@@ -52,16 +50,6 @@ export default function Hero() {
     const timer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
     return () => clearInterval(timer);
   }, [nextSlide]);
-
-  // Typing animation
-  useEffect(() => {
-    if (typedCount < HEADING_TEXT.length) {
-      const timer = setTimeout(() => setTypedCount((c) => c + 1), TYPING_SPEED);
-      return () => clearTimeout(timer);
-    } else {
-      setTypingDone(true);
-    }
-  }, [typedCount]);
 
   const activeImage = heroImages[currentSlide];
 
@@ -156,18 +144,7 @@ export default function Hero() {
             <span>Join millions of kids worldwide!</span>
           </div>
           <h1 className="text-4xl font-black leading-tight tracking-tight text-text-main dark:text-white sm:text-5xl lg:text-6xl">
-            {/* "Welcome To " part (first 11 chars) */}
-            {HEADING_TEXT.slice(0, Math.min(typedCount, 11))}
-            {/* "Kidspiration!" part (chars 11+) in primary with wavy underline */}
-            {typedCount > 11 && (
-              <span className="text-primary underline decoration-wavy decoration-4 underline-offset-4">
-                {HEADING_TEXT.slice(11, typedCount)}
-              </span>
-            )}
-            {/* Blinking cursor */}
-            {!typingDone && (
-              <span className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 align-middle animate-pulse" />
-            )}
+            <TypewriterText text={HEADING_TEXT} />
           </h1>
           <p className="text-lg font-normal leading-relaxed text-text-muted dark:text-stone-300 max-w-xl mx-auto lg:mx-0">
             Discover the joy of faith through inspiring Bible stories, fun

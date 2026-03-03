@@ -54,8 +54,8 @@ export default function ActionPath() {
         </div>
 
         {/* Mobile Vertical Timeline */}
-        <div className="md:hidden flex flex-col gap-8 relative pl-6">
-          <div className="absolute left-[27px] top-0 h-full w-[2px] border-l-2 border-dashed border-slate-300 dark:border-slate-600" />
+        <div className="md:hidden flex flex-col gap-8 relative">
+          <div className="absolute left-[27px] top-0 h-full w-[2px] border-l-2 border-dashed border-slate-300 dark:border-slate-600 -z-10" />
 
           {STEPS.map((step, i) => (
             <div key={step.title} className="flex items-start gap-4 relative">
