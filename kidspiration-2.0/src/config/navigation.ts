@@ -12,4 +12,5 @@ export const navItems: NavItem[] = [
   // { path: "/shop", label: "Shop" },
   { path: "/4ps", label: "4Ps" },
   { path: "/stories", label: "Impact Stories" },
+  { path: "/kids", label: "Kids Zone" },
 ];

@@ -20,6 +20,12 @@
   --color-text-main: #1a2235; /* Deep slate blue-black */
   --color-text-muted: #64748b; /* Slate gray */
 
+  /* Kids Dashboard Accents */
+  --color-kids-blue: #4a90d9;
+  --color-kids-green: #4caf50;
+  --color-kids-orange: #ff9800;
+  --color-kids-pink: #e91e63;
+
   /* Fonts */
   --font-display: "Fredoka", "Plus Jakarta Sans", sans-serif;
   --font-heading: "Fredoka", "Plus Jakarta Sans", sans-serif;
@@ -62,6 +68,95 @@ body {
   background-image:
     radial-gradient(rgba(244, 192, 37, 0.25) 2px, transparent 2px),
     radial-gradient(rgba(74, 169, 255, 0.15) 2px, transparent 2px);
+}
+
+/* ── Kids Dashboard Background ── */
+/* Soft animated pastel gradient inspired by PBS Kids / Khan Academy Kids */
+@keyframes kidsGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.kids-dashboard-bg {
+  background: linear-gradient(
+    135deg,
+    #eef6ff 0%,
+    /* airy sky blue */ #fef5d3 25%,
+    /* warm golden cream */ #eef6ff 50%,
+    /* sky blue again */ #f0fdf4 75%,
+    /* fresh mint */ #fef5d3 100% /* golden cream */
+  );
+  background-size: 400% 400%;
+  animation: kidsGradientShift 20s ease-in-out infinite;
+  position: relative;
+}
+
+/* Subtle decorative SVG wave at the top */
+.kids-dashboard-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23f4c025' fill-opacity='0.06' d='M0,96L48,106.7C96,117,192,139,288,128C384,117,480,75,576,74.7C672,75,768,117,864,128C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'/%3E%3Cpath fill='%234A90D9' fill-opacity='0.04' d='M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,74.7C672,64,768,64,864,80C960,96,1056,128,1152,128C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'/%3E%3C/svg%3E")
+    no-repeat top center;
+  background-size: 100% 200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating soft blobs */
+.kids-dashboard-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 100px;
+  right: -60px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 144, 217, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark mode variant */
+:where(.dark, .dark *) .kids-dashboard-bg {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1a1f35 25%,
+    #0f172a 50%,
+    #121d2e 75%,
+    #1a1f35 100%
+  );
+  background-size: 400% 400%;
+  animation: kidsGradientShift 20s ease-in-out infinite;
+}
+
+:where(.dark, .dark *) .kids-dashboard-bg::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23f4c025' fill-opacity='0.04' d='M0,96L48,106.7C96,117,192,139,288,128C384,117,480,75,576,74.7C672,75,768,117,864,128C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'/%3E%3C/svg%3E")
+    no-repeat top center;
+  background-size: 100% 200px;
+}
+
+:where(.dark, .dark *) .kids-dashboard-bg::after {
+  background: radial-gradient(
+    circle,
+    rgba(74, 144, 217, 0.05) 0%,
+    transparent 70%
+  );
 }
 
 .bg-hero-pattern {

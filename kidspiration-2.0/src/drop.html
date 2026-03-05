@@ -1,209 +1,366 @@
-<!DOCTYPE html>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 overflow-x-hidden">
-<div class="relative flex min-h-screen w-full flex-col group/design-root">
-<main class="flex-1">
-<!-- Hero / Featured Section -->
-<div class="relative w-full py-16 px-4 md:px-10 overflow-hidden doodle-pattern dark:bg-background-dark">
-<!-- Abstract blobs for fun background -->
-<div class="absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10"></div>
-<div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-blue/20 rounded-full blur-3xl -z-10"></div>
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-<div class="flex-1 space-y-6 text-center md:text-left z-10">
-<span class="inline-block px-4 py-1 rounded-full bg-accent-blue/10 text-accent-blue font-bold text-sm uppercase tracking-wider">New Arrivals</span>
-<h1 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight">
-                            Gear Up for <span class="text-primary relative inline-block">Adventures <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-50" preserveaspectratio="none" viewbox="0 0 100 10"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3"></path></svg></span>!
-                        </h1>
-<p class="text-lg text-slate-600 dark:text-slate-300 max-w-lg mx-auto md:mx-0 font-medium">
-                            Check out our latest collection of tees, hoodies, and caps designed to spark joy and creativity in every kiddo.
-                        </p>
-<div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-<button class="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
-                                Shop All 
-                                <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-<button class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 px-8 py-3 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-                                View Categories
-                            </button>
-</div>
-</div>
-<div class="flex-1 relative">
-<div class="relative z-10 bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-bouncy transform rotate-2 hover:rotate-0 transition-all duration-500 group">
-<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent-blue/20 mix-blend-multiply"></div>
-<img alt="Featured Merch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Happy kids wearing colorful t-shirts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfQtEHRvNPnr9iDKWD4Q_N3ixrevCyamwBfPuNC2jfgZf607x1RPucMsFqiElN8c-evrvHQn4evNHUagnEQ6IYzT6vTgW58G6heASSVGu7uWgvCz2Co0JwhxdMhlanoRGwwe6g693LKuraCNloIKBIlJbFsqCdTkq_FownA13jgGnf5znQvEQsVRuT69Adrrh8Q1OdLdetAGWPDtvl1M3n11V1iqLPjemVGRRWyIaCpZI_tC4oCn8yMaKsmH-L7CfeTQNSurrGcaau"/>
-</div>
-<div class="absolute -bottom-6 -right-6 bg-accent-red text-white size-24 rounded-full flex flex-col items-center justify-center shadow-lg transform rotate-12 border-4 border-white dark:border-slate-800">
-<span class="text-xs font-bold uppercase">Start at</span>
-<span class="text-2xl font-black">$12</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Carousel Section -->
-<div class="max-w-7xl mx-auto px-4 md:px-10 py-16">
-<div class="flex items-center justify-between mb-10">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Trending Now 🔥</h2>
-<div class="flex gap-2">
-<button class="size-12 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:border-primary hover:text-slate-900 transition-all">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<button class="size-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-all shadow-lg">
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- Product Grid (Carousel Simulation) -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
-<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
-<span class="absolute top-3 left-3 bg-accent-blue text-white text-xs font-bold px-2 py-1 rounded-lg z-10">Best Seller</span>
-<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Kid wearing a yellow graphic t-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXTUawme-LNSOUc-6Sv3Gzv4x6FSg2iYzekGGRF-jLwupA-yW001s46QnIpk2pcj_BCs5tqi29h66jwjxernkNGfuK9UaFU_V5jaEinTy_w_xhheEeFcOI4jDmgl_mOACx0NCmmAYfWbO18OHDuEbKt6g4HiB781NahtM8mFK2Keuaff6GstjvnXGEsOTN_zswYZfWNgz_MFCNNZ0kOQy12zW8nqxN9T-65Vb6JZ2FsV66lBYvsU23HI9ix27EU2tEzkPngVA48z5S"/>
-</div>
-<div class="px-2 flex-1 flex flex-col">
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Super Star Tee</h3>
-<div class="flex items-center gap-1 mb-3">
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star_half</span>
-<span class="text-xs text-slate-500 ml-1">(42)</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xl font-black text-slate-900 dark:text-white">$18.00</span>
-<button class="bg-primary text-slate-900 p-2 rounded-xl hover:bg-primary-dark transition-colors shadow-md">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
-<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
-<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Child wearing a colorful cap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHKhF5POlx39FfXOnhHbn7iqImNEwjrNlIJBgzZoPKwtpWTvPDwK8FDcb_qhgrq1GaHxYQ9lxzt0EEsz_guAkaRzO9OVr7rLcEHz_ePoiUGkfR5r6ZNcMyZKsd2YugBa4G65i62W-qSeJaodecG2QG3wSvnlOtL2F18pY8KQgPOXl2UUHHt1KbH_KqQd23yA8V3Q6Zc5p95h3lEOsWuJMcLec4UugyzIFSgcBGBbPhorxtw06cca7BrBPNAGiVBN2sAXTDPhONj2zI"/>
-</div>
-<div class="px-2 flex-1 flex flex-col">
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Sunny Days Cap</h3>
-<div class="flex items-center gap-1 mb-3">
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-slate-300 text-sm">star</span>
-<span class="text-xs text-slate-500 ml-1">(15)</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xl font-black text-slate-900 dark:text-white">$12.00</span>
-<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
-<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
-<span class="absolute top-3 left-3 bg-accent-red text-white text-xs font-bold px-2 py-1 rounded-lg z-10">-20%</span>
-<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Comfortable grey hoodie for kids" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuVnh2g51nf-KLN2eGqmvmbKtckhpuNu_AS2BFZ6DfnUEq1Jb9Mi2MRVpM3CJ1BZTW29Upr6lxhX_c4XwXldy39EABwaFdWHUwMn5ZmVJP8lSeunT_BjNEO5Rj_9Cw0N4SaWAqNP1A3QSbl7MrKKSgfBMirOWQu8zG9PtLGvnbFWBa-tQryDdr7lj3eDKYBASCluffFbDvP_4cBO92KoxnToJJ4r-ZlstYQlpKj2Kf0k9dEaNn4jpyFOqZHP2oufxDDA2RFamolmEL"/>
-</div>
-<div class="px-2 flex-1 flex flex-col">
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Cozy Doodle Hoodie</h3>
-<div class="flex items-center gap-1 mb-3">
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="text-xs text-slate-500 ml-1">(89)</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<div class="flex flex-col leading-none">
-<span class="text-xs text-slate-400 line-through decoration-red-500">$35.00</span>
-<span class="text-xl font-black text-accent-red">$28.00</span>
-</div>
-<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="group bg-white dark:bg-slate-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 flex flex-col">
-<div class="relative aspect-square rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 mb-4">
-<button class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-800/80 rounded-full text-slate-400 hover:text-accent-red transition-colors z-10 backdrop-blur-sm">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Girl smiling with a backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQd3l0lk9hku2FdfM5ZpjGiMwkR1T_WMOCuzFnf4hkzMBN8UWYWh-qt1z_QySjbQPcFsVExd2zzfvuO4lfcPYitBkHaMheBMH9huX4cJU8w5-sFUe3yu_QX3fMB4xdod164DPKeIXUwCFs2TNme1iP9BHA5abdPcx7XRO_GBy1Fd0JjxBU7ygp51J24bKdS_onpf8ECAJWIKzHkZADOJ-7ov0ooIBBx5cE1u1Ql-1e86WxmSABs19yy_pbqwXFNoP70XOIg65e6FcI"/>
-</div>
-<div class="px-2 flex-1 flex flex-col">
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">Explorer Backpack</h3>
-<div class="flex items-center gap-1 mb-3">
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="material-symbols-outlined text-primary text-sm">star</span>
-<span class="text-xs text-slate-500 ml-1">(24)</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xl font-black text-slate-900 dark:text-white">$45.00</span>
-<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white p-2 rounded-xl hover:bg-primary hover:text-slate-900 transition-colors">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Categories / Quick Links -->
-<div class="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-4 md:px-10">
-<h2 class="text-2xl font-bold text-center mb-10 text-slate-900 dark:text-white">Shop by Category</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Pile of colorful t-shirts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA_uy_7gL01WYNUQXnz5iZAfHVSbEyBkSb7-et5D049_-OlFkAIDac9YNt2NR4XK5rC5jl9oHIIG_C7GGyvSvLRK3bidlUBnl69_b3b9JbiLCke3gMVnRBrPi3gZW7LUtufvWozX_UBj8FodiGAgSdYqRhtazJI2e55wVI0tIo87GY9LgpK1Rmt5eAHxWFgZZMI7al_dkSqGP9jbMPVhmWhFLbUoXpI0DJjDM483S06V5573iZyS5vZDodXdSMAp5IYuyKAm17D1VO"/>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Tees</span>
-</div>
-</a>
-<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a hoodie texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFYM-CA5hPdbXVbbcqlofu7-99A-aUEPjHSVEV19-_PHDl3sLlfOIgIl4Anwzhnto6umGZBxiv_nnpbULDZry0Q78NSOCt0YPZxfdQXcILuELs1xm3vfXRuDFHgO8YaTVWHd8ttNI1fuQwE_0oGPetN71nw4kwqKaY6_Q3DrYOjVEOBn3kJoBQ6a0W4LdHcaM_rtzw5oaplhv3xac1GQRouAue3Jj5q76QKevzt1YxZYfSzmpNK-APqC7-7pezmkuBBsPpeCgZwP8-"/>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Hoodies</span>
-</div>
-</a>
-<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Baseball caps on a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxPC7EQk9GhskWJAqomZLsDpC1EIa4jaNh75AmetpjpoFdOZ2XpRU-SnGWGK1MVfUXn-6knHlgkMfqudM1C8HqddPypvBrUEZMb4XlMe_WeOJL8XDS5VHOBZu9J94yfMeUPiHxoy0_6WiiNKCXLdEQ050QD38vmCk-vQFM87h17AUWhhTggIT-dAmtTO9sB_Bgg2rzYY8FMw-l-Lo3RMY40NjvNojUPZuk7Y9ct6Sp_ni-U8gHrSiFMo9_02562jX70fJn2rdHtfeY"/>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Hats</span>
-</div>
-</a>
-<a class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]" href="#">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Assorted kids accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeg0q2WaM3XEK8ZuitLxUCpJj8NIxFfKbzYB5jEGMjw9nJBP4Giz6nSbuDRVzjLA54kGgTRrFrbDpWtzBuKU7VrI9FhHX7z8XQozYvyvv_VlnfnoV58QPdLI_YUV-30-BrUAJfgcXDUjyO0DfcLG28SlH2eC4D4yQO_4pTIUQdR8VmQreg-u9041ALs9ZWtptNDOs2Qle4JUNpI93gvyXXYyn1maONA-mpQnoy2oLWNDM7GO_JZrrWIbELWoVE91rTeLDJ6SSukmXZ"/>
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-white text-xl md:text-2xl font-bold tracking-wide group-hover:scale-110 transition-transform">Accessories</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-</main>
 
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<header class="sticky top-0 z-50 flex items-center justify-between border-b-4 border-primary bg-white px-6 py-3 lg:px-10 shadow-sm dark:border-primary dark:bg-stone-900">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-lg rotate-3 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl">local_activity</span>
 </div>
-</body></html>
+<h1 class="hidden sm:block text-2xl font-black tracking-tight text-text-main dark:text-white">Kidspiration</h1>
+</div>
+<div class="hidden md:flex flex-1 max-w-lg mx-8 relative">
+<input class="w-full h-12 pl-12 pr-4 rounded-full bg-stone-100 border-2 border-stone-200 focus:border-kids-blue focus:ring-0 text-text-main font-bold placeholder-stone-400 transition-all dark:bg-stone-800 dark:border-stone-700 dark:text-white" placeholder="Search for fun games &amp; videos..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 font-bold">search</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-gradient-to-r from-primary-light to-white px-4 py-2 rounded-full border-2 border-primary shadow-sm hover:shadow-md transition-shadow cursor-pointer dark:from-stone-800 dark:to-stone-900 dark:border-primary">
+<span class="material-symbols-outlined text-primary text-2xl drop-shadow-sm">stars</span>
+<div class="flex flex-col leading-none">
+<span class="font-black text-lg text-text-main dark:text-white">450</span>
+<span class="text-[10px] font-bold text-text-muted uppercase tracking-wider dark:text-stone-400">Sparks</span>
+</div>
+</div>
+<button class="relative h-12 w-12 rounded-full overflow-hidden border-4 border-white shadow-md ring-2 ring-primary dark:border-stone-800">
+<img alt="Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAolA6YUqOaldvT97ekPzBSdYDq58hce-NARSUCdF-vvh0qYrbAM0dlX7m263gW5lRDy-aL-6eb6bmiJ92CT7sQTqztdeadOt2KNghZ95NPJj32v5KVZ8yVYQr66aM6wwHV3zKYM8Ojn97G0casH09DLDKEd41GM6OckqmiNJLOFxm7JaDKFlRt7MVcRYk2TI-lWfLJxAiMHYIcGh3QWzy0WdwfNerlpMlFZvLVL4GR1e10GfOKqsH5yZxFUQyaOAcYj4ydQaQn1oCl"/>
+</button>
+</div>
+</header>
+<main class="flex flex-col grow bg-doodle-pattern">
+<section class="w-full px-6 py-8 lg:px-10 lg:py-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-kids-blue/10 text-kids-blue font-bold text-sm mb-2">
+<span class="material-symbols-outlined text-base">waving_hand</span>
+                        Good Morning!
+                    </div>
+<h2 class="text-4xl md:text-5xl font-black text-text-main dark:text-white tracking-tight">
+                        Welcome back, <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-kids-orange">Explorer!</span>
+</h2>
+<p class="mt-2 text-lg text-text-muted font-medium max-w-xl dark:text-stone-400">
+                        Ready to unleash your spark today? We have new games and videos waiting for you.
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="bg-white border-2 border-stone-200 text-stone-600 font-bold py-3 px-6 rounded-2xl hover:bg-stone-50 hover:border-stone-300 transition-all shadow-sm flex items-center gap-2 dark:bg-stone-800 dark:border-stone-700 dark:text-stone-300 dark:hover:bg-stone-700">
+<span class="material-symbols-outlined">calendar_month</span>
+                        Daily Streak: 5
+                    </button>
+<button class="bg-kids-blue text-white font-bold py-3 px-6 rounded-2xl hover:bg-opacity-90 transition-all shadow-lg shadow-kids-blue/30 flex items-center gap-2 hover:-translate-y-1">
+<span class="material-symbols-outlined">add_reaction</span>
+                        Customize Avatar
+                    </button>
+</div>
+</div>
+</section>
+<div class="px-6 pb-12 lg:px-10 lg:pb-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 space-y-12">
+<section class="bg-gradient-to-r from-kids-green/10 to-kids-blue/10 rounded-3xl p-1 shadow-lg border-2 border-dashed border-kids-green/30 relative overflow-hidden group">
+<div class="bg-white dark:bg-stone-900 rounded-[1.3rem] p-6 h-full relative z-10">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-kids-green rotate-12">emoji_events</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<div class="shrink-0 relative">
+<div class="w-24 h-24 bg-kids-green/20 rounded-full flex items-center justify-center text-kids-green border-4 border-white shadow-md dark:border-stone-800">
+<span class="material-symbols-outlined text-5xl">rocket_launch</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-white text-xs font-black px-2 py-1 rounded-lg shadow-sm border-2 border-white dark:border-stone-800">
+                            +50 Sparks
+                        </div>
+</div>
+<div class="flex-1 text-center sm:text-left">
+<div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+<span class="bg-kids-green text-white text-xs font-bold px-2 py-0.5 rounded-md uppercase tracking-wide">Daily Challenge</span>
+<span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Ends in 4h
+                            </span>
+</div>
+<h3 class="text-2xl font-black text-text-main dark:text-white mb-2">Complete 3 Math Puzzles</h3>
+<div class="w-full bg-stone-100 rounded-full h-4 mb-3 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+<div class="bg-kids-green h-full rounded-full transition-all duration-1000 relative" style="width: 66%">
+<div class="absolute right-0 top-0 bottom-0 w-4 bg-white/30 rounded-full animate-pulse"></div>
+</div>
+</div>
+<p class="text-sm font-bold text-stone-500 dark:text-stone-400 flex justify-between">
+<span>2/3 Puzzles Completed</span>
+<span class="text-kids-green">66%</span>
+</p>
+</div>
+<button class="shrink-0 bg-kids-green hover:bg-kids-green/90 text-white font-black py-3 px-8 rounded-xl shadow-lg shadow-kids-green/20 transition-transform hover:scale-105 active:scale-95 flex items-center gap-2">
+                        Start Challenge
+                        <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-stone-900 rounded-3xl p-6 shadow-xl border border-stone-100 dark:border-stone-800 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-kids-blue rounded-full blur-3xl opacity-10 -mr-20 -mt-20"></div>
+<div class="flex items-center justify-between mb-6 relative z-10">
+<div class="flex items-center gap-3">
+<div class="bg-kids-blue/20 p-2.5 rounded-xl text-kids-blue">
+<span class="material-symbols-outlined text-3xl">play_circle</span>
+</div>
+<h3 class="text-2xl font-black text-text-main dark:text-white">Watch &amp; Learn</h3>
+</div>
+<button class="text-kids-blue font-bold hover:bg-kids-blue/10 px-4 py-2 rounded-xl transition-colors flex items-center gap-1">
+                    View All <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-2xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
+<div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<img alt="Science Experiment" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxbOn0_4n65pSMZirMKWXP2yiZvDrNyUr22OSOtc6lj_8Y_LIFdgdW2SsDqJZA_Z_No-HdHVwxHab7Q_bkRq99CkvUrTweIdrjtiTOCBs7v3mgqnWPH6KwWnAjHBIqkVWFpghud1YPb-Buokx-XxCWGo9_Q2FjcXbawHMTV7oszN1vrt_4MTdhlCNIDSbCuHWQ0ms9TUDVv_H5oSkqp6y5evdIB02ZL8jRe6FsraG34Nm-TTekdF0Xjbg14UzD5SxpEc2HpLIQoCS0"/>
+<span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md z-20">12:04</span>
+</div>
+<h4 class="font-bold text-lg leading-tight text-text-main dark:text-white group-hover:text-kids-blue transition-colors">Cool Science Tricks!</h4>
+<p class="text-sm text-stone-500 mt-1 dark:text-stone-400">Science Club • 2 days ago</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-2xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
+<div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<img alt="Art Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6dPiLcaAklNp6ghntzaCm5WneV3PPGMSWOsH9SO5BZMFhsi7hkXhH5q5AaqMwtqAyFqr1jNEtQrDA1O5YZRf3o3-xDHWlpvBShWGgFMJzvMIgYDm3ENDM5nHoBv3bXGEsEOr6BYYPMO942xM3uqYUfEwAqASx7yuvBAdAVOJE_ayk8JMOMH6P3o_ue9Gq8se8oFyNrW7t890LU8_DhxyB33zbe4LHhx0CajR8PgHUQJM_41AWAhdaomVPlKH2YL_nE1g-h2A6_VvU"/>
+<span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-md z-20">08:30</span>
+</div>
+<h4 class="font-bold text-lg leading-tight text-text-main dark:text-white group-hover:text-kids-blue transition-colors">Draw a Funny Monster</h4>
+<p class="text-sm text-stone-500 mt-1 dark:text-stone-400">Art Studio • 1 week ago</p>
+</div>
+</div>
+</section>
+<section class="bg-primary/5 rounded-3xl p-6 border-2 border-primary/20 dark:bg-stone-800/50 dark:border-stone-700">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="bg-kids-orange/20 p-2.5 rounded-xl text-kids-orange">
+<span class="material-symbols-outlined text-3xl">sports_esports</span>
+</div>
+<h3 class="text-2xl font-black text-text-main dark:text-white">Game Zone</h3>
+</div>
+<button class="text-kids-orange font-bold hover:bg-kids-orange/10 px-4 py-2 rounded-xl transition-colors flex items-center gap-1">
+                    View All <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+<div class="aspect-square w-full bg-kids-green/10 p-4 flex items-center justify-center">
+<img alt="Math Blaster" class="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0bVqNW1O8s-Ec1mVOglQwy1c-HRQi95oy11pDm1_fsdtf4jz__j2oYBp16CACyVdQbQbvUChskBGvYLaau4i0dZtc5bU2rd0eW1tBrXCIPyAsvCiD1hVT3l3tnZYEQG-Zp3eoCuZ1M5AP7_xBzG0RCsoMrJrt7wK-VgcFB4g4-HiFI4uM5rL02o1jHIz4VwMJHyLn1w6eitGZpPJvq-NtItOItZCUvq9YW6PW-jyvizPrRSGIA-p5JJoAfEIzSQKSlTdb_OMKRr8f"/>
+</div>
+<div class="p-3 text-center">
+<h4 class="font-bold text-text-main dark:text-white truncate text-sm">Math Blaster</h4>
+<span class="text-[10px] font-bold text-kids-green bg-kids-green/10 px-2 py-0.5 rounded-full mt-1 inline-block">Educational</span>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+<div class="aspect-square w-full bg-kids-blue/10 p-4 flex items-center justify-center">
+<img alt="Space Explorer" class="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA70ydNnGHNgLce5UO5unp0NmhGkB0G57CcMxV7GPXlYhVEtdYiTfpLpHTzw3b4SJiAGuzifK_uaQ7S6Hy4OUjbzRGfhzQgt17YX9u3IjkcnpwrVBm5agfpnFgPOxOGvLVuKSjuGYADO7zD6rLqr6nwURTi-POg2mWdOflD_zcjh61LKuWVJK0YrhPTldD35X6tE9RJmIBJG0LOonwHdo5MnOOOcHGI2eqjGvdueVlOqJSsFApXIMXIEKyA6TspNoLczXD-Id-gH4X3"/>
+</div>
+<div class="p-3 text-center">
+<h4 class="font-bold text-text-main dark:text-white truncate text-sm">Space Explorer</h4>
+<span class="text-[10px] font-bold text-kids-blue bg-kids-blue/10 px-2 py-0.5 rounded-full mt-1 inline-block">Adventure</span>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+<div class="aspect-square w-full bg-kids-pink/10 p-4 flex items-center justify-center">
+<img alt="Color Match" class="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY6lfgtev2lCL8z0dNd4uo6xn0oi_u0FkO-Dfhl_WzLFl79KWLqwL42oGOC5Fb50Jh_pmcolQKXpsH26ySNNyknun7equvdNC_N-sOEmfXsqwqd_8CIqEGotpdgRpkV4cap--b9cCZseOXZDPdElfsfIlzza62WQKtLFZ2PlLhHxv56QibkK5GhMzuZPjaKSJ8TzbzqWxsHVjfLfi6lFPwFqBtkY_hIqyTa_nLvutTEPo339kEiknbPVe-81OSs-J_8fxAzUVrpQCN"/>
+</div>
+<div class="p-3 text-center">
+<h4 class="font-bold text-text-main dark:text-white truncate text-sm">Color Match</h4>
+<span class="text-[10px] font-bold text-kids-pink bg-kids-pink/10 px-2 py-0.5 rounded-full mt-1 inline-block">Puzzle</span>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+<div class="aspect-square w-full bg-kids-orange/10 p-4 flex items-center justify-center">
+<img alt="Dino Run" class="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCORmS8m7zAXoEnojdN1MMZ1_XXAxLRP0aNC0asj-L3NQAtKMrUKo1-rAKTOh1gpILgtIpJTq31AhPYllwU1gdVHXsWiqRZAEx9fVXKcr1qo_d-w4qWiybr2IajaFsy_syLNCLMOU1Ny2Uvu8ZTW_5KZRRYDa5WFCTCutob41tdcJZhYShfcBesaTedvhvEEJaXzsywYODjyQPkg_h8CLA6xeJrTsWSL_SYAd2Q27aXtvYDJzHv-VbPJN3VD48Iv8UVjJ7_DQiJ8xpN"/>
+</div>
+<div class="p-3 text-center">
+<h4 class="font-bold text-text-main dark:text-white truncate text-sm">Dino Run</h4>
+<span class="text-[10px] font-bold text-kids-orange bg-kids-orange/10 px-2 py-0.5 rounded-full mt-1 inline-block">Action</span>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+<div class="aspect-square w-full bg-primary/10 p-4 flex items-center justify-center">
+<img alt="Word Scramble" class="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuy1UCstniKG_b1f0uwNZwUmNiufO4NrxghhhVLevk6lxmvHfAjMm1gF08vCFXCqdqVC_cKKDrNxRHKOexs1zb4L8e0WBtKtov7-r30u3Nn9z40KKBBwsvrKHrmSpEMz1E5s2wb2SMYCRjWnew2rqxjBCG1-UgIBIAYEtVFKC61fM6ZssfMowRqouTbCvNOn5bQONWPdSfLz7fpf9zm9jBMCVMLdUvYmlcDCU1anS9yesSlTMQeBpbO_AwT0h7p6bPIjM5TRUbESE5"/>
+</div>
+<div class="p-3 text-center">
+<h4 class="font-bold text-text-main dark:text-white truncate text-sm">Word Scramble</h4>
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full mt-1 inline-block">Word Game</span>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex items-center justify-center border-2 border-dashed border-stone-200 dark:border-stone-700">
+<div class="text-center p-4">
+<div class="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2 text-stone-400 dark:bg-stone-800">
+<span class="material-symbols-outlined">add</span>
+</div>
+<h4 class="font-bold text-stone-400 text-sm">More Games</h4>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-gradient-to-br from-kids-blue/10 to-kids-pink/10 rounded-3xl p-8 border border-kids-blue/20 relative overflow-hidden dark:from-stone-800 dark:to-stone-900 dark:border-stone-700">
+<div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-kids-blue to-kids-pink opacity-10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row gap-10 items-center">
+<div class="lg:w-1/3 flex flex-col gap-4 relative z-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-kids-blue p-2.5 rounded-xl text-white shadow-lg">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h3 class="text-3xl font-black text-text-main dark:text-white">Kidspiration<br/><span class="text-kids-blue">Magazine</span></h3>
+</div>
+<p class="text-lg text-text-muted dark:text-stone-300 font-medium">
+                        Dive into the latest issue! Full of comics, puzzles, and inspiring stories from explorers like you.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-2">
+<button class="flex-1 bg-kids-blue text-white font-bold py-3 px-6 rounded-xl hover:bg-kids-blue/90 transition-all shadow-lg shadow-kids-blue/30 flex items-center justify-center gap-2 hover:-translate-y-0.5">
+<span class="material-symbols-outlined">menu_book</span>
+                            Read Digital
+                        </button>
+<button class="flex-1 bg-white border-2 border-kids-pink text-kids-pink font-bold py-3 px-6 rounded-xl hover:bg-kids-pink/5 transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 dark:bg-transparent dark:hover:bg-kids-pink/10">
+<span class="material-symbols-outlined">shopping_bag</span>
+                            Order Copy
+                        </button>
+</div>
+</div>
+<div class="lg:w-2/3 w-full relative z-10">
+<div class="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
+<div class="snap-center shrink-0 w-64 group cursor-pointer">
+<div class="bg-white p-2 rounded-lg shadow-md rotate-1 group-hover:rotate-0 transition-transform duration-300 dark:bg-stone-800">
+<div class="aspect-[3/4] rounded-md overflow-hidden bg-stone-200 relative">
+<img alt="Magazine Cover May" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVozeMtYHYdQdhQclxjJ_xzUdCinsmWwTu_ckukXc2c10CNOJKlYfatKtqcLly33zykGWdyEWQBjVb3cbWEXKEkRwAhqLqC1XEtdLUK0cx_IeagCfxrHLtM6JFwc9BaLn_UMl7IfDJU0l4v1EeFRkLzQHfBeZ3KAz87Te7DqBda4CFYurY3Kwb2vxYED6_7Y40R91xpfM-TaWuKfFP8qdXbq0p2yUoKiXZ3N01G5aIZdwQLETNHR_DqDwL472ICf-j7MbLVV1kHTPP"/>
+<div class="absolute top-2 right-2 bg-primary text-xs font-black px-2 py-1 rounded text-stone-900 shadow-sm">NEW</div>
+</div>
+</div>
+<h5 class="text-center font-bold mt-4 text-text-main dark:text-white">May 2023: Space Adventure</h5>
+</div>
+<div class="snap-center shrink-0 w-64 group cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+<div class="bg-white p-2 rounded-lg shadow-md -rotate-1 group-hover:rotate-0 transition-transform duration-300 dark:bg-stone-800">
+<div class="aspect-[3/4] rounded-md overflow-hidden bg-stone-200">
+<img alt="Magazine Cover April" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_t3imcx1_KsWyJRpXQexTBpwUa5i7SVs6Yfh_F2kWROTJHWoX36qMAdoiCiKH1S4o3dbglQcEQFRsoosqE3uC_bFj4h-i2VMbeUcr6PbTN34v-zTOJyqUkB6JNZtP_oNSOGGO0p1lk90I14BAOn4Gx9Q4mRSmau5aF9HB5J0nE_uUOh4UPyXFNGQuj-nsnuTpgDanvyIwk74zYsgdVxyGeI53MRZceJv18WXzFMxoANjO9zHQIVDeqwCSuWOevprswi6BWlGNhc-"/>
+</div>
+</div>
+<h5 class="text-center font-bold mt-4 text-text-main dark:text-white">April 2023: Under the Sea</h5>
+</div>
+<div class="snap-center shrink-0 w-64 group cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+<div class="bg-white p-2 rounded-lg shadow-md rotate-2 group-hover:rotate-0 transition-transform duration-300 dark:bg-stone-800">
+<div class="aspect-[3/4] rounded-md overflow-hidden bg-stone-200">
+<img alt="Magazine Cover March" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiCTtSqSma205XntrBi_xr4RqVopkYILlS1Q232DOdApFqeYpuH93fDrnOXV2H-IXRlf4BSqasPHHQZYS6SaTVikgLtzx0ORIfBxQWKN2_6ekPb1M2x0Q9Ni30QW9rnGkcLWfDlTU67JI6zJTu-hSjJ2nq08IVC4NsjEt45bmf73ribnIFPnZ0olbJBtS2TL4Od8uCTWfwMQdGNqwZ_R-6Kw0MeSFvT_UlXqAx8dNlGGbtk38T2kEdjPj5PBqAaE88cd4xkkmAbzdF"/>
+</div>
+</div>
+<h5 class="text-center font-bold mt-4 text-text-main dark:text-white">March 2023: Jungle Safari</h5>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-white dark:bg-stone-900 rounded-3xl p-6 shadow-xl border-b-8 border-primary relative">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-black text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">storefront</span> Reward Shop
+                </h3>
+<a class="text-sm font-bold text-primary hover:text-primary-hover" href="#">Visit Shop</a>
+</div>
+<div class="bg-primary-light/50 dark:bg-stone-800 p-4 rounded-2xl mb-4 text-center">
+<p class="text-xs font-bold text-stone-500 uppercase tracking-wide mb-1">Your Balance</p>
+<div class="flex items-center justify-center gap-2 text-3xl font-black text-text-main dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">stars</span> 450
+                </div>
+</div>
+<h4 class="text-sm font-bold text-stone-500 mb-3 uppercase tracking-wide">Unlock Next:</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white dark:bg-stone-800 p-2 rounded-xl border border-stone-100 dark:border-stone-700 shadow-sm">
+<div class="w-16 h-16 bg-kids-blue/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-kids-blue">skateboarding</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="font-bold text-text-main dark:text-white text-sm truncate">Cool Skateboard</h5>
+<div class="flex items-center gap-1 text-primary font-bold text-xs mt-0.5">
+<span class="material-symbols-outlined text-sm">stars</span> 600
+                        </div>
+</div>
+<div class="shrink-0 pr-2">
+<span class="material-symbols-outlined text-stone-300">lock</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-stone-800 p-2 rounded-xl border border-stone-100 dark:border-stone-700 shadow-sm">
+<div class="w-16 h-16 bg-kids-pink/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-kids-pink">palette</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="font-bold text-text-main dark:text-white text-sm truncate">Artist Badge</h5>
+<div class="flex items-center gap-1 text-primary font-bold text-xs mt-0.5">
+<span class="material-symbols-outlined text-sm">stars</span> 500
+                        </div>
+</div>
+<div class="shrink-0 pr-2">
+<span class="material-symbols-outlined text-stone-300">lock</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-stone-800 p-2 rounded-xl border border-stone-100 dark:border-stone-700 shadow-sm opacity-60">
+<div class="w-16 h-16 bg-kids-orange/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl text-kids-orange">pets</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="font-bold text-text-main dark:text-white text-sm truncate">Pet Dragon</h5>
+<div class="flex items-center gap-1 text-primary font-bold text-xs mt-0.5">
+<span class="material-symbols-outlined text-sm">stars</span> 1200
+                        </div>
+</div>
+<div class="shrink-0 pr-2">
+<span class="material-symbols-outlined text-stone-300">lock</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 bg-primary text-text-main font-bold py-3 rounded-xl hover:bg-primary-hover transition-colors shadow-sm">
+                View All Rewards
+            </button>
+</div>
+<div class="bg-white dark:bg-stone-900 rounded-3xl p-6 shadow-lg border border-stone-100 dark:border-stone-700">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-black text-text-main dark:text-white">Your Week</h3>
+<span class="text-xs font-bold bg-stone-100 dark:bg-stone-800 text-stone-500 px-2 py-1 rounded-md">Level 5</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-kids-blue/20 text-kids-blue flex items-center justify-center font-bold text-xs">M</div>
+<div class="flex-1 h-2 bg-stone-100 rounded-full dark:bg-stone-800 overflow-hidden">
+<div class="h-full bg-kids-blue w-full"></div>
+</div>
+<span class="text-xs font-bold text-kids-blue">100%</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-kids-blue/20 text-kids-blue flex items-center justify-center font-bold text-xs">T</div>
+<div class="flex-1 h-2 bg-stone-100 rounded-full dark:bg-stone-800 overflow-hidden">
+<div class="h-full bg-kids-blue w-3/4"></div>
+</div>
+<span class="text-xs font-bold text-kids-blue">75%</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-kids-blue/20 text-kids-blue flex items-center justify-center font-bold text-xs">W</div>
+<div class="flex-1 h-2 bg-stone-100 rounded-full dark:bg-stone-800 overflow-hidden">
+<div class="h-full bg-kids-blue w-1/2"></div>
+</div>
+<span class="text-xs font-bold text-kids-blue">50%</span>
+</div>
+<div class="flex items-center gap-3 opacity-40">
+<div class="w-8 h-8 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center font-bold text-xs dark:bg-stone-800">T</div>
+<div class="flex-1 h-2 bg-stone-100 rounded-full dark:bg-stone-800"></div>
+</div>
+<div class="flex items-center gap-3 opacity-40">
+<div class="w-8 h-8 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center font-bold text-xs dark:bg-stone-800">F</div>
+<div class="flex-1 h-2 bg-stone-100 rounded-full dark:bg-stone-800"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main></div>
