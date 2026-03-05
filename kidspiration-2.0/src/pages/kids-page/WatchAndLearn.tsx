@@ -8,7 +8,7 @@ const videos = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAxbOn0_4n65pSMZirMKWXP2yiZvDrNyUr22OSOtc6lj_8Y_LIFdgdW2SsDqJZA_Z_No-HdHVwxHab7Q_bkRq99CkvUrTweIdrjtiTOCBs7v3mgqnWPH6KwWnAjHBIqkVWFpghud1YPb-Buokx-XxCWGo9_Q2FjcXbawHMTV7oszN1vrt_4MTdhlCNIDSbCuHWQ0ms9TUDVv_H5oSkqp6y5evdIB02ZL8jRe6FsraG34Nm-TTekdF0Xjbg14UzD5SxpEc2HpLIQoCS0",
   },
   {
-    title: "Draw a Funny Monster",
+    title: "Draw a Funny Toy",
     channel: "Art Studio",
     time: "1 week ago",
     duration: "08:30",
