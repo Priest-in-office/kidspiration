@@ -1,0 +1,31 @@
+[33me7380e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Kids' landing page added
+[33md7a85f8[m UI bug fixes and code optimisation
+[33m1029620[m Added the three options for signup as requested
+[33mc479bcc[m Optimised the page and overall performance of the site
+[33ma7555c9[m Changed the background color for light mode across board
+[33m4ae8541[m Fixed the bug making the magazine video crop when in full screen mode
+[33m335db79[m UI fixes
+[33m76b00b6[m Minor bug fixes
+[33m688a86b[m Created and added an activities page detailing all the impact reports
+[33mdb7031c[m Fixed the bug affecting the hero images on mobile, and also optimised the loading to improve performance. Also added live images where appropriate
+[33m89f57fc[m Merge branch 'test-env' to the main branch
+[33m8b97bcc[m[33m ([m[1;31morigin/test-env[m[33m, [m[1;32mtest-env[m[33m)[m Add large magazine files to Git LFS
+[33mc21ef68[m One more try
+[33mb032e12[m Configure Git LFS tracking
+[33m9815603[m Configure Git LFS tracking
+[33m7f28b6c[m Added the read httn feature and coloring to the appropriate pages
+[33m0259e56[m Added a live page, 4Ps, and also smooth scroll with Lenis and few animations
+[33m8f7d6e2[m Slight adjustments to the form
+[33m585cfac[m feat: add CountrySelect component for country selection with styling and error handling.
+[33m75062de[m Updated the form fields to include a country field and added visibility to the password
+[33me2edd31[m Added a custom preloader hook to ensure the critical images are fully loaded before the user sees anything
+[33m1779b21[m Added a payment page, and set it up to use paystack. Will update it to use a real paystack key, and later update the monthly recurring payment
+[33m73c2762[m Fixed colour contrasts on dark mode
+[33m7de829c[m Added a full darkmode feature
+[33m138b29a[m Added the Healing Streams Section to the Home page
+[33mcd5d19f[m Minor adjustments to the footer and search bar
+[33m4865385[m Added an about page as well as updated the images across the site
+[33m473fb0d[m Fixed the loading issue, now there is a 3 second break before the page renders
+[33m2c130be[m Worked on a demo site, with filler images across the pages. Also added the sign up and login forms
+[33m83049de[m Completed a temporary demo of the landing page
+[33me11c7a4[m First Commit
