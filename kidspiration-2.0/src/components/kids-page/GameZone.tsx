@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const games = [
   {
+    id: "math-blaster",
     name: "Math Blaster",
     tag: "Educational",
     tagColor: "kids-green",
@@ -8,6 +11,7 @@ const games = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuB0bVqNW1O8s-Ec1mVOglQwy1c-HRQi95oy11pDm1_fsdtf4jz__j2oYBp16CACyVdQbQbvUChskBGvYLaau4i0dZtc5bU2rd0eW1tBrXCIPyAsvCiD1hVT3l3tnZYEQG-Zp3eoCuZ1M5AP7_xBzG0RCsoMrJrt7wK-VgcFB4g4-HiFI4uM5rL02o1jHIz4VwMJHyLn1w6eitGZpPJvq-NtItOItZCUvq9YW6PW-jyvizPrRSGIA-p5JJoAfEIzSQKSlTdb_OMKRr8f",
   },
   {
+    id: "space-explorer",
     name: "Space Explorer",
     tag: "Adventure",
     tagColor: "kids-blue",
@@ -16,6 +20,7 @@ const games = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA70ydNnGHNgLce5UO5unp0NmhGkB0G57CcMxV7GPXlYhVEtdYiTfpLpHTzw3b4SJiAGuzifK_uaQ7S6Hy4OUjbzRGfhzQgt17YX9u3IjkcnpwrVBm5agfpnFgPOxOGvLVuKSjuGYADO7zD6rLqr6nwURTi-POg2mWdOflD_zcjh61LKuWVJK0YrhPTldD35X6tE9RJmIBJG0LOonwHdo5MnOOOcHGI2eqjGvdueVlOqJSsFApXIMXIEKyA6TspNoLczXD-Id-gH4X3",
   },
   {
+    id: "color-match",
     name: "Color Match",
     tag: "Puzzle",
     tagColor: "kids-pink",
@@ -24,6 +29,7 @@ const games = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAY6lfgtev2lCL8z0dNd4uo6xn0oi_u0FkO-Dfhl_WzLFl79KWLqwL42oGOC5Fb50Jh_pmcolQKXpsH26ySNNyknun7equvdNC_N-sOEmfXsqwqd_8CIqEGotpdgRpkV4cap--b9cCZseOXZDPdElfsfIlzza62WQKtLFZ2PlLhHxv56QibkK5GhMzuZPjaKSJ8TzbzqWxsHVjfLfi6lFPwFqBtkY_hIqyTa_nLvutTEPo339kEiknbPVe-81OSs-J_8fxAzUVrpQCN",
   },
   {
+    id: "dino-run",
     name: "Dino Run",
     tag: "Action",
     tagColor: "kids-orange",
@@ -32,6 +38,7 @@ const games = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCORmS8m7zAXoEnojdN1MMZ1_XXAxLRP0aNC0asj-L3NQAtKMrUKo1-rAKTOh1gpILgtIpJTq31AhPYllwU1gdVHXsWiqRZAEx9fVXKcr1qo_d-w4qWiybr2IajaFsy_syLNCLMOU1Ny2Uvu8ZTW_5KZRRYDa5WFCTCutob41tdcJZhYShfcBesaTedvhvEEJaXzsywYODjyQPkg_h8CLA6xeJrTsWSL_SYAd2Q27aXtvYDJzHv-VbPJN3VD48Iv8UVjJ7_DQiJ8xpN",
   },
   {
+    id: "word-scramble",
     name: "Word Scramble",
     tag: "Word Game",
     tagColor: "primary",
@@ -94,7 +101,8 @@ export default function GameZone() {
         {games.map((g) => {
           const clr = colorMap[g.tagColor] ?? colorMap.primary;
           return (
-            <div
+            <Link 
+              to={`/kids/game/${g.id}`}
               key={g.name}
               className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
@@ -117,7 +125,7 @@ export default function GameZone() {
                   {g.tag}
                 </span>
               </div>
-            </div>
+            </Link>
           );
         })}
 

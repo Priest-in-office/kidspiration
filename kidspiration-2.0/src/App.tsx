@@ -17,6 +17,7 @@ import FourPs from "./pages/FourPs";
 import ReadHttn from "./pages/ReadHttn";
 import ImpactStories from "./pages/ImpactStories";
 import KidsDashboard from "./pages/KidsDashboard";
+import GameShell from "./components/kids-page/games/GameShell";
 
 // Local assets to preload
 import heroImg from "./assets/kidspiration-1.png";
@@ -74,6 +75,14 @@ export default function App() {
           element={
             <KidsProvider>
               <KidsDashboard />
+            </KidsProvider>
+          }
+        />
+        <Route
+          path="/kids/game/:gameId"
+          element={
+            <KidsProvider>
+              <GameShell />
             </KidsProvider>
           }
         />

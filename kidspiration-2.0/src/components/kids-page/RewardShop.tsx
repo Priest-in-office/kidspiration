@@ -1,3 +1,5 @@
+import { useKids } from "../../context/KidsContext";
+
 const rewards = [
   {
     name: "Cool Skateboard",
@@ -29,6 +31,8 @@ const rewards = [
 ];
 
 export default function RewardShop() {
+  const { sparks } = useKids();
+
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border-b-8 border-primary relative">
       <div className="flex items-center justify-between mb-4">
@@ -55,7 +59,7 @@ export default function RewardShop() {
           <span className="material-symbols-outlined text-primary text-3xl">
             stars
           </span>{" "}
-          450
+          {sparks}
         </div>
       </div>
 
