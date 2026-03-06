@@ -1,37 +1,14 @@
+import { Link } from "react-router-dom";
 import { useKids } from "../../context/KidsContext";
-
-const rewards = [
-  {
-    name: "Cool Skateboard",
-    cost: 600,
-    icon: "skateboarding",
-    color: "text-kids-blue",
-    bg: "bg-kids-blue/10",
-    locked: true,
-    faded: false,
-  },
-  {
-    name: "Artist Badge",
-    cost: 500,
-    icon: "palette",
-    color: "text-kids-pink",
-    bg: "bg-kids-pink/10",
-    locked: true,
-    faded: false,
-  },
-  {
-    name: "Pet Dragon",
-    cost: 1200,
-    icon: "pets",
-    color: "text-kids-orange",
-    bg: "bg-kids-orange/10",
-    locked: true,
-    faded: true,
-  },
-];
+import { REWARDS } from "../../data/rewards";
 
 export default function RewardShop() {
-  const { sparks } = useKids();
+  const { sparks, unlockedRewards } = useKids();
+
+  // Show the 3 cheapest rewards the user hasn't unlocked yet
+  const nextRewards = REWARDS.filter((r) => !unlockedRewards.includes(r.id))
+    .sort((a, b) => a.cost - b.cost)
+    .slice(0, 3);
 
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border-b-8 border-primary relative">
@@ -42,12 +19,12 @@ export default function RewardShop() {
           </span>{" "}
           Reward Shop
         </h3>
-        <a
+        <Link
           className="text-sm font-bold text-primary hover:text-primary-hover"
-          href="#"
+          to="/kids/rewards"
         >
           Visit Shop
-        </a>
+        </Link>
       </div>
 
       {/* Balance */}
@@ -63,46 +40,64 @@ export default function RewardShop() {
         </div>
       </div>
 
+      {/* Unlocked count */}
+      {unlockedRewards.length > 0 && (
+        <div className="flex items-center gap-2 mb-3 text-xs font-bold text-kids-green">
+          <span className="material-symbols-outlined text-sm">verified</span>
+          {unlockedRewards.length} / {REWARDS.length} rewards unlocked
+        </div>
+      )}
+
       <h4 className="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide">
         Unlock Next:
       </h4>
 
       <div className="space-y-4">
-        {rewards.map((r) => (
-          <div
-            key={r.name}
-            className={`flex items-center gap-4 bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm ${r.faded ? "opacity-60" : ""}`}
-          >
+        {nextRewards.map((r) => {
+          const canAfford = sparks >= r.cost;
+          return (
             <div
-              className={`w-16 h-16 ${r.bg} rounded-lg flex items-center justify-center shrink-0`}
+              key={r.id}
+              className="flex items-center gap-4 bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm"
             >
-              <span className={`material-symbols-outlined text-3xl ${r.color}`}>
-                {r.icon}
-              </span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <h5 className="font-bold text-text-main dark:text-white text-sm truncate">
-                {r.name}
-              </h5>
-              <div className="flex items-center gap-1 text-primary font-bold text-xs mt-0.5">
-                <span className="material-symbols-outlined text-sm">stars</span>{" "}
-                {r.cost}
-              </div>
-            </div>
-            {r.locked && (
-              <div className="shrink-0 pr-2">
-                <span className="material-symbols-outlined text-slate-300">
-                  lock
+              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-3xl text-kids-blue">
+                  {r.icon}
                 </span>
               </div>
-            )}
-          </div>
-        ))}
+              <div className="flex-1 min-w-0">
+                <h5 className="font-bold text-text-main dark:text-white text-sm truncate">
+                  {r.name}
+                </h5>
+                <div className="flex items-center gap-1 text-primary font-bold text-xs mt-0.5">
+                  <span className="material-symbols-outlined text-sm">
+                    stars
+                  </span>{" "}
+                  {r.cost}
+                </div>
+              </div>
+              <div className="shrink-0 pr-2">
+                {canAfford ? (
+                  <span className="material-symbols-outlined text-kids-green">
+                    lock_open
+                  </span>
+                ) : (
+                  <span className="material-symbols-outlined text-slate-300">
+                    lock
+                  </span>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      <button className="w-full mt-4 bg-primary text-text-main font-bold py-3 rounded-xl hover:bg-primary-hover transition-colors shadow-sm">
+      <Link
+        to="/kids/rewards"
+        className="w-full mt-4 bg-primary text-text-main font-bold py-3 rounded-xl hover:bg-primary-hover transition-colors shadow-sm block text-center"
+      >
         View All Rewards
-      </button>
+      </Link>
     </div>
   );
 }

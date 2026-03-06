@@ -7,8 +7,9 @@ const games = [
     tag: "Educational",
     tagColor: "kids-green",
     bgColor: "kids-green",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB0bVqNW1O8s-Ec1mVOglQwy1c-HRQi95oy11pDm1_fsdtf4jz__j2oYBp16CACyVdQbQbvUChskBGvYLaau4i0dZtc5bU2rd0eW1tBrXCIPyAsvCiD1hVT3l3tnZYEQG-Zp3eoCuZ1M5AP7_xBzG0RCsoMrJrt7wK-VgcFB4g4-HiFI4uM5rL02o1jHIz4VwMJHyLn1w6eitGZpPJvq-NtItOItZCUvq9YW6PW-jyvizPrRSGIA-p5JJoAfEIzSQKSlTdb_OMKRr8f",
+    icon: "rocket_launch",
+    subIcons: ["add", "close", "pin"],
+    gradient: "from-emerald-400 to-green-500",
   },
   {
     id: "space-explorer",
@@ -16,8 +17,9 @@ const games = [
     tag: "Adventure",
     tagColor: "kids-blue",
     bgColor: "kids-blue",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA70ydNnGHNgLce5UO5unp0NmhGkB0G57CcMxV7GPXlYhVEtdYiTfpLpHTzw3b4SJiAGuzifK_uaQ7S6Hy4OUjbzRGfhzQgt17YX9u3IjkcnpwrVBm5agfpnFgPOxOGvLVuKSjuGYADO7zD6rLqr6nwURTi-POg2mWdOflD_zcjh61LKuWVJK0YrhPTldD35X6tE9RJmIBJG0LOonwHdo5MnOOOcHGI2eqjGvdueVlOqJSsFApXIMXIEKyA6TspNoLczXD-Id-gH4X3",
+    icon: "public",
+    subIcons: ["star", "dark_mode", "person"],
+    gradient: "from-blue-400 to-indigo-500",
   },
   {
     id: "color-match",
@@ -25,8 +27,9 @@ const games = [
     tag: "Puzzle",
     tagColor: "kids-pink",
     bgColor: "kids-pink",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAY6lfgtev2lCL8z0dNd4uo6xn0oi_u0FkO-Dfhl_WzLFl79KWLqwL42oGOC5Fb50Jh_pmcolQKXpsH26ySNNyknun7equvdNC_N-sOEmfXsqwqd_8CIqEGotpdgRpkV4cap--b9cCZseOXZDPdElfsfIlzza62WQKtLFZ2PlLhHxv56QibkK5GhMzuZPjaKSJ8TzbzqWxsHVjfLfi6lFPwFqBtkY_hIqyTa_nLvutTEPo339kEiknbPVe-81OSs-J_8fxAzUVrpQCN",
+    icon: "palette",
+    subIcons: ["circle", "square", "hexagon"],
+    gradient: "from-pink-400 to-rose-500",
   },
   {
     id: "dino-run",
@@ -34,8 +37,9 @@ const games = [
     tag: "Action",
     tagColor: "kids-orange",
     bgColor: "kids-orange",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCORmS8m7zAXoEnojdN1MMZ1_XXAxLRP0aNC0asj-L3NQAtKMrUKo1-rAKTOh1gpILgtIpJTq31AhPYllwU1gdVHXsWiqRZAEx9fVXKcr1qo_d-w4qWiybr2IajaFsy_syLNCLMOU1Ny2Uvu8ZTW_5KZRRYDa5WFCTCutob41tdcJZhYShfcBesaTedvhvEEJaXzsywYODjyQPkg_h8CLA6xeJrTsWSL_SYAd2Q27aXtvYDJzHv-VbPJN3VD48Iv8UVjJ7_DQiJ8xpN",
+    icon: "sprint",
+    subIcons: ["park", "sunny", "air"],
+    gradient: "from-orange-400 to-amber-500",
   },
   {
     id: "word-scramble",
@@ -43,8 +47,39 @@ const games = [
     tag: "Word Game",
     tagColor: "primary",
     bgColor: "primary",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBuy1UCstniKG_b1f0uwNZwUmNiufO4NrxghhhVLevk6lxmvHfAjMm1gF08vCFXCqdqVC_cKKDrNxRHKOexs1zb4L8e0WBtKtov7-r30u3Nn9z40KKBBwsvrKHrmSpEMz1E5s2wb2SMYCRjWnew2rqxjBCG1-UgIBIAYEtVFKC61fM6ZssfMowRqouTbCvNOn5bQONWPdSfLz7fpf9zm9jBMCVMLdUvYmlcDCU1anS9yesSlTMQeBpbO_AwT0h7p6bPIjM5TRUbESE5",
+    icon: "spellcheck",
+    subIcons: ["lightbulb", "edit", "description"],
+    gradient: "from-yellow-400 to-amber-400",
+  },
+  {
+    id: "bible-trivia",
+    name: "Bible Trivia",
+    tag: "Bible",
+    tagColor: "kids-orange",
+    bgColor: "kids-orange",
+    icon: "menu_book",
+    subIcons: ["church", "star", "lightbulb"],
+    gradient: "from-amber-500 to-orange-500",
+  },
+  {
+    id: "verse-scramble",
+    name: "Verse Scramble",
+    tag: "Bible",
+    tagColor: "kids-green",
+    bgColor: "kids-green",
+    icon: "auto_stories",
+    subIcons: ["menu_book", "shuffle", "auto_awesome"],
+    gradient: "from-teal-400 to-emerald-500",
+  },
+  {
+    id: "fill-the-verse",
+    name: "Fill the Verse",
+    tag: "Bible",
+    tagColor: "kids-blue",
+    bgColor: "kids-blue",
+    icon: "edit_note",
+    subIcons: ["history_edu", "chat", "star"],
+    gradient: "from-violet-400 to-purple-500",
   },
 ];
 
@@ -101,19 +136,23 @@ export default function GameZone() {
         {games.map((g) => {
           const clr = colorMap[g.tagColor] ?? colorMap.primary;
           return (
-            <Link 
+            <Link
               to={`/kids/game/${g.id}`}
               key={g.name}
               className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              <div
-                className={`aspect-square w-full ${clr.bg} p-4 flex items-center justify-center`}
-              >
-                <img
-                  alt={g.name}
-                  className="w-16 h-16 object-contain drop-shadow-md group-hover:scale-110 transition-transform"
-                  src={g.image}
+              {/* Dark card with colored accent icon */}
+              <div className="aspect-square w-full bg-slate-100 dark:bg-slate-800 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                {/* Subtle colored ring */}
+                <div
+                  className={`absolute w-20 h-20 rounded-full border-4 ${clr.text} opacity-15`}
                 />
+                {/* Large accent-colored icon */}
+                <span
+                  className={`material-symbols-outlined text-7xl ${clr.text} drop-shadow group-hover:scale-110 transition-transform duration-300 relative z-10`}
+                >
+                  {g.icon}
+                </span>
               </div>
               <div className="p-3 text-center">
                 <h4 className="font-bold text-text-main dark:text-white truncate text-sm">

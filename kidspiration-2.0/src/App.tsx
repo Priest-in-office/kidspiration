@@ -18,6 +18,7 @@ import ReadHttn from "./pages/ReadHttn";
 import ImpactStories from "./pages/ImpactStories";
 import KidsDashboard from "./pages/KidsDashboard";
 import GameShell from "./components/kids-page/games/GameShell";
+import RewardShopPage from "./components/kids-page/RewardShopPage";
 
 // Local assets to preload
 import heroImg from "./assets/kidspiration-1.png";
@@ -83,6 +84,14 @@ export default function App() {
           element={
             <KidsProvider>
               <GameShell />
+            </KidsProvider>
+          }
+        />
+        <Route
+          path="/kids/rewards"
+          element={
+            <KidsProvider>
+              <RewardShopPage />
             </KidsProvider>
           }
         />

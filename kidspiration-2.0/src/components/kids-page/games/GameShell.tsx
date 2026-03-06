@@ -6,6 +6,9 @@ import WordScramble from "./WordScramble";
 import ColorMatch from "./ColorMatch";
 import SpaceExplorer from "./SpaceExplorer";
 import DinoRun from "./DinoRun";
+import BibleTrivia from "./BibleTrivia";
+import VerseScramble from "./VerseScramble";
+import FillTheVerse from "./FillTheVerse";
 
 // I'll add more games to this Registry as I build
 const GAMES: Record<string, { title: string; component: React.FC<GameProps> }> =
@@ -15,6 +18,9 @@ const GAMES: Record<string, { title: string; component: React.FC<GameProps> }> =
     "color-match": { title: "Color Match", component: ColorMatch },
     "space-explorer": { title: "Space Explorer", component: SpaceExplorer },
     "dino-run": { title: "Dino Run", component: DinoRun },
+    "bible-trivia": { title: "Bible Trivia", component: BibleTrivia },
+    "verse-scramble": { title: "Verse Scramble", component: VerseScramble },
+    "fill-the-verse": { title: "Fill the Verse", component: FillTheVerse },
   };
 
 // The games will receives these props from the shell
