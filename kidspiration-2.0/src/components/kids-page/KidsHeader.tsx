@@ -1,10 +1,12 @@
 import { useTheme } from "../../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/kidspiration-logo.png";
+import { useKids } from "../../context/KidsContext";
 
 export default function KidsHeader() {
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
+  const { sparks, avatar } = useKids();
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b-4 border-primary bg-white px-6 py-3 lg:px-10 shadow-sm dark:border-primary dark:bg-slate-900">
@@ -39,7 +41,7 @@ export default function KidsHeader() {
           </span>
           <div className="flex flex-col leading-none">
             <span className="font-black text-lg text-text-main dark:text-white">
-              450
+              {sparks}
             </span>
             <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider dark:text-slate-400">
               Sparks
@@ -63,7 +65,7 @@ export default function KidsHeader() {
           <img
             alt="Avatar"
             className="h-full w-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAolA6YUqOaldvT97ekPzBSdYDq58hce-NARSUCdF-vvh0qYrbAM0dlX7m263gW5lRDy-aL-6eb6bmiJ92CT7sQTqztdeadOt2KNghZ95NPJj32v5KVZ8yVYQr66aM6wwHV3zKYM8Ojn97G0casH09DLDKEd41GM6OckqmiNJLOFxm7JaDKFlRt7MVcRYk2TI-lWfLJxAiMHYIcGh3QWzy0WdwfNerlpMlFZvLVL4GR1e10GfOKqsH5yZxFUQyaOAcYj4ydQaQn1oCl"
+            src={avatar}
           />
         </button>
       </div>

@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
+import { useImagePreloader } from "./hooks/useImagePreloader";
+import { KidsProvider } from "./context/KidsContext";
 import Home from "./pages/Home";
 import SignupChooser from "./pages/SignupChooser";
 import Signup from "./pages/Signup";
@@ -14,8 +16,7 @@ import Live from "./pages/Live";
 import FourPs from "./pages/FourPs";
 import ReadHttn from "./pages/ReadHttn";
 import ImpactStories from "./pages/ImpactStories";
-import KidsDashboard from "./pages/kids-page/KidsDashboard";
-import { useImagePreloader } from "./hooks/useImagePreloader";
+import KidsDashboard from "./pages/KidsDashboard";
 
 // Local assets to preload
 import heroImg from "./assets/kidspiration-1.png";
@@ -68,7 +69,14 @@ export default function App() {
         <Route path="/live" element={<Live />} />
         <Route path="/4ps" element={<FourPs />} />
         <Route path="/stories" element={<ImpactStories />} />
-        <Route path="/kids" element={<KidsDashboard />} />
+        <Route
+          path="/kids"
+          element={
+            <KidsProvider>
+              <KidsDashboard />
+            </KidsProvider>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/partner/donate" element={<Donate />} />

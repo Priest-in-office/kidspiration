@@ -1,6 +1,9 @@
+import { useKids } from "../../context/KidsContext";
+
 export default function DailyChallenge() {
-  const completed = 2;
-  const total = 3;
+  const { streak } = useKids();
+  const completed = streak;
+  const total = 5;
   const pct = Math.round((completed / total) * 100);
 
   return (

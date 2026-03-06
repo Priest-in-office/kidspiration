@@ -1,11 +1,11 @@
-import KidsHeader from "./KidsHeader";
-import WelcomeBanner from "./WelcomeBanner";
-import DailyChallenge from "./DailyChallenge";
-import WatchAndLearn from "./WatchAndLearn";
-import GameZone from "./GameZone";
-import MagazineSection from "./MagazineSection";
-import RewardShop from "./RewardShop";
-import WeeklyActivity from "./WeeklyActivity";
+import KidsHeader from "../components/kids-page/KidsHeader";
+import WelcomeBanner from "../components/kids-page/WelcomeBanner";
+import DailyChallenge from "../components/kids-page/DailyChallenge";
+import WatchAndLearn from "../components/kids-page/WatchAndLearn";
+import GameZone from "../components/kids-page/GameZone";
+import MagazineSection from "../components/kids-page/MagazineSection";
+import RewardShop from "../components/kids-page/RewardShop";
+import WeeklyActivity from "../components/kids-page/WeeklyActivity";
 
 export default function KidsDashboard() {
   return (
