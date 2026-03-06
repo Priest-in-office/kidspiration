@@ -1,6 +1,8 @@
 import { useKids } from "../../context/KidsContext";
+import { useNavigate } from "react-router-dom";
 
 export default function WelcomeBanner() {
+  const navigate = useNavigate();
   const hour = new Date().getHours();
   const greeting =
     hour < 12 ? "Good Morning" : hour < 17 ? "Good Afternoon" : "Good Evening";
@@ -33,7 +35,10 @@ export default function WelcomeBanner() {
             <span className="material-symbols-outlined">calendar_month</span>
             Daily Streak: {streak}
           </button>
-          <button className="bg-kids-blue text-white font-bold py-3 px-6 rounded-2xl hover:bg-opacity-90 transition-all shadow-lg shadow-kids-blue/30 flex items-center gap-2 hover:-translate-y-1">
+          <button
+            onClick={() => navigate("/kids/avatar")}
+            className="bg-kids-blue text-white font-bold py-3 px-6 rounded-2xl hover:bg-opacity-90 transition-all shadow-lg shadow-kids-blue/30 flex items-center gap-2 hover:-translate-y-1"
+          >
             <span className="material-symbols-outlined">add_reaction</span>
             Customize Avatar
           </button>

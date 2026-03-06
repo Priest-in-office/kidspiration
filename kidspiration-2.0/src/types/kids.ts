@@ -24,6 +24,8 @@ export interface GameConfig {
   name: string;
   tag: string;
   tagColor: string;
+  bgColor: string;
   icon: string;
+  subIcons: string[];
   gradient: string;
 }

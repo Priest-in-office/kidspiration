@@ -1,88 +1,5 @@
 import { Link } from "react-router-dom";
-
-const games = [
-  {
-    id: "math-blaster",
-    name: "Math Blaster",
-    tag: "Educational",
-    tagColor: "kids-green",
-    bgColor: "kids-green",
-    icon: "rocket_launch",
-    subIcons: ["add", "close", "pin"],
-    gradient: "from-emerald-400 to-green-500",
-  },
-  {
-    id: "space-explorer",
-    name: "Space Explorer",
-    tag: "Adventure",
-    tagColor: "kids-blue",
-    bgColor: "kids-blue",
-    icon: "public",
-    subIcons: ["star", "dark_mode", "person"],
-    gradient: "from-blue-400 to-indigo-500",
-  },
-  {
-    id: "color-match",
-    name: "Color Match",
-    tag: "Puzzle",
-    tagColor: "kids-pink",
-    bgColor: "kids-pink",
-    icon: "palette",
-    subIcons: ["circle", "square", "hexagon"],
-    gradient: "from-pink-400 to-rose-500",
-  },
-  {
-    id: "dino-run",
-    name: "Dino Run",
-    tag: "Action",
-    tagColor: "kids-orange",
-    bgColor: "kids-orange",
-    icon: "sprint",
-    subIcons: ["park", "sunny", "air"],
-    gradient: "from-orange-400 to-amber-500",
-  },
-  {
-    id: "word-scramble",
-    name: "Word Scramble",
-    tag: "Word Game",
-    tagColor: "primary",
-    bgColor: "primary",
-    icon: "spellcheck",
-    subIcons: ["lightbulb", "edit", "description"],
-    gradient: "from-yellow-400 to-amber-400",
-  },
-  {
-    id: "bible-trivia",
-    name: "Bible Trivia",
-    tag: "Bible",
-    tagColor: "kids-orange",
-    bgColor: "kids-orange",
-    icon: "menu_book",
-    subIcons: ["church", "star", "lightbulb"],
-    gradient: "from-amber-500 to-orange-500",
-  },
-  {
-    id: "verse-scramble",
-    name: "Verse Scramble",
-    tag: "Bible",
-    tagColor: "kids-green",
-    bgColor: "kids-green",
-    icon: "auto_stories",
-    subIcons: ["menu_book", "shuffle", "auto_awesome"],
-    gradient: "from-teal-400 to-emerald-500",
-  },
-  {
-    id: "fill-the-verse",
-    name: "Fill the Verse",
-    tag: "Bible",
-    tagColor: "kids-blue",
-    bgColor: "kids-blue",
-    icon: "edit_note",
-    subIcons: ["history_edu", "chat", "star"],
-    gradient: "from-violet-400 to-purple-500",
-  },
-];
-
+import { GAMES } from "../../data/games";
 // Map dynamic color tokens to actual class strings so Tailwind can detect them
 const colorMap: Record<string, { bg: string; text: string; tagBg: string }> = {
   "kids-green": {
@@ -133,7 +50,7 @@ export default function GameZone() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {games.map((g) => {
+        {GAMES.map((g) => {
           const clr = colorMap[g.tagColor] ?? colorMap.primary;
           return (
             <Link
