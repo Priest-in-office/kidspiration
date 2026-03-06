@@ -2,11 +2,20 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useKids } from "../../../context/KidsContext";
 import { useState } from "react";
 import MathBlaster from "./MathBlaster";
+import WordScramble from "./WordScramble";
+import ColorMatch from "./ColorMatch";
+import SpaceExplorer from "./SpaceExplorer";
+import DinoRun from "./DinoRun";
 
 // I'll add more games to this Registry as I build
-const GAMES: Record<string, { title: string; component: React.FC<GameProps> }> = {
-   "math-blaster": { title: "Math Blaster", component: MathBlaster },
-};
+const GAMES: Record<string, { title: string; component: React.FC<GameProps> }> =
+  {
+    "math-blaster": { title: "Math Blaster", component: MathBlaster },
+    "word-scramble": { title: "Word Scramble", component: WordScramble },
+    "color-match": { title: "Color Match", component: ColorMatch },
+    "space-explorer": { title: "Space Explorer", component: SpaceExplorer },
+    "dino-run": { title: "Dino Run", component: DinoRun },
+  };
 
 // The games will receives these props from the shell
 export interface GameProps {
@@ -67,8 +76,8 @@ export default function GameShell() {
         </div>
         <h2 className="text-4xl font-black">Great Job!</h2>
         <div className="flex items-center gap-2 text-2xl font-black text-primary">
-          <span className="material-symbols-outlined text-3xl">stars</span>
-          +{sparksEarned} Sparks Earned
+          <span className="material-symbols-outlined text-3xl">stars</span>+
+          {sparksEarned} Sparks Earned
         </div>
         <div className="flex gap-4 mt-4">
           <button
