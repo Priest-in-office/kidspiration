@@ -305,7 +305,7 @@ export default function WordScramble({ onComplete }: GameProps) {
             onKeyDown={handleKeyDown}
             disabled={!!feedback}
             autoFocus
-            placeholder="Type your answer..."
+            placeholder="Answer here"
             className="w-full h-14 text-center text-2xl font-black tracking-[0.3em] rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white placeholder-slate-300 dark:placeholder-slate-600 focus:border-kids-blue focus:ring-0 outline-none transition-colors uppercase"
             maxLength={currentWord.word.length}
             autoComplete="off"

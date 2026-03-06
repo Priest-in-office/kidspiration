@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { GAMES } from "../../data/games";
+
 // Map dynamic color tokens to actual class strings so Tailwind can detect them
 const colorMap: Record<string, { bg: string; text: string; tagBg: string }> = {
   "kids-green": {
@@ -30,6 +32,9 @@ const colorMap: Record<string, { bg: string; text: string; tagBg: string }> = {
 };
 
 export default function GameZone() {
+  const [showAll, setShowAll] = useState(false);
+  const displayedGames = showAll ? GAMES : GAMES.slice(0, 3);
+
   return (
     <section className="bg-primary/5 rounded-3xl p-6 border-2 border-primary/20 dark:bg-slate-800/50 dark:border-slate-700">
       <div className="flex items-center justify-between mb-6">
@@ -43,14 +48,21 @@ export default function GameZone() {
             Game Zone
           </h3>
         </div>
-        <button className="text-kids-orange font-bold hover:bg-kids-orange/10 px-4 py-2 rounded-xl transition-colors flex items-center gap-1">
-          View All{" "}
-          <span className="material-symbols-outlined">arrow_forward</span>
-        </button>
+        {GAMES.length > 3 && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-kids-orange font-bold hover:bg-kids-orange/10 px-4 py-2 rounded-xl transition-colors flex items-center gap-1"
+          >
+            {showAll ? "Show Less" : "View All"}{" "}
+            <span className="material-symbols-outlined">
+              {showAll ? "expand_less" : "arrow_forward"}
+            </span>
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {GAMES.map((g) => {
+        {displayedGames.map((g) => {
           const clr = colorMap[g.tagColor] ?? colorMap.primary;
           return (
             <Link
@@ -86,14 +98,21 @@ export default function GameZone() {
         })}
 
         {/* More Games placeholder */}
-        <div className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-slate-700">
-          <div className="text-center p-4">
-            <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-2 text-slate-400 dark:bg-slate-800">
-              <span className="material-symbols-outlined">add</span>
+        {!showAll && GAMES.length > 3 && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="w-full group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-slate-700"
+          >
+            <div className="text-center p-4">
+              <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-2 text-slate-400 group-hover:bg-kids-orange/20 group-hover:text-kids-orange transition-colors">
+                <span className="material-symbols-outlined">grid_view</span>
+              </div>
+              <h4 className="font-bold text-slate-400 group-hover:text-kids-orange text-sm transition-colors">
+                +{GAMES.length - 3} More Games
+              </h4>
             </div>
-            <h4 className="font-bold text-slate-400 text-sm">More Games</h4>
-          </div>
-        </div>
+          </button>
+        )}
       </div>
     </section>
   );
