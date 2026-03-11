@@ -48,6 +48,9 @@ export default function ReadHttn() {
   const [activeLayer, setActiveLayer] = useState<0 | 1>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true); // Default to playing
   const [isVideoEnded, setIsVideoEnded] = useState<boolean>(false);
+  const [slideDirection, setSlideDirection] = useState<
+    "forward" | "backward" | "none"
+  >("none");
 
   // We keep two sources, one for each video element layer.
   // Initially, Layer 0 plays Page 1 (index 0). Layer 1 preloads Page 2 (index 1).
@@ -72,6 +75,10 @@ export default function ReadHttn() {
     setIsVideoEnded(false);
 
     const isNext = newIndex === currentPage + 1;
+    // If not strict next (i.e. jumping pages or Prev), determine direction relative to current
+    const isForward = newIndex > currentPage;
+    setSlideDirection(isForward ? "forward" : "backward");
+
     const newActiveLayer = activeLayer === 0 ? 1 : 0;
     const layerToPreload = activeLayer; // The one currently active will become hidden and get preloaded
 
@@ -162,7 +169,23 @@ export default function ReadHttn() {
   }, [activeLayer, isPlaying]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background-light dark:bg-slate-950 font-sans">
+    <div className="min-h-screen flex flex-col bg-background-light dark:bg-slate-950 font-sans overflow-x-hidden">
+      <style>{`
+        @keyframes sweepForward {
+          0% { transform: translateX(100%); box-shadow: -15px 0 25px rgba(0,0,0,0.15); }
+          100% { transform: translateX(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+        }
+        @keyframes sweepBackward {
+          0% { transform: translateX(-100%); box-shadow: 15px 0 25px rgba(0,0,0,0.15); }
+          100% { transform: translateX(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+        }
+        .animate-sweep-forward {
+          animation: sweepForward 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .animate-sweep-backward {
+          animation: sweepBackward 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+      `}</style>
       <Navbar />
 
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center">
@@ -185,11 +208,21 @@ export default function ReadHttn() {
           <video
             ref={video0Ref}
             src={videoSrcs[0]}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover origin-center ${
               activeLayer === 0
-                ? "opacity-100 z-10"
-                : "opacity-0 z-0 pointer-events-none"
+                ? "z-10 opacity-100 " +
+                  (slideDirection === "forward"
+                    ? "animate-sweep-forward"
+                    : slideDirection === "backward"
+                      ? "animate-sweep-backward"
+                      : "")
+                : "z-0 opacity-100 mix-blend-normal pointer-events-none"
             }`}
+            style={
+              {
+                // We only want the shadow to appear on the active sliding card, but we use the animation class for that.
+              }
+            }
             onEnded={handleVideoEnded}
             playsInline
           />
@@ -198,10 +231,15 @@ export default function ReadHttn() {
           <video
             ref={video1Ref}
             src={videoSrcs[1]}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover origin-center ${
               activeLayer === 1
-                ? "opacity-100 z-10"
-                : "opacity-0 z-0 pointer-events-none"
+                ? "z-10 opacity-100 " +
+                  (slideDirection === "forward"
+                    ? "animate-sweep-forward"
+                    : slideDirection === "backward"
+                      ? "animate-sweep-backward"
+                      : "")
+                : "z-0 opacity-100 mix-blend-normal pointer-events-none"
             }`}
             onEnded={handleVideoEnded}
             playsInline
