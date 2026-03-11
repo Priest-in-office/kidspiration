@@ -44,9 +44,10 @@ const MAGAZINE_PAGES = [
 ];
 
 export default function ReadHttn() {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const [activeLayer, setActiveLayer] = useState<0 | 1>(0);
-  const [isPlaying, setIsPlaying] = useState(true); // Default to playing
+  const [isPlaying, setIsPlaying] = useState<boolean>(true); // Default to playing
+  const [isVideoEnded, setIsVideoEnded] = useState<boolean>(false);
 
   // We keep two sources, one for each video element layer.
   // Initially, Layer 0 plays Page 1 (index 0). Layer 1 preloads Page 2 (index 1).
@@ -66,6 +67,9 @@ export default function ReadHttn() {
       newIndex === currentPage
     )
       return;
+
+    setIsPlaying(true);
+    setIsVideoEnded(false);
 
     const isNext = newIndex === currentPage + 1;
     const newActiveLayer = activeLayer === 0 ? 1 : 0;
@@ -116,9 +120,9 @@ export default function ReadHttn() {
   };
 
   const handleVideoEnded = () => {
-    if (currentPage < MAGAZINE_PAGES.length - 1) {
-      goToPage(currentPage + 1);
-    }
+    // Stop playing at the end of the video instead of auto-advancing.
+    setIsPlaying(false);
+    setIsVideoEnded(true);
   };
 
   // Ensure active video follows isPlaying state
@@ -229,7 +233,8 @@ export default function ReadHttn() {
           <button
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === MAGAZINE_PAGES.length - 1}
-            className="flex items-center gap-2 px-5 py-3 bg-white dark:bg-slate-800 text-text-main dark:text-white rounded-xl font-bold transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed border border-slate-200 dark:border-slate-700 hover:bg-primary hover:text-slate-900 dark:hover:bg-primary"
+            className={`flex items-center gap-2 px-5 py-3 bg-white dark:bg-slate-800 text-text-main dark:text-white rounded-xl font-bold transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed border border-slate-200 dark:border-slate-700 hover:bg-primary hover:text-slate-900 dark:hover:bg-primary 
+              ${isVideoEnded && currentPage !== MAGAZINE_PAGES.length - 1 ? "ring-4 ring-primary/50 animate-pulse bg-primary/20" : ""}`}
           >
             Next
             <span className="material-symbols-outlined">arrow_forward</span>

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 const CARDS = [
   {
     icon: "groups",
-    title: "Connect with Others",
+    title: "The Last Child Challenge",
     description:
-      "Join our online forums and meet other parents, religious leaders, and community organizers sharing the same vision.",
+      "We are on the race to reach the last child with the Healing to the Nations Magazine for Kids."
   },
   {
     icon: "volunteer_activism",
