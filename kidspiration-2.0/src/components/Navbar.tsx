@@ -13,9 +13,12 @@ export default function Navbar() {
   };
   const navigate = useNavigate();
   const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-solid border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm">
+    <header className={
+      isHome ? "absolute top-0 left-0 right-0 z-50" : "sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm"
+    }>
       {/* Top bar */}
       <div className="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-4">
         <div className="flex items-center gap-8">
@@ -35,7 +38,7 @@ export default function Navbar() {
                 className={`relative py-1 text-sm font-bold transition-colors hover:text-primary ${
                   location.pathname === item.path
                     ? "text-primary"
-                    : "text-slate-700 dark:text-slate-300"
+                    : isHome ? "text-white/90" : "text-slate-700 dark:text-slate-300"
                 }`}
               >
                 {item.label}
@@ -52,8 +55,8 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-3">
           {/* Search - desktop only */}
-          <label className="hidden lg:flex flex-col min-w-40 h-10 w-64">
-            <div className="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-100 dark:bg-slate-800 focus-within:ring-2 focus-within:ring-primary transition-all">
+          {/* <label className="hidden lg:flex flex-col min-w-40 h-10 w-64">
+            <div className="flex w-full flex-1 items-stretch rounded-xl h-full bg-white/15 backdrop-blur-md focus-within:ring-2 focus-within:ring-primary transition-all">
               <div className="text-slate-400 flex items-center justify-center pl-4">
                 <span className="material-symbols-outlined">search</span>
               </div>
@@ -62,7 +65,7 @@ export default function Navbar() {
                 placeholder="Search..."
               />
             </div>
-          </label>
+          </label> */}
           {/* Join Now - desktop only */}
           <button
             onClick={() => navigate("/signup")}
@@ -73,12 +76,12 @@ export default function Navbar() {
           {/* Log In - always visible */}
           <button
             onClick={() => navigate("/login")}
-            className="flex items-center justify-center rounded-xl h-10 px-5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-900 dark:text-white text-sm font-bold tracking-wide"
+            className={`flex items-center justify-center rounded-xl h-10 px-5 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"} hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm font-bold tracking-wide`}
           >
             <span>Log In</span>
           </button>
           {/* Cart - desktop only */}
-          <button className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative">
+          <button className={`hidden md:flex items-center justify-center rounded-xl size-10 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"} relative`}>
             <span className="material-symbols-outlined">shopping_cart</span>
             <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
               2
@@ -88,7 +91,7 @@ export default function Navbar() {
           {/* Dark mode toggle - desktop only */}
           <button
             onClick={toggleTheme}
-            className="hidden md:flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className={`hidden md:flex items-center justify-center rounded-xl size-10 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"} hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors`}
             aria-label="Toggle dark mode"
           >
             <span className="material-symbols-outlined">
@@ -97,7 +100,7 @@ export default function Navbar() {
           </button>
           {/* Hamburger - mobile only */}
           <button
-            className="flex md:hidden items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
+            className={`flex md:hidden items-center justify-center rounded-xl size-10 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"}`}
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >

@@ -450,3 +450,22 @@ h3 {
     font-size: 0.7rem;
   }
 }
+
+/* ── Gallery Marquee Strip ── */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-marquee {
+  animation: marqueeScroll 40s linear infinite;
+  width: max-content;
+}
+
+.gallery-marquee:hover {
+  animation-play-state: paused;
+}
