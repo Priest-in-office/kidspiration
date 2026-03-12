@@ -10,6 +10,7 @@ interface FeaturesCardProps {
   icon: string;
   iconAnimation?: IconAnimation;
   link?: string;
+  accentColor?: string;
 }
 
 const MAX_TILT = 15; // degrees
@@ -67,6 +68,7 @@ export default function FeaturesCard({
   icon,
   iconAnimation,
   link,
+  accentColor = "#f4c025",
 }: FeaturesCardProps) {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -117,7 +119,7 @@ export default function FeaturesCard({
       style={{ perspective: "800px" }}
     >
       <div
-        className="group flex flex-col gap-4 p-4 rounded-2xl hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-300"
+        className="group flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-md hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-slate-700"
         style={{
           transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
           transition: isHovered
@@ -126,28 +128,41 @@ export default function FeaturesCard({
           transformStyle: "preserve-3d",
         }}
       >
-        <div className="w-full aspect-square rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow">
+        {/* Coloured top accent stripe */}
+        <div
+          className="h-1.5 w-full"
+          style={{ backgroundColor: accentColor }}
+        />
+
+        {/* Image */}
+        <div className="w-full aspect-[4/3] overflow-hidden">
           <div
-            className="w-full h-full bg-contain bg-center transform group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"
             data-alt={title}
-            style={{
-              backgroundImage: `url(${imageUrl})`,
-            }}
-          ></div>
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
         </div>
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <span
-              className="material-symbols-outlined text-primary"
-              style={iconStyle}
+
+        {/* Content */}
+        <div className="p-5 flex flex-col gap-3">
+          <div className="flex items-center gap-3">
+            {/* Icon in coloured circle */}
+            <div
+              className="size-10 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: `${accentColor}20` }}
             >
-              {icon}
-            </span>
-            <h3 className="text-text-main dark:text-white text-xl font-bold leading-normal">
+              <span
+                className="material-symbols-outlined text-xl"
+                style={{ ...iconStyle, color: accentColor }}
+              >
+                {icon}
+              </span>
+            </div>
+            <h3 className="text-text-main dark:text-white text-lg font-bold leading-snug">
               {title}
             </h3>
           </div>
-          <p className="text-text-muted dark:text-stone-400 text-base font-normal leading-relaxed">
+          <p className="text-text-muted dark:text-stone-400 text-sm font-normal leading-relaxed">
             {description}
           </p>
         </div>

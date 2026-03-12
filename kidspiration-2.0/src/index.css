@@ -550,14 +550,21 @@ h3 {
   }
 }
 
-/* Wrong answer shake */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-8px); }
-  40% { transform: translateX(8px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
+/* ── Gallery Marquee Strip ── */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.shake {
-  animation: shake 0.4s ease-in-out;
+
+.gallery-marquee {
+  animation: marqueeScroll 40s linear infinite;
+  width: max-content;
+}
+
+.gallery-marquee:hover {
+  animation-play-state: paused;
 }
