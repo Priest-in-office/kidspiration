@@ -1,26 +1,41 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import kidspiration1 from "../assets/kidspiration-1.png";
+import live1 from "../assets/real-images/live-8.jpg";
+import live2 from "../assets/real-images/live-11.jpg";
+import live3 from "../assets/real-images/live-12.jpg";
+import live4 from "../assets/real-images/live-13.jpg";
+import live5 from "../assets/real-images/live-15.jpg";
 import kidspirationVideo from "../assets/KIDSPIRATION_IMPACT.mp4";
 import VideoModal from "./VideoModal";
+import TypewriterText from "./TypewriterText";
+
 const HEADING_TEXT = "Welcome To Kidspiration!";
+const BACKGROUND_IMAGES = [live1, live2, live3, live4, live5];
 
 export default function Hero() {
   const navigate = useNavigate();
-  const [showVideo, setShowVideo] = useState(false);
-  const [typedCount, setTypedCount] = useState(0);
-  const [typingDone, setTypingDone] = useState(false);
+  const [showVideo, setShowVideo] = useState<boolean>(false);
+  const [currentBgIndex, setCurrentBgIndex] = useState<number>(0);
 
-  const activeImage = heroImages[currentSlide];
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBgIndex(prevIndex => (prevIndex + 1) % BACKGROUND_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
 
   return (
     <div className="relative w-full min-h-[85vh] lg:min-h-[95vh] flex items-center justify-center overflow-hidden">
       {/* Full-bleed background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${kidspiration1})` }}
-      />
+      {BACKGROUND_IMAGES.map((img, index) => (
+        <div
+          key={index}
+          className={`${index === currentBgIndex ? "opacity-100" : "opacity-0"} absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out`}
+          style={{ backgroundImage: `url(${img})` }}
+        />
+      ))}
 
       {/* Gradient overlay for text readability — darker from bottom */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
@@ -71,18 +86,7 @@ export default function Hero() {
 
         {/* Heading with typing animation */}
         <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl drop-shadow-lg">
-          {/* "Welcome To " part (first 11 chars) */}
-          {HEADING_TEXT.slice(0, Math.min(typedCount, 11))}
-          {/* "Kidspiration!" part (chars 11+) in primary with wavy underline */}
-          {typedCount > 11 && (
-            <span className="text-primary underline decoration-wavy decoration-4 underline-offset-8">
-              {HEADING_TEXT.slice(11, typedCount)}
-            </span>
-          )}
-          {/* Blinking cursor */}
-          {!typingDone && (
-            <span className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 align-middle animate-pulse" />
-          )}
+          <TypewriterText text={HEADING_TEXT} speed={90} highlightStart={11} />
         </h1>
 
         {/* Subheading */}

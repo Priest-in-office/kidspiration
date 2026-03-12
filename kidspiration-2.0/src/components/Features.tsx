@@ -4,6 +4,7 @@ import FeaturesCard from "./FeaturesCard";
 import kidspiration2 from "../assets/kidspiration-2.png";
 import kidspiration3 from "../assets/kidspiration-3.png";
 import kidspiration4 from "../assets/kidspiration-4.png";
+import kidspiration5 from "../assets/kidspiration-5.png";
 import kidspiration6 from "../assets/kidspiration-6.png";
 import kidspiration7 from "../assets/kidspiration-7.png";
 
