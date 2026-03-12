@@ -207,7 +207,7 @@ export default function InteractiveCanvas({
         <div
           className={`relative shadow-xl overflow-hidden bg-black transition-all ${
             isFullscreen
-              ? "flex-shrink-0"
+              ? "shrink-0"
               : "w-full aspect-[1/1.414] rounded-2xl md:rounded-3xl ring-1 ring-slate-200 dark:ring-slate-800"
           }`}
           style={
@@ -247,7 +247,7 @@ export default function InteractiveCanvas({
           className="absolute top-4 right-4 z-30 p-2 md:p-3 bg-black/40 hover:bg-black/60 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm shadow-md"
           title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
         >
-          <span className="material-symbols-outlined !text-2xl md:!text-3xl">
+          <span className="material-symbols-outlined text-2xl! md:text-3xl!">
             {isFullscreen ? "fullscreen_exit" : "fullscreen"}
           </span>
         </button>
@@ -295,7 +295,7 @@ export default function InteractiveCanvas({
               }`}
               title="Eraser"
             >
-              <span className="material-symbols-outlined !text-[24px]">
+              <span className="material-symbols-outlined text-[24px]!">
                 ink_eraser
               </span>
             </button>

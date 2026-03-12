@@ -48,8 +48,8 @@ export default function ShopHero() {
         {/* Featured image */}
         <div className="flex-1 relative">
           <div className="relative z-10 bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-xl transform rotate-2 hover:rotate-0 transition-all duration-500 group">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-blue-300/20 mix-blend-multiply" />
+            <div className="aspect-4/3 rounded-2xl overflow-hidden bg-slate-100 relative">
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-blue-300/20 mix-blend-multiply" />
               <img
                 alt="Happy kids wearing colorful t-shirts"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

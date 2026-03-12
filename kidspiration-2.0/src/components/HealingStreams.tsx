@@ -83,7 +83,7 @@ export default function HealingStreams() {
         >
           <div className="absolute top-0 left-10 w-24 h-24 bg-blue-300 rounded-full blur-2xl opacity-50 animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary rounded-full blur-3xl opacity-30"></div>
-          <div className="relative w-full aspect-[4/3] max-w-md lg:max-w-full rounded-3xl overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="relative w-full aspect-4/3 max-w-md lg:max-w-full rounded-3xl overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500">
             <img
               src={healingStreamsImg}
               alt="Healing Streams Live Healing Services with Pastor Chris - March 2026"

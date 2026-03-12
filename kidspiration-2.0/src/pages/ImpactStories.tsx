@@ -89,7 +89,7 @@ export default function ImpactStories() {
               className="w-full h-full object-cover"
             />
             {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background-light dark:to-slate-950"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-background-light dark:to-slate-950"></div>
           </div>
 
           <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
@@ -140,7 +140,7 @@ export default function ImpactStories() {
                 className="group flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800"
               >
                 {/* Image Container */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <img
                     src={story.image}
                     alt={story.title}

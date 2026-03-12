@@ -136,7 +136,7 @@ export default function AvatarBuilder() {
                   )}
 
                   {/* Name overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2 pt-6 text-center">
+                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/60 to-transparent p-2 pt-6 text-center">
                     <span className="text-white text-xs font-bold truncate block drop-shadow-md">
                       {avatarData.name}
                     </span>

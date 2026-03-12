@@ -20,7 +20,7 @@ export default function WelcomeBanner() {
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-text-main dark:text-white tracking-tight font-display">
             Welcome back,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-kids-orange">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-kids-orange">
               {playerName}!
             </span>
           </h2>

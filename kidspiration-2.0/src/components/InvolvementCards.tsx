@@ -6,18 +6,35 @@ const CARDS = [
     title: "The Last Child Challenge",
     description:
       "We are on the race to reach the last child with the Healing to the Nations Magazine for Kids.",
+    purposeKey: "lastChildChallenge",
   },
   {
     icon: "volunteer_activism",
-    title: "Support the Mission",
+    title: "Each One Reach 100 (ER100)",
     description:
-      "Donate or volunteer your time to help our events succeed. Small acts of kindness ripple outwards.",
+      "Reach 100 children with the Gospel through the C.O.M.P.L.E.T.E mandate.",
+    purposeKey: "er100",
+  },
+  {
+    icon: "party_mode",
+    title: "Kidspiration Party Initiative",
+    description:
+      "Sponsor birthday parties for underprivileged children.",
+    purposeKey: "partyInitiative",
   },
   {
     icon: "campaign",
-    title: "Lead a Group",
+    title: "Missions",
     description:
-      "Start a local Kidspiration chapter in your neighborhood. We provide the tools, you provide the passion.",
+      "Support global missionary trips and outreach programs.",
+    purposeKey: "missions",
+  },
+  {
+    icon: "support",
+    title: "Outreach",
+    description:
+      "Community development and aid programs.",
+    purposeKey: "outreaches",
   },
 ];
 
@@ -60,13 +77,10 @@ export default function InvolvementCards() {
               </p>
             </div>
             <button
-              onClick={() => {
-                if (card.title === "Support the Mission")
-                  navigate("/partner/donate");
-              }}
+              onClick={() => navigate(`/partner/donate?purpose=${card.purposeKey}`)}
               className="mt-auto pt-4 text-primary font-bold text-sm hover:underline flex items-center gap-1 self-start"
             >
-              Learn more{" "}
+              Give Here{" "}
               <span className="material-symbols-outlined text-sm">
                 arrow_forward
               </span>

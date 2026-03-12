@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useFormValidation } from "../context/FormValidation";
 import FormInput from "./FormInput";
 import "../types/paystack.d.ts";
@@ -26,7 +27,7 @@ const PLAN_OPTIONS = [
   },
 ];
 
-const PRESET_AMOUNTS = [5000, 10000, 25000, 50000];
+const PRESET_AMOUNTS = [50, 1000, 2500, 5000];
 
 const VALIDATION_RULES = {
   fullName: { required: true, minLength: 2 },
@@ -37,9 +38,10 @@ const VALIDATION_RULES = {
 // ──────────────────────────── Component ────────────────────────────
 
 export default function DonationForm() {
+  const [searchParams] = useSearchParams();
   const [step, setStep] = useState(1);
   const [plan, setPlan] = useState("one-time");
-  const [givingPurpose, setGivingPurpose] = useState("");
+  const [givingPurpose, setGivingPurpose] = useState(() => searchParams.get("purpose") || "");
   const [amount, setAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState("");
   const [amountError, setAmountError] = useState("");
@@ -235,6 +237,9 @@ export default function DonationForm() {
               {/* ── Add your options here ── */}
               <option value="outreaches">Outreaches</option>
               <option value="missions">Missions</option>
+              <option value="er100">ER100</option>
+              <option value="lastChildChallenge">The Last Child Challenge</option>
+              <option value="partyInitiative">Kidspiration Party Initiative</option>
             </select>
             <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-lg">
               expand_more
@@ -245,7 +250,7 @@ export default function DonationForm() {
 
       {/* Amount Selection */}
       <label className="block text-slate-900 dark:text-slate-100 text-base font-bold mb-4">
-        Select Amount (₦)
+        Select Amount (Espees)
       </label>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
         {PRESET_AMOUNTS.map((preset) => (
@@ -263,7 +268,7 @@ export default function DonationForm() {
                 : "border-[#e8e2ce] dark:border-[#3a3525] text-slate-700 dark:text-slate-300 hover:border-primary/50"
             }`}
           >
-            ₦{preset.toLocaleString()}
+            E {preset.toLocaleString()}
           </button>
         ))}
       </div>
@@ -272,7 +277,7 @@ export default function DonationForm() {
       <div className="mb-6">
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm">
-            ₦
+            E
           </span>
           <input
             type="number"
@@ -299,7 +304,7 @@ export default function DonationForm() {
             {plan === "monthly" ? "Monthly" : "One-time"} donation
           </span>
           <span className="text-xl font-black text-primary">
-            ₦{finalAmount.toLocaleString()}
+            E{finalAmount.toLocaleString()}
           </span>
         </div>
       )}

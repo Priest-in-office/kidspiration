@@ -103,7 +103,7 @@ const PROGRAMS = [
 ];
 
 const CORE_VALUES = [
-  { icon: "accessibility_new", label: "Accessibility" },
+  { icon: "accessibility_new", label: "Growth" },
   { icon: "interests", label: "Engagement" },
   { icon: "eco", label: "Sustainability" },
   { icon: "trending_up", label: "Impact" },
@@ -123,7 +123,7 @@ export default function About() {
             alt="Diverse group of happy children holding balloon letters spelling Kidspiration"
             className="w-full h-[280px] sm:h-[360px] md:h-[440px] object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+          <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end">
             <div className="max-w-7xl mx-auto w-full px-4 md:px-10 pb-10">
               <span className="inline-block px-4 py-1 rounded-full bg-primary/90 text-slate-900 font-bold text-sm uppercase tracking-wider mb-3">
                 About Us
@@ -317,13 +317,13 @@ export default function About() {
 
         {/* ───── CTA / Gratitude ───── */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-blue-100/20 to-primary/5 dark:from-primary/5 dark:via-slate-900 dark:to-slate-900" />
+          <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-blue-100/20 to-primary/5 dark:from-primary/5 dark:via-slate-900 dark:to-slate-900" />
           <div className="relative max-w-4xl mx-auto px-4 md:px-10 py-20 text-center">
             <span className="material-symbols-outlined text-primary text-5xl mb-4 block">
               favorite
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">
-              With Gratitude
+              Thank You!
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               We appreciate all our partners and supporters whose partnership

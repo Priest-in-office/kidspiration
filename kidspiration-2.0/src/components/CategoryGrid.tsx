@@ -17,7 +17,7 @@ export default function CategoryGrid({ categories }: CategoryGridProps) {
             <Link
               key={cat.id}
               to={`/shop/category/${cat.slug}`}
-              className="group relative overflow-hidden rounded-2xl aspect-video md:aspect-[3/4]"
+              className="group relative overflow-hidden rounded-2xl aspect-video md:aspect-3/4"
             >
               <img
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

@@ -23,7 +23,7 @@ function FourPCard({
       <div
         className={`size-16 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl shadow-lg ${colorClass}`}
       >
-        <span className="material-symbols-outlined !text-[32px]">{icon}</span>
+        <span className="material-symbols-outlined text-[32px]!">{icon}</span>
       </div>
       <h3 className="text-2xl font-bold font-display text-text-main dark:text-white mb-4">
         {title}
@@ -37,7 +37,7 @@ function FourPCard({
         style={{ color: "var(--color-primary-dark)" }}
       >
         Learn More
-        <span className="material-symbols-outlined !text-[20px] transition-transform group-hover:translate-x-1">
+        <span className="material-symbols-outlined text-[20px]! transition-transform group-hover:translate-x-1">
           arrow_forward
         </span>
       </Link>
@@ -59,12 +59,12 @@ export default function FourPs() {
               alt="Healing Streams Live Healing Services"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 md:px-10 py-24 md:py-32 flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-light px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase mb-6 backdrop-blur-md ring-1 ring-primary/30">
-              <span className="material-symbols-outlined !text-[18px]">
+              <span className="material-symbols-outlined text-[18px]!">
                 verified
               </span>
               Preparation Guide
@@ -86,7 +86,7 @@ export default function FourPs() {
             <FourPCard
               title="1. Prayer"
               icon="volunteer_activism"
-              colorClass="bg-gradient-to-br from-accent-sky to-blue-600"
+              colorClass="bg-linear-to-br from-accent-sky to-blue-600"
               learnMoreLink="/4ps/prayer"
             >
               <p>
@@ -106,7 +106,7 @@ export default function FourPs() {
             <FourPCard
               title="2. Publicity"
               icon="campaign"
-              colorClass="bg-gradient-to-br from-primary to-orange-500"
+              colorClass="bg-linear-to-br from-primary to-orange-500"
               learnMoreLink="/4ps/publicity"
             >
               <p>
@@ -125,7 +125,7 @@ export default function FourPs() {
             <FourPCard
               title="3. Preparing Places"
               icon="home_work"
-              colorClass="bg-gradient-to-br from-accent-green to-emerald-600"
+              colorClass="bg-linear-to-br from-accent-green to-emerald-600"
               learnMoreLink="/4ps/preparing-places"
             >
               <p>
@@ -145,7 +145,7 @@ export default function FourPs() {
             <FourPCard
               title="4. Partnership"
               icon="handshake"
-              colorClass="bg-gradient-to-br from-accent-purple to-purple-600"
+              colorClass="bg-linear-to-br from-accent-purple to-purple-600"
               learnMoreLink="/4ps/partnership"
             >
               <p>

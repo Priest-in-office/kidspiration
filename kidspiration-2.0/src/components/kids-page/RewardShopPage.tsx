@@ -64,7 +64,7 @@ export default function RewardShopPage() {
 
       <main className="max-w-5xl mx-auto p-6">
         {/* Balance card */}
-        <div className="bg-gradient-to-r from-amber-400 to-yellow-300 rounded-3xl p-8 mb-8 text-center shadow-xl">
+        <div className="bg-linear-to-r from-amber-400 to-yellow-300 rounded-3xl p-8 mb-8 text-center shadow-xl">
           <p className="text-sm font-bold text-amber-800 uppercase tracking-wider mb-1">
             Your Spark Balance
           </p>

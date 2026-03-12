@@ -263,7 +263,7 @@ export default function ReadHttn() {
             className="flex items-center justify-center size-12 bg-primary hover:bg-primary-dark text-slate-900 rounded-full font-bold transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
-            <span className="material-symbols-outlined !text-[24px]">
+            <span className="material-symbols-outlined text-[24px]!">
               {isPlaying ? "pause" : "play_arrow"}
             </span>
           </button>

@@ -29,9 +29,9 @@ const covers = [
 
 export default function MagazineSection() {
   return (
-    <section className="bg-gradient-to-br from-kids-blue/10 to-kids-pink/10 rounded-3xl p-8 border border-kids-blue/20 relative overflow-hidden dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
+    <section className="bg-linear-to-br from-kids-blue/10 to-kids-pink/10 rounded-3xl p-8 border border-kids-blue/20 relative overflow-hidden dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
       {/* Decorative blob */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-kids-blue to-kids-pink opacity-10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-kids-blue to-kids-pink opacity-10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
 
       <div className="flex flex-col lg:flex-row gap-10 items-center">
         {/* Text & CTAs */}
@@ -81,7 +81,7 @@ export default function MagazineSection() {
                 <div
                   className={`bg-white p-2 rounded-lg shadow-md ${c.rotation} group-hover:rotate-0 transition-transform duration-300 dark:bg-slate-800`}
                 >
-                  <div className="aspect-[3/4] rounded-md overflow-hidden bg-slate-200 relative">
+                  <div className="aspect-3/4 rounded-md overflow-hidden bg-slate-200 relative">
                     <img
                       alt={c.title}
                       className="w-full h-full object-cover"

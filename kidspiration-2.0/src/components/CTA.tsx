@@ -8,7 +8,7 @@ export default function CTA() {
       <div className="flex flex-col justify-center items-center gap-8 px-4 py-20 lg:py-32 bg-rainbow-gradient relative overflow-hidden">
         {/* Decorative Background Elements — Material Symbols */}
         <div className="absolute top-10 left-10 text-primary opacity-30 hidden md:block animate-spin" style={{ animationDuration: "20s" }}>
-          <span className="material-symbols-outlined !text-[80px] font-bold">
+          <span className="material-symbols-outlined text-[80px]! font-bold">
             star
           </span>
         </div>
@@ -16,7 +16,7 @@ export default function CTA() {
           className="absolute top-32 left-24 text-accent-red opacity-20 hidden md:block animate-bounce"
           style={{ animationDelay: "1s" }}
         >
-          <span className="material-symbols-outlined !text-[60px] font-bold">
+          <span className="material-symbols-outlined text-[60px]! font-bold">
             favorite
           </span>
         </div>
@@ -24,7 +24,7 @@ export default function CTA() {
           className="absolute top-16 right-20 text-accent-blue opacity-40 hidden md:block"
           style={{ animation: "wiggle 4s ease-in-out infinite" }}
         >
-          <span className="material-symbols-outlined !text-[100px] font-bold">
+          <span className="material-symbols-outlined text-[100px]! font-bold">
             cloud
           </span>
         </div>
@@ -32,12 +32,12 @@ export default function CTA() {
           className="absolute top-8 right-40 text-primary opacity-20 hidden lg:block animate-pulse"
           style={{ animationDuration: "3s" }}
         >
-          <span className="material-symbols-outlined !text-[50px] font-bold">
+          <span className="material-symbols-outlined text-[50px]! font-bold">
             kid_star
           </span>
         </div>
         <div className="absolute bottom-20 left-20 text-green-500 opacity-30 hidden md:block animate-gentle-bounce">
-          <span className="material-symbols-outlined !text-[90px] font-bold">
+          <span className="material-symbols-outlined text-[90px]! font-bold">
             eco
           </span>
         </div>
@@ -45,7 +45,7 @@ export default function CTA() {
           className="absolute bottom-10 left-48 text-purple-500 opacity-20 hidden lg:block animate-spin"
           style={{ animationDuration: "15s" }}
         >
-          <span className="material-symbols-outlined !text-[70px] font-bold">
+          <span className="material-symbols-outlined text-[70px]! font-bold">
             auto_awesome
           </span>
         </div>
@@ -53,7 +53,7 @@ export default function CTA() {
           className="absolute bottom-14 right-14 text-accent-blue opacity-30 hidden md:block animate-bounce"
           style={{ animationDuration: "6s", animationDelay: "0.5s" }}
         >
-          <span className="material-symbols-outlined !text-[110px] font-bold">
+          <span className="material-symbols-outlined text-[110px]! font-bold">
             rocket_launch
           </span>
         </div>
@@ -61,7 +61,7 @@ export default function CTA() {
           className="absolute bottom-40 right-32 text-primary opacity-40 hidden lg:block"
           style={{ animation: "wiggle 5s ease-in-out infinite" }}
         >
-          <span className="material-symbols-outlined !text-[60px] font-bold">
+          <span className="material-symbols-outlined text-[60px]! font-bold">
             wb_sunny
           </span>
         </div>

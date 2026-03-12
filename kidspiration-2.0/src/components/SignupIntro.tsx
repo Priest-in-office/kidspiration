@@ -31,23 +31,23 @@ export default function SignupIntro() {
 
       {/* Image Cards */}
       <div className="grid grid-cols-2 gap-4 mt-4">
-        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative group">
+        <div className="aspect-4/3 rounded-2xl overflow-hidden relative group">
           <img
             alt="Adult mentoring a child reading a book"
             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwzM2E0NPaDruD5nBcsQwdYwwCp4P4ljeorYwLU3A-5fHVXnazbjjp4vhsdvUE9eHvbjSYfIrPHHlyllT98QX9czMZ9o_3P3ednJ2UhDdaWzKY9QS_CxphhyanBBWgqwfeaKK6WQfcMaqjEpxsH_2KV02hH3cBo3lmA6Ewq14mj-7xMChIkY-0wOtoZx5hcuDqv0TYGWCHw6gPgqhJdQMz96IPducISeH38O1nKDfoC4xZXiET2W2y7N2OE2iITtfEQT9cX-7Bk6dV"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-4">
             <span className="text-white font-bold text-sm">Mentorship</span>
           </div>
         </div>
-        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative group translate-y-8">
+        <div className="aspect-4/3 rounded-2xl overflow-hidden relative group translate-y-8">
           <img
             alt="Group of diverse kids playing together outdoors"
             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNDQ7YPazIUD5AzN3KgHZPRFct_CFs2rMvsFchcCqMPxX2QkAim53iqt8tukvmTzVMMRCeClPTtFThk660ukFmiYg7hHC3tNBwPCk19fPpx24yrZL-1eiBkZIto7jBkGWosKxfFh3lux9olUQuUwnqkxJN5aJHYWcJPnUZIFCYzjbBffUtjP6Q_XSjoQ_X0yatZoVi4wNflk9VwNeFM3qcgJ9i9kh9NT3JWCVvbCttgoxMEyHBfE2ZdF35M4Rj3ItioBEWc2tDZ1_2"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-4">
             <span className="text-white font-bold text-sm">Community</span>
           </div>
         </div>

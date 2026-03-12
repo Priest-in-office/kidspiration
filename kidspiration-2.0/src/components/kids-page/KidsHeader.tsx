@@ -140,7 +140,7 @@ export default function KidsHeader() {
 
       <div className="flex items-center gap-4">
         {/* Sparks counter */}
-        <div className="flex items-center gap-2 bg-gradient-to-r from-primary-light to-white px-4 py-2 rounded-full border-2 border-primary shadow-sm hover:shadow-md transition-shadow cursor-pointer dark:from-slate-800 dark:to-slate-900 dark:border-primary">
+        <div className="flex items-center gap-2 bg-linear-to-r from-primary-light to-white px-4 py-2 rounded-full border-2 border-primary shadow-sm hover:shadow-md transition-shadow cursor-pointer dark:from-slate-800 dark:to-slate-900 dark:border-primary">
           <span className="material-symbols-outlined text-primary text-2xl drop-shadow-sm">
             stars
           </span>

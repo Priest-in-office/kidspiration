@@ -78,8 +78,8 @@ export default function Live() {
           {/* Video Player Container */}
           <div className="w-full aspect-video bg-slate-900 rounded-2xl md:rounded-3xl overflow-hidden relative shadow-lg ring-1 ring-slate-200 dark:ring-slate-800">
             {/* Fake Video Player Screen */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-950 text-slate-400">
-              <span className="material-symbols-outlined !text-[80px] md:!text-[120px] opacity-50 mb-4 animate-pulse">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-linear-to-br from-slate-800 to-slate-950 text-slate-400">
+              <span className="material-symbols-outlined text-[80px]! md:text-[120px]! opacity-50 mb-4 animate-pulse">
                 play_circle
               </span>
               <p className="text-xl md:text-2xl font-bold font-display tracking-wide text-white">
@@ -98,14 +98,14 @@ export default function Live() {
 
             {/* View Count Badge */}
             <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">
-              <span className="material-symbols-outlined !text-[16px]">
+              <span className="material-symbols-outlined text-[16px]!">
                 visibility
               </span>
               1,248
             </div>
 
             {/* Fake Video Controls */}
-            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/80 to-transparent flex items-end px-4 py-3">
+            <div className="absolute bottom-0 inset-x-0 h-16 bg-linear-to-t from-black/80 to-transparent flex items-end px-4 py-3">
               <div className="w-full flex items-center justify-between text-white">
                 <div className="flex items-center gap-4">
                   <button className="hover:text-primary transition-colors">
@@ -180,7 +180,7 @@ export default function Live() {
                   </div>
                 ) : (
                   <div className="flex gap-3 max-w-[90%]">
-                    <div className="size-8 rounded-full bg-gradient-to-tr from-accent-sky to-primary-dark shrink-0 flex items-center justify-center text-white font-bold text-xs shadow-sm">
+                    <div className="size-8 rounded-full bg-linear-to-tr from-accent-sky to-primary-dark shrink-0 flex items-center justify-center text-white font-bold text-xs shadow-sm">
                       {msg.user.charAt(0)}
                     </div>
                     <div className="flex flex-col">
@@ -220,7 +220,7 @@ export default function Live() {
                 disabled={!newMessage.trim()}
                 className="absolute right-2 top-1.5 bottom-1.5 aspect-square bg-primary hover:bg-primary-dark text-white rounded-lg flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
               >
-                <span className="material-symbols-outlined !text-[18px]">
+                <span className="material-symbols-outlined text-[18px]!">
                   send
                 </span>
               </button>

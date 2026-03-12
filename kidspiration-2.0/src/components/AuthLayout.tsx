@@ -75,14 +75,14 @@ export default function AuthLayout({
             {images.map((img, i) => (
               <div
                 key={i}
-                className={`aspect-[4/3] rounded-2xl overflow-hidden relative group ${img.offset ? "translate-y-8" : ""}`}
+                className={`aspect-4/3 rounded-2xl overflow-hidden relative group ${img.offset ? "translate-y-8" : ""}`}
               >
                 <img
                   alt={img.alt}
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   src={img.src}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-4">
                   <span className="text-white font-bold text-sm">
                     {img.label}
                   </span>

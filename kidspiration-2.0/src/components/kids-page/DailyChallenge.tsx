@@ -20,7 +20,10 @@ export default function DailyChallenge() {
   // Live countdown to midnight
   const [secsLeft, setSecsLeft] = useState(secondsUntilMidnight());
   useEffect(() => {
-    const interval = setInterval(() => setSecsLeft(secondsUntilMidnight()), 1000);
+    const interval = setInterval(
+      () => setSecsLeft(secondsUntilMidnight()),
+      1000,
+    );
     return () => clearInterval(interval);
   }, []);
 
@@ -38,7 +41,7 @@ export default function DailyChallenge() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-kids-green/10 to-kids-blue/10 rounded-3xl p-1 shadow-lg border-2 border-dashed border-kids-green/30 relative overflow-hidden group">
+    <section className="bg-linear-to-r from-kids-green/10 to-kids-blue/10 rounded-3xl p-1 shadow-lg border-2 border-dashed border-kids-green/30 relative overflow-hidden group">
       <div className="bg-white dark:bg-slate-900 rounded-[1.3rem] p-6 h-full relative z-10">
         {/* Decorative watermark */}
         <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
@@ -50,7 +53,9 @@ export default function DailyChallenge() {
         <div className="flex flex-col sm:flex-row gap-6 items-center">
           {/* Icon */}
           <div className="shrink-0 relative">
-            <div className={`w-24 h-24 bg-${meta.color}/20 rounded-full flex items-center justify-center text-${meta.color} border-4 border-white shadow-md dark:border-slate-800`}>
+            <div
+              className={`w-24 h-24 bg-${meta.color}/20 rounded-full flex items-center justify-center text-${meta.color} border-4 border-white shadow-md dark:border-slate-800`}
+            >
               <span className="material-symbols-outlined text-5xl">
                 {meta.icon}
               </span>
@@ -63,14 +68,20 @@ export default function DailyChallenge() {
           {/* Content */}
           <div className="flex-1 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
-              <span className={`bg-${meta.color} text-white text-xs font-bold px-2 py-0.5 rounded-md uppercase tracking-wide`}>
+              <span
+                className={`bg-${meta.color} text-white text-xs font-bold px-2 py-0.5 rounded-md uppercase tracking-wide`}
+              >
                 Daily Challenge
               </span>
-              <span className={`text-xs font-bold px-2 py-0.5 rounded-md bg-${meta.color}/10 text-${meta.color}`}>
+              <span
+                className={`text-xs font-bold px-2 py-0.5 rounded-md bg-${meta.color}/10 text-${meta.color}`}
+              >
                 {meta.label}
               </span>
               <span className="text-xs font-bold text-slate-400 flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">schedule</span>
+                <span className="material-symbols-outlined text-sm">
+                  schedule
+                </span>
                 {hours}h {mins}m left
               </span>
             </div>
@@ -85,7 +96,9 @@ export default function DailyChallenge() {
             {/* Streak */}
             {streak > 0 && (
               <div className="flex items-center gap-1 text-xs font-bold text-kids-orange mb-2">
-                <span className="material-symbols-outlined text-sm">local_fire_department</span>
+                <span className="material-symbols-outlined text-sm">
+                  local_fire_department
+                </span>
                 {streak}-day streak!
               </div>
             )}

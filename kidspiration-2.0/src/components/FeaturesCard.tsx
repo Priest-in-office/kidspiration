@@ -135,7 +135,7 @@ export default function FeaturesCard({
         />
 
         {/* Image */}
-        <div className="w-full aspect-[4/3] overflow-hidden">
+        <div className="w-full aspect-4/3 overflow-hidden">
           <div
             className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"
             data-alt={title}
@@ -148,7 +148,7 @@ export default function FeaturesCard({
           <div className="flex items-center gap-3">
             {/* Icon in coloured circle */}
             <div
-              className="size-10 rounded-full flex items-center justify-center flex-shrink-0"
+              className="size-10 rounded-full flex items-center justify-center shrink-0"
               style={{ backgroundColor: `${accentColor}20` }}
             >
               <span

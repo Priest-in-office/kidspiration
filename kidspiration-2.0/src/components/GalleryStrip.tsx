@@ -40,7 +40,9 @@ export default function GalleryStrip() {
         transition={{ duration: 0.6 }}
       >
         <div className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider mb-3">
-          <span className="material-symbols-outlined text-lg">photo_camera</span>
+          <span className="material-symbols-outlined text-lg">
+            photo_camera
+          </span>
           <span>Gallery</span>
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-text-main dark:text-white leading-tight">
@@ -54,14 +56,14 @@ export default function GalleryStrip() {
       {/* Auto-scrolling strip */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
 
         <div className="gallery-marquee flex gap-4 md:gap-6">
           {SCROLL_IMAGES.map((img, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-48 h-36 md:w-64 md:h-48 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="shrink-0 w-48 h-36 md:w-64 md:h-48 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               style={{ transform: `rotate(${i % 2 === 0 ? "1" : "-1"}deg)` }}
             >
               <img

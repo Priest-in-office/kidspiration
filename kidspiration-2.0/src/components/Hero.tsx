@@ -20,11 +20,12 @@ export default function Hero() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentBgIndex(prevIndex => (prevIndex + 1) % BACKGROUND_IMAGES.length);
+      setCurrentBgIndex(
+        (prevIndex) => (prevIndex + 1) % BACKGROUND_IMAGES.length,
+      );
     }, 3000);
     return () => clearInterval(timer);
   }, []);
-
 
   return (
     <div className="relative w-full min-h-[85vh] lg:min-h-[95vh] flex items-center justify-center overflow-hidden">
@@ -38,7 +39,7 @@ export default function Hero() {
       ))}
 
       {/* Gradient overlay for text readability — darker from bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30" />
 
       {/* Floating decorative shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -50,17 +51,32 @@ export default function Hero() {
         <motion.div
           className="absolute top-[25%] right-[12%] w-10 h-10 rounded-full bg-accent-blue/40 blur-sm"
           animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
         />
         <motion.div
           className="absolute bottom-[30%] left-[15%] w-12 h-12 rounded-lg bg-accent-red/30 blur-sm rotate-45"
           animate={{ y: [0, -15, 0], rotate: [45, 60, 45] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
         />
         <motion.div
           className="absolute bottom-[20%] right-[20%] w-8 h-8 rounded-full bg-primary/40 blur-sm"
           animate={{ y: [0, 10, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
         />
       </div>
 
@@ -112,15 +128,13 @@ export default function Hero() {
             className="flex h-14 cursor-pointer items-center justify-center rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 px-10 text-lg font-bold text-white shadow-sm transition-all hover:bg-white/25 hover:-translate-y-1"
           >
             <span className="truncate">Watch Our Story</span>
-            <span className="material-symbols-outlined ml-2">
-              play_circle
-            </span>
+            <span className="material-symbols-outlined ml-2">play_circle</span>
           </button>
         </div>
       </motion.div>
 
       {/* Wave divider at bottom */}
-      <div className="absolute -bottom-px left-0 right-0 z-20 overflow-hidden leading-[0]">
+      <div className="absolute -bottom-px left-0 right-0 z-20 overflow-hidden leading-0">
         <svg
           viewBox="0 0 1440 100"
           fill="none"
