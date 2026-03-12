@@ -48,7 +48,7 @@ export default function SignupChooser() {
   const navigate = useNavigate();
 
   return (
-    <div className="overflow-x-hidden min-h-screen flex flex-col relative bg-hero-pattern">
+    <div className="overflow-x-clip min-h-screen flex flex-col relative bg-hero-pattern">
       {/* Floating background SVG shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingShapes />

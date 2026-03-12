@@ -65,7 +65,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="w-full min-h-screen flex flex-col overflow-x-clip">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/read-httn4kids" element={<ReadHttn />} />
@@ -114,6 +114,6 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
-    </>
+    </div>
   );
 }

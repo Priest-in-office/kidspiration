@@ -51,7 +51,7 @@ export default function AuthLayout({
   children,
 }: AuthLayoutProps) {
   return (
-    <div className="overflow-x-hidden bg-background-light dark:bg-slate-950">
+    <div className="overflow-x-clip bg-background-light dark:bg-slate-950">
       <Navbar />
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 py-18 sm:p-6 md:p-10 lg:p-16 flex flex-col lg:flex-row gap-8 lg:gap-12 justify-center items-start">
         {/* Left — Intro Panel */}

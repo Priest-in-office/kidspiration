@@ -96,6 +96,7 @@ body {
   background-size: 400% 400%;
   animation: kidsGradientShift 20s ease-in-out infinite;
   position: relative;
+  overflow-x: clip;
 }
 
 /* Subtle decorative SVG wave at the top */
@@ -118,7 +119,7 @@ body {
   content: "";
   position: absolute;
   bottom: 100px;
-  right: -60px;
+  right: 0;
   width: 350px;
   height: 350px;
   background: radial-gradient(
@@ -377,7 +378,7 @@ h3 {
     opacity: var(--emoji-opacity, 0.15);
   }
   50% {
-    transform: translateY(-50vh) translateX(30px) rotate(180deg);
+    transform: translateY(-50vh) translateX(15px) rotate(180deg);
   }
   90% {
     opacity: var(--emoji-opacity, 0.15);

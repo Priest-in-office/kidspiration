@@ -20,7 +20,7 @@ export default function Navbar() {
       isHome ? "absolute top-0 left-0 right-0 z-50" : "sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm"
     }>
       {/* Top bar */}
-      <div className="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-4">
+      <div className="flex items-center justify-between px-4 md:px-10 py-4 min-w-0">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-3 text-slate-900 dark:text-white">
             <img

@@ -9,7 +9,7 @@ import WeeklyActivity from "../components/kids-page/WeeklyActivity";
 
 export default function KidsDashboard() {
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-slate-950 text-text-main font-display antialiased overflow-x-hidden">
+    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-slate-950 text-text-main font-display antialiased overflow-x-clip">
       <KidsHeader />
 
       <main className="flex flex-col grow kids-dashboard-bg">

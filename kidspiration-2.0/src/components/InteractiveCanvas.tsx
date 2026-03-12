@@ -200,7 +200,7 @@ export default function InteractiveCanvas({
         ref={containerWrapRef}
         className={`relative group flex justify-center items-center ${
           isFullscreen
-            ? "w-screen h-screen bg-black"
+            ? "w-full h-screen bg-black"
             : "w-full max-w-[500px] md:max-w-[650px]"
         }`}
       >
@@ -214,7 +214,7 @@ export default function InteractiveCanvas({
             isFullscreen
               ? {
                   width: "100%",
-                  maxWidth: "min(100vw, 100vh / 1.414)", // Prevents horizontal stretching
+                  maxWidth: "min(100%, 100vh / 1.414)", // Prevents horizontal stretching
                   aspectRatio: "1 / 1.414", // Strict aspect ratio
                 }
               : undefined

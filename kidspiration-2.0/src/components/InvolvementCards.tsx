@@ -5,7 +5,7 @@ const CARDS = [
     icon: "groups",
     title: "The Last Child Challenge",
     description:
-      "We are on the race to reach the last child with the Healing to the Nations Magazine for Kids."
+      "We are on the race to reach the last child with the Healing to the Nations Magazine for Kids.",
   },
   {
     icon: "volunteer_activism",
@@ -40,7 +40,7 @@ export default function InvolvementCards() {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 p-0">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-6 p-0">
         {CARDS.map((card) => (
           <div
             key={card.title}

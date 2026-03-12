@@ -122,7 +122,7 @@ export default function Shop() {
   };
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-clip">
       <Navbar />
       <main>
         <ShopHero />

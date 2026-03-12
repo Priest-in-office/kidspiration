@@ -113,7 +113,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div className="overflow-x-hidden bg-background-light dark:bg-slate-950">
+    <div className="overflow-x-clip bg-background-light dark:bg-slate-950">
       <Navbar />
       <main>
         {/* ───── Hero Banner ───── */}

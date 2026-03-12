@@ -169,7 +169,7 @@ export default function ReadHttn() {
   }, [activeLayer, isPlaying]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background-light dark:bg-slate-950 font-sans overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-background-light dark:bg-slate-950 font-sans overflow-x-clip">
       <style>{`
         @keyframes sweepForward {
           0% { transform: translateX(100%); box-shadow: -15px 0 25px rgba(0,0,0,0.15); }

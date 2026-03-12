@@ -6,7 +6,7 @@ import InvolvementCards from "../components/InvolvementCards";
 
 export default function Partner() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-clip">
       <Navbar />
       <main className="flex flex-1 justify-center py-5 px-4 md:px-10 lg:px-40">
         <div className="flex flex-col max-w-[960px] flex-1">
