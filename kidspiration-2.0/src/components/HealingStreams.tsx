@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import healingStreamsImg from "../assets/HSLHS_MARCH_2026.jpg";
+import { Link } from "react-router";
 
 const EVENT_DATE = new Date("2026-03-13T00:00:00").getTime();
 
@@ -22,32 +23,32 @@ function getTimeLeft(): TimeLeft {
   };
 }
 
-function FlipDigit({ value, label }: { value: number; label: string }) {
-  const [display, setDisplay] = useState(value);
-  const [flipping, setFlipping] = useState(false);
+// function FlipDigit({ value, label }: { value: number; label: string }) {
+//   const [display, setDisplay] = useState(value);
+//   const [flipping, setFlipping] = useState(false);
 
-  useEffect(() => {
-    if (value !== display) {
-      setFlipping(true);
-      const timer = setTimeout(() => {
-        setDisplay(value);
-        setFlipping(false);
-      }, 250);
-      return () => clearTimeout(timer);
-    }
-  }, [value, display]);
+//   useEffect(() => {
+//     if (value !== display) {
+//       setFlipping(true);
+//       const timer = setTimeout(() => {
+//         setDisplay(value);
+//         setFlipping(false);
+//       }, 250);
+//       return () => clearTimeout(timer);
+//     }
+//   }, [value, display]);
 
-  const formatted = String(display).padStart(2, "0");
+//   const formatted = String(display).padStart(2, "0");
 
-  return (
-    <div className="flip-card">
-      <div className={`flip-card-inner ${flipping ? "flip-animate" : ""}`}>
-        {formatted}
-      </div>
-      <span className="countdown-label">{label}</span>
-    </div>
-  );
-}
+//   return (
+//     <div className="flip-card">
+//       <div className={`flip-card-inner ${flipping ? "flip-animate" : ""}`}>
+//         {formatted}
+//       </div>
+//       <span className="countdown-label">{label}</span>
+//     </div>
+//   );
+// }
 
 export default function HealingStreams() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -102,15 +103,14 @@ export default function HealingStreams() {
             <span>March 13–15, 2026</span>
           </div>
           <h2 className="text-3xl font-black leading-tight tracking-tight text-text-main dark:text-white sm:text-4xl lg:text-5xl">
-            Get Ready for the Largest{" "}
-            <span className="text-primary underline decoration-wavy decoration-4 underline-offset-4">
-              Healing Crusade
-            </span>{" "}
-            on Earth
+            HSLHS with Pastor Chris Now Streaming on{" "}
+            <span className="text-primary">
+              Kidspiration!
+            </span>
           </h2>
 
           {/* Flip Countdown Timer */}
-          <div className="flex items-start justify-center lg:justify-start gap-1 sm:gap-2">
+          {/* <div className="flex items-start justify-center lg:justify-start gap-1 sm:gap-2">
             <FlipDigit value={timeLeft.days} label="Days" />
             <span className="countdown-colon">:</span>
             <FlipDigit value={timeLeft.hours} label="Hours" />
@@ -118,25 +118,24 @@ export default function HealingStreams() {
             <FlipDigit value={timeLeft.minutes} label="Mins" />
             <span className="countdown-colon">:</span>
             <FlipDigit value={timeLeft.seconds} label="Secs" />
-          </div>
+          </div> */}
 
           <p className="text-lg font-normal leading-relaxed text-text-muted dark:text-stone-300 max-w-xl mx-auto lg:mx-0">
-            Healing Streams Live Healing Services with Pastor Chris. Experience
-            the miraculous — join billions around the world for three days of
+            The Healing Streams Live Healing Services with Pastor Chris is here! Get ready to experience
+            the miraculous! Join billions around the world for three days of
             faith, healing, and transformation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-2">
-            <a
-              href="https://healingstreams.tv/kids"
-              target="_blank"
+            <Link
+              to="/live"
               rel="noopener noreferrer"
               className="animate-pulse-glow flex h-12 cursor-pointer items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-stone-900 shadow-lg shadow-primary/30 transition-all hover:bg-primary-hover hover:-translate-y-1"
             >
-              <span className="truncate">Register Now</span>
+              <span className="truncate">Watch Now</span>
               <span className="material-symbols-outlined ml-2">
                 arrow_forward
               </span>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

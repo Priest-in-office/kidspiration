@@ -26,8 +26,10 @@ export default function TypewriterText({
   return (
     <>
       {text.slice(0, Math.min(typedCount, highlightStart))}
+      {/* Wavy underline highlight for the "Kidspiration!" part */}
       {typedCount > highlightStart && (
-        <span className="text-primary underline decoration-wavy decoration-4 underline-offset-4">
+        <span className="text-primary"> 
+        {/* The className for the wavy underline - underline decoration-wavy decoration-4 underline-offset-4*/}
           {text.slice(highlightStart, typedCount)}
         </span>
       )}

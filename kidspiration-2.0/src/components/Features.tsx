@@ -137,10 +137,10 @@ export default function Features() {
           and discover how you can make a difference today.
         </p>
       </motion.div>
+      <div ref={gridRef} className="w-full">
       {/* Mobile Carousel */}
       <div className="sm:hidden w-full">
         <div
-          ref={gridRef}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 no-scrollbar"
         >
         {cards.map((card, i) => (
@@ -171,6 +171,7 @@ export default function Features() {
             <FeaturesCard {...card} />
           </motion.div>
         ))}
+      </div>
       </div>
     </div>
   );
