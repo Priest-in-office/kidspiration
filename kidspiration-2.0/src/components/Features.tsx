@@ -137,10 +137,29 @@ export default function Features() {
           and discover how you can make a difference today.
         </p>
       </motion.div>
-      <div
-        ref={gridRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full"
-      >
+      {/* Mobile Carousel */}
+      <div className="sm:hidden w-full">
+        <div
+          ref={gridRef}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 no-scrollbar"
+        >
+        {cards.map((card, i) => (
+          <motion.div
+            key={card.title}
+            custom={i}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="min-w-[85%] snap-center"
+          >
+            <FeaturesCard {...card} />
+          </motion.div>
+        ))}
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
         {cards.map((card, i) => (
           <motion.div
             key={card.title}

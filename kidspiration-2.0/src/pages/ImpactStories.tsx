@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import VideoModal from "../components/VideoModal";
 
 // Import images
 import imgHero from "../assets/real-images/live-4.jpg";
@@ -74,7 +76,60 @@ const impactStories = [
   },
 ];
 
+interface TestimonyVideo {
+  id: number;
+  title: string;
+  child: string;
+  location: string;
+  image: string;
+  date: string;
+  duration: string;
+  quote: string;
+  videoId?: string;
+  videoUrl?: string;
+}
+
+const testimonyVideos: TestimonyVideo[] = [
+  {
+    id: 1,
+    title: "A New Beginning",
+    child: "Mia, Age 10",
+    location: "Cuba",
+    image: imgCuba,
+    date: "February 2026",
+    duration: "12:04",
+    quote:
+      "I learned to read better and now I share stories with my little brother every night.",
+  },
+  {
+    id: 2,
+    title: "Weekend Joy Club",
+    child: "Jayden, Age 12",
+    location: "United States",
+    image: imgUS,
+    date: "January 2026",
+    duration: "08:30",
+    quote:
+      "The mentorship program helped me stay focused in school and believe in myself.",
+  },
+  {
+    id: 3,
+    title: "Reading Changed My World",
+    child: "Amara, Age 9",
+    location: "Worldwide",
+    image: imgRead,
+    date: "Ongoing",
+    duration: "10:15",
+    quote:
+      "HTTN stories made me feel brave, and now I read one page every day before bed.",
+  },
+];
+
 export default function ImpactStories() {
+  const [activeTestimony, setActiveTestimony] = useState<TestimonyVideo | null>(
+    null,
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-background-light dark:bg-slate-950 font-sans">
       <Navbar />
@@ -195,6 +250,88 @@ export default function ImpactStories() {
           </div>
         </section>
 
+        {/* Testimony Videos Section */}
+        <section className="w-full max-w-7xl mx-auto px-4 pb-16 md:pb-24">
+          <div className="rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 md:p-8 shadow-xl">
+            <div className="flex items-center justify-between gap-4 mb-8">
+              <div className="inline-flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-white/10 dark:bg-primary/20 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[16px] text-primary-dark">
+                    play_circle
+                  </span>
+                </span>
+                <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white">
+                  Kids Testimonies
+                </h2>
+              </div>
+
+              <span className="inline-flex items-center gap-1 text-primary dark:text-primary-dark font-bold text-sm">
+                View All
+                <span className="material-symbols-outlined text-[18px]">
+                  arrow_forward
+                </span>
+              </span>
+            </div>
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 -mb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:pb-0 md:mb-0">
+              {testimonyVideos.map((video, index) => {
+                const hasVideo = Boolean(video.videoId || video.videoUrl);
+
+                return (
+                  <motion.article
+                    key={video.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    className="group shrink-0 snap-start w-[80vw] max-w-[340px] md:w-auto md:max-w-none"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (hasVideo) setActiveTestimony(video);
+                      }}
+                      disabled={!hasVideo}
+                      className="w-full text-left"
+                    >
+                      <div className="relative overflow-hidden rounded-3xl aspect-[16/10] mb-4">
+                        <img
+                          src={video.image}
+                          alt={video.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/35 to-transparent" />
+
+                        <div className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
+                          <span className="material-symbols-outlined text-[14px]">
+                            play_arrow
+                          </span>
+                          Testimony
+                        </div>
+
+                        <div className="absolute right-3 bottom-3 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
+                          {video.duration}
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl md:text-2xl font-black text-slate-900 dark:text-white leading-tight group-hover:text-primary dark:group-hover:text-primary transition-colors">
+                        {video.title}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 mt-1.5 text-sm font-medium">
+                        {video.child} • {video.date}
+                      </p>
+                      {!hasVideo && (
+                        <p className="mt-2 text-xs font-semibold text-stone-300 dark:text-slate-400">
+                          Video coming soon
+                        </p>
+                      )}
+                    </button>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="w-full max-w-5xl mx-auto px-4 py-16 mb-16">
           <motion.div
@@ -233,6 +370,14 @@ export default function ImpactStories() {
           </motion.div>
         </section>
       </main>
+
+      <VideoModal
+        isOpen={Boolean(activeTestimony)}
+        onClose={() => setActiveTestimony(null)}
+        title={activeTestimony?.title}
+        videoId={activeTestimony?.videoId}
+        videoUrl={activeTestimony?.videoUrl}
+      />
 
       <Footer />
     </div>

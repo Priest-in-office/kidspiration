@@ -569,3 +569,12 @@ h3 {
 .gallery-marquee:hover {
   animation-play-state: paused;
 }
+
+/* No scrollbar on Features on Home Page */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
