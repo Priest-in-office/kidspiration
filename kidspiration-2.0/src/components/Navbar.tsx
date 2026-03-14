@@ -67,19 +67,21 @@ export default function Navbar() {
             </div>
           </label> */}
           {/* Join Now - desktop only */}
-          <button
+          {/* TODO: Uncomment these buttons once the backend is live */}
+          {/* <button
             onClick={() => navigate("/signup")}
             className="hidden md:flex items-center justify-center rounded-xl h-10 px-5 bg-primary hover:bg-primary-dark transition-colors text-slate-900 text-sm font-bold tracking-wide shadow-sm"
           >
             <span>Join Now</span>
-          </button>
+          </button> */}
           {/* Log In - always visible */}
-          <button
+          {/* <button
             onClick={() => navigate("/login")}
             className={`flex items-center justify-center rounded-xl h-10 px-5 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"} hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm font-bold tracking-wide`}
           >
             <span>Log In</span>
-          </button>
+          </button> */}
+
           {/* Cart - desktop only */}
           {/* <button className={`hidden md:flex items-center justify-center rounded-xl size-10 ${isHome ? "bg-white/15 backdrop-blur-md text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"} relative`}>
             <span className="material-symbols-outlined">shopping_cart</span>
@@ -133,14 +135,16 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-1 flex items-center justify-between">
-            <button
+            {/* TODO: Add it once the backend is live */}
+            {/* <button
               onClick={() => navigate("/signup")}
               className="flex items-center justify-center rounded-xl h-10 px-5 bg-primary hover:bg-primary-dark transition-colors text-slate-900 text-sm font-bold tracking-wide shadow-sm"
             >
               <span>Join Now</span>
-            </button>
+            </button> */}
             <div className="flex gap-3">
-              <button
+              {/* Add this button back if the marketplace is ever implemented */}
+              {/* <button
                 onClick={() => navigate("/shop")}
                 className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white relative"
               >
@@ -148,7 +152,7 @@ export default function Navbar() {
                 <span className="absolute -top-1 -right-1 size-4 bg-accent-red text-white text-[10px] font-bold flex items-center justify-center rounded-full">
                   2
                 </span>
-              </button>
+              </button> */}
               <button
                 onClick={toggleTheme}
                 className="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"

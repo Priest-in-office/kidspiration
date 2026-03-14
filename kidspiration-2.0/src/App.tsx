@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import { useImagePreloader } from "./hooks/useImagePreloader";
 import { KidsProvider } from "./context/KidsContext";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import Home from "./pages/Home";
 import SignupChooser from "./pages/SignupChooser";
 import Signup from "./pages/Signup";
@@ -56,10 +57,13 @@ export default function App() {
 
   if (pageLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background-light dark:bg-slate-950">
-        <span className="material-symbols-outlined text-primary text-6xl animate-spin">
-          donut_large
-        </span>
+      <div
+        className="min-h-screen flex items-center justify-center bg-background-light dark:bg-slate-950"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading page"
+      >
+        <ArrowPathIcon className="w-12 h-12 text-primary animate-spin" />
       </div>
     );
   }
