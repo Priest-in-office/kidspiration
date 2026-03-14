@@ -102,10 +102,11 @@ export default function Live() {
             aria-label="Live service stream"
           />
 
-          <div className="absolute top-4 left-4 flex items-center gap-2 bg-accent-red/90 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase backdrop-blur-sm shadow-sm pointer-events-none">
+          {/* Removed pulsing live badge */}
+          {/* <div className="absolute top-4 left-4 flex items-center gap-2 bg-accent-red/90 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase backdrop-blur-sm shadow-sm pointer-events-none">
             <span className="size-2 rounded-full bg-white animate-pulse"></span>
             LIVE
-          </div>
+          </div> */}
 
           {hasError && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/75 text-white text-center px-6">
