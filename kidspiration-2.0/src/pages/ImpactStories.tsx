@@ -354,7 +354,7 @@ export default function ImpactStories() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/partner"
+                  href="" // TODO: navigate to /partner
                   className="bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-xl font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                 >
                   Partner With Us

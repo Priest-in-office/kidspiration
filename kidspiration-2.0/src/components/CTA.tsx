@@ -85,7 +85,7 @@ export default function CTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center z-10">
           <button
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/")} // TODO: navigate to "/signup"
             className="btn-sparkle flex min-w-[200px] cursor-pointer items-center justify-center rounded-2xl h-14 px-10 bg-primary text-stone-900 text-lg font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300"
           >
             <span className="mr-2">Get Started for Free</span>

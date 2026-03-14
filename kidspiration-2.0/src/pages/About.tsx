@@ -7,7 +7,7 @@ const VISION_MISSION = [
   {
     icon: "visibility",
     label: "Our Vision",
-    text: "Reach 3 Billion Children Worldwide with the Gospel.",
+    text: "Reach 1.5 Billion Children Worldwide with the Gospel.",
     accent: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400",
   },
   {
@@ -104,8 +104,8 @@ const PROGRAMS = [
 
 const CORE_VALUES = [
   { icon: "accessibility_new", label: "Growth" },
-  { icon: "interests", label: "Engagement" },
-  { icon: "eco", label: "Sustainability" },
+  { icon: "favorite", label: "Compassion" },
+  { icon: "military_tech", label: "Excellence" },
   { icon: "trending_up", label: "Impact" },
 ];
 
@@ -143,10 +143,10 @@ export default function About() {
               global movement
             </strong>{" "}
             inspired by the healing ministry of Pastor Chris Oyakhilome. At
-            Kidspiration, our vision is clear — to reach three billion children
+            Kidspiration, our vision is clear — to reach 1.5 billion children
             around the world with the Gospel of our Lord Jesus Christ. We're
             raising a generation of children, ages zero to twelve, filled with
-            the Word and the Spirit — children who experience and share the
+            the Word and the Spirit; children who experience and share the
             Gospel, becoming conduits of God's grace and power.
           </p>
         </section>
@@ -332,7 +332,7 @@ export default function About() {
               faith, love, and action.
             </p>
             <button
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/")} // TODO: navigate to "/signup"
               className="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/30"
             >
               Join Our Mission

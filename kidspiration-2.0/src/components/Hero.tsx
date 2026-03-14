@@ -116,7 +116,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
           <button
             className="animate-gentle-bounce flex h-14 cursor-pointer items-center justify-center rounded-2xl bg-primary px-10 text-lg font-bold text-stone-900 shadow-lg shadow-primary/40 transition-all hover:bg-primary-hover hover:-translate-y-1 hover:shadow-xl"
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/")} // TODO: navigate to /signup
           >
             <span className="truncate">Join the Fun</span>
             <span className="material-symbols-outlined ml-2">

@@ -77,7 +77,7 @@ export default function InvolvementCards() {
               </p>
             </div>
             <button
-              onClick={() => navigate(`/partner/donate?purpose=${card.purposeKey}`)}
+              onClick={() => navigate(`/`)} // TODO: navigate to /partner/donate?purpose=${card.purposeKey}
               className="mt-auto pt-4 text-primary font-bold text-sm hover:underline flex items-center gap-1 self-start"
             >
               Give Here{" "}
@@ -92,7 +92,7 @@ export default function InvolvementCards() {
       {/* CTA */}
       <div className="flex justify-center mt-6">
         <button
-          onClick={() => navigate("/partner/donate")}
+          onClick={() => navigate("/")} // TODO: navigate to /partner/donate 
           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-8 bg-primary hover:bg-yellow-400 text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md hover:shadow-lg"
         >
           <span className="truncate">See Full Details</span>

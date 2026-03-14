@@ -87,7 +87,7 @@ export default function FourPs() {
               title="1. Prayer"
               icon="volunteer_activism"
               colorClass="bg-linear-to-br from-accent-sky to-blue-600"
-              learnMoreLink="/4ps/prayer"
+              learnMoreLink="" // TODO: navigate to /4ps/prayer
             >
               <p>
                 Prayer is the foundation of our preparation. By praying, we make
@@ -107,7 +107,7 @@ export default function FourPs() {
               title="2. Publicity"
               icon="campaign"
               colorClass="bg-linear-to-br from-primary to-orange-500"
-              learnMoreLink="/4ps/publicity"
+              learnMoreLink="" // TODO: navigate to /4ps/publicity
             >
               <p>
                 We have a mandate to take healing to the nations. Publicity
@@ -126,7 +126,7 @@ export default function FourPs() {
               title="3. Preparing Places"
               icon="home_work"
               colorClass="bg-linear-to-br from-accent-green to-emerald-600"
-              learnMoreLink="/4ps/preparing-places"
+              learnMoreLink="" // TODO: navigate to /4ps/preparing-places
             >
               <p>
                 A healing center is an extension of the Healing School
@@ -146,7 +146,7 @@ export default function FourPs() {
               title="4. Partnership"
               icon="handshake"
               colorClass="bg-linear-to-br from-accent-purple to-purple-600"
-              learnMoreLink="/4ps/partnership"
+              learnMoreLink="" // TODO: navigate to /4ps/partnership
             >
               <p>
                 Partnership is your commitment to ensuring the program reaches

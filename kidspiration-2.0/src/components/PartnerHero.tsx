@@ -27,7 +27,7 @@ export default function PartnerHero() {
             </h2>
           </div>
           <button
-            onClick={() => navigate("/partner/donate")}
+            onClick={() => navigate("/")} // TODO: navigate to "/partner/donate"
             className="flex min-w-[84px] max-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary hover:bg-yellow-400 text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base transition-all shadow-md hover:shadow-lg"
           >
             <span className="truncate">Start Your Journey</span>
