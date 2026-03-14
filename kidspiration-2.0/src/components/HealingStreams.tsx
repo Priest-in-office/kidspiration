@@ -1,27 +1,29 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import healingStreamsImg from "../assets/HSLHS_MARCH_2026.jpg";
 import { Link } from "react-router";
 
-const EVENT_DATE = new Date("2026-03-13T00:00:00").getTime();
+// Countdown timer code is currently commented out since the event has passed and the timer isn't a critical feature yet. It can be re-enabled at the announcement of the next healing streams.
 
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+// const EVENT_DATE = new Date("2026-03-13T00:00:00").getTime();
 
-function getTimeLeft(): TimeLeft {
-  const now = Date.now();
-  const diff = Math.max(EVENT_DATE - now, 0);
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-  };
-}
+// interface TimeLeft {
+//   days: number;
+//   hours: number;
+//   minutes: number;
+//   seconds: number;
+// }
+
+// function getTimeLeft(): TimeLeft {
+//   const now = Date.now();
+//   const diff = Math.max(EVENT_DATE - now, 0);
+//   return {
+//     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+//     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+//     minutes: Math.floor((diff / (1000 * 60)) % 60),
+//     seconds: Math.floor((diff / 1000) % 60),
+//   };
+// }
 
 // function FlipDigit({ value, label }: { value: number; label: string }) {
 //   const [display, setDisplay] = useState(value);
@@ -60,16 +62,16 @@ export default function HealingStreams() {
   const imageY = useTransform(scrollYProgress, [0, 1], [60, -60]);
   const textY = useTransform(scrollYProgress, [0, 1], [40, -100]);
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft);
+  // const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft);
 
-  const tick = useCallback(() => {
-    setTimeLeft(getTimeLeft());
-  }, []);
+  // const tick = useCallback(() => {
+  //   setTimeLeft(getTimeLeft());
+  // }, []);
 
-  useEffect(() => {
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, [tick]);
+  // useEffect(() => {
+  //   const id = setInterval(tick, 1000);
+  //   return () => clearInterval(id);
+  // }, [tick]);
 
   return (
     <div
@@ -105,7 +107,7 @@ export default function HealingStreams() {
           <h2 className="text-3xl font-black leading-tight tracking-tight text-text-main dark:text-white sm:text-4xl lg:text-5xl">
             HSLHS with Pastor Chris Now Streaming on{" "}
             <span className="text-primary">
-              Kidspiration!
+              Kidspiration
             </span>
           </h2>
 
