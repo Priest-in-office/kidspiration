@@ -317,10 +317,10 @@ function MagazineReader({ issue, onBack }: { issue: MagazineIssue; onBack: () =>
           <span className="hidden sm:inline">Library</span>
         </button>
         <h1 className="text-2xl md:text-4xl font-black font-display text-text-main dark:text-white">
-          {issue.month} Edition
+          {issue.month} Edition - {issue.description}
         </h1>
         <p className="text-slate-600 dark:text-slate-400 mt-1 font-medium">
-          {issue.title} — Page {currentPage + 1} of {magazinePages.length}
+          Page {currentPage + 1} of {magazinePages.length}
         </p>
       </header>
 
@@ -330,7 +330,7 @@ function MagazineReader({ issue, onBack }: { issue: MagazineIssue; onBack: () =>
         <video
           ref={video0Ref}
           src={videoSrcs[0]}
-          preload="auto"
+          preload="auto" // alternative - use preload="metadata" to reduce bandwidth usage
           className={`absolute inset-0 w-full h-full object-cover origin-center ${
             activeLayer === 0
               ? "z-10 opacity-100 " +
@@ -348,7 +348,7 @@ function MagazineReader({ issue, onBack }: { issue: MagazineIssue; onBack: () =>
         <video
           ref={video1Ref}
           src={videoSrcs[1]}
-          preload="auto"
+          preload="auto" // alternative - use preload="metadata" to reduce bandwidth usage
           className={`absolute inset-0 w-full h-full object-cover origin-center ${
             activeLayer === 1
               ? "z-10 opacity-100 " +

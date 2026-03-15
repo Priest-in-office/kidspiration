@@ -29,6 +29,7 @@ import logoImg from "./assets/kidspiration-logo.png";
 import partner from "./assets/real-images/live-11.jpg";
 import mentor from "./assets/real-images/live-6.jpg";
 import community from "./assets/real-images/live-4.jpg";
+import AdultsLanding from "./pages/AdultsLanding";
 
 // Critical above-the-fold images (local + external)
 const CRITICAL_IMAGES = [
@@ -108,6 +109,7 @@ export default function App() {
             </KidsProvider>
           }
         />
+        <Route path="/adults" element={<AdultsLanding />} />
         <Route path="/about" element={<About />} />
         <Route path="/partner" element={<Partner />} />
         <Route path="/partner/donate" element={<Donate />} />
